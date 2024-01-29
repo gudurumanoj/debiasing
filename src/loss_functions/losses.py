@@ -21,7 +21,7 @@ class AsymmetricLoss(nn.Module):
         """
 
         # Calculating Probabilities
-        x_sigmoid = torch.sigmoid(x)
+        x_sigmoid = torch.sigmoid(x)        ## batch_size * num_classes
         xs_pos = x_sigmoid
         xs_neg = 1 - x_sigmoid
 
@@ -30,14 +30,14 @@ class AsymmetricLoss(nn.Module):
             xs_neg = (xs_neg + self.clip).clamp(max=1)
 
         # Basic CE calculation
-        los_pos = y * torch.log(xs_pos.clamp(min=self.eps))
+        los_pos = y * torch.log(xs_pos.clamp(min=self.eps))         ## batch_size * num_classes?
         los_neg = (1 - y) * torch.log(xs_neg.clamp(min=self.eps))
         loss = los_pos + los_neg
 
         # Asymmetric Focusing
         if self.gamma_neg > 0 or self.gamma_pos > 0:
             if self.disable_torch_grad_focal_loss:
-                torch.set_grad_enabled(False)
+                torch.set_grad_enabled(False)       ## why this step?
             pt0 = xs_pos * y
             pt1 = xs_neg * (1 - y)  # pt = p if t > 0 else 1-p
             pt = pt0 + pt1
@@ -48,6 +48,39 @@ class AsymmetricLoss(nn.Module):
             loss *= one_sided_w
 
         return -loss.sum()
+
+
+class BCEloss(nn.Module):
+    def __init__(self, eps=1e-8):
+        super(BCEloss, self).__init__()
+        self.eps = eps
+
+    def forward(self, x, y, weights):
+        """"
+        Parameters
+        ----------
+        x: input logits, batch_size * num_classes
+        y: targets (multi-label binarized vector), batch_size * num_classes
+        weights: weights for each class, num_classes
+        ----------
+        """
+        ## totalloss = \sigma_{i=1}^{num_classes} w_i * BCEloss_i
+        ## BCEloss_i = \sigma_{j=1}^{batch_size} -y_{ij} * log(x_{ij}) + (1-y_{ij}) * log(1-x_{ij})
+        
+        ## Calculating Probabilities
+        x_sigmoid = torch.sigmoid(x)        ## batch_size * num_classes
+        xs_pos = x_sigmoid
+        xs_neg = 1 - x_sigmoid
+
+        ## Basic CE calculation
+        los_pos = y * torch.log(xs_pos.clamp(min=self.eps))         ## batch_size * num_classes
+        los_neg = (1 - y) * torch.log(xs_neg.clamp(min=self.eps))
+        
+        ## totalloss = \sigma_{i=1}^{num_classes} w_i * BCEloss_i
+        # loss = torch.matmul(los_pos + los_neg, weights)             ## batch_size * 1, then sum over batch_size
+        # loss = ((los_neg + los_pos) * weights).sum(dim=0)        ## num_classes
+        loss = torch.sum((los_neg + los_pos) * weights, dim=0)      ## num_classes
+        return -loss  ## sum will be done in training loop because we need max element from it    
 
 
 class AsymmetricLossOptimized(nn.Module):
