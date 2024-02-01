@@ -1,9 +1,16 @@
 from enum import auto
+import gc
+from math import fabs
 import os
 import argparse
+from pyexpat import model
+import re
 import sched
 from symbol import parameters
+from copy import deepcopy       ## importing deepcopy
 import torch
+# torch.autograd.set_detect_anomaly(True)
+import torch.nn as nn
 import torch.nn.parallel
 import torch.optim
 import torch.utils.data.distributed
@@ -14,6 +21,8 @@ from src.models import create_model
 from src.loss_functions.losses import AsymmetricLoss, BCEloss
 from randaugment import RandAugment
 from torch.cuda.amp import GradScaler, autocast
+
+
 
 parser = argparse.ArgumentParser(description='PyTorch MS_COCO Training')
 parser.add_argument('data', metavar='DIR', help='path to dataset', default='/home/MSCOCO_2014/')
@@ -112,7 +121,8 @@ def main():
         train_multi_label_coco(model, train_loader, val_loader, args.lr)
     elif args.type == 'objp':
         ## new metalearning training loop
-        train_multi_label_coco2(model_train, model_val, train_loader, val_loader, args.lr, args.model_name, args.type)
+        # train_multi_label_coco2(model_train, model_val, train_loader, val_loader, args.lr, args)
+        learner(model_train, model_val, train_loader, val_loader, args).forward()
 
 
 def train_multi_label_coco(model, train_loader, val_loader, lr):
@@ -182,137 +192,191 @@ def train_multi_label_coco(model, train_loader, val_loader, lr):
         print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score, highest_mAP))
 
 
-def train_multi_label_coco2(model_train, model_val, train_loader, val_loader, lr, model_name, type):
+## implementing without gradscaler as normal one isn't working, ot using lr scheduler as well, just plain simple training loop
+## because the above one is not working 
+class learner(nn.Module):
+    def __init__(self, model_train, model_val, train_loader, val_loader, args):
+        super(learner, self).__init__()
+        self.model_train = model_train
+        self.model_train_ema = ModelEma(self.model_train, 0.9997)  # 0.9997^641=0.82
+        self.model_val = model_val
+        self.model_val_ema = ModelEma(self.model_val, 0.9997) # 0.9997^641=0.82
 
-    ema_train = ModelEma(model_train, 0.9997)  # 0.9997^641=0.82
+        self.type = args.type
+        self.model_name = args.model_name
+
+        self.train_loader = train_loader
+        self.val_loader = val_loader
+        self.args = args
+
+        self.lr = args.lr
+        self.epochs = 80
+        self.stop_epoch = 40    ## can be updated during training process
+        self.weight_decay = 1e-4
+
+        self.steps_per_epoch_train = len(train_loader)
+        self.steps_per_epoch_val = len(val_loader)
+
+        self.optimizer_train = torch.optim.Adam(params=self.model_train.parameters(), lr=self.lr)
+        self.optimizer_val = torch.optim.Adam(params=self.model_val.parameters(), lr=self.lr)
+
+        self.highest_mAP_train = 0
+        self.highest_mAP_val = 0
+
+        self.criteria = BCEloss()
+        self.trainInfoList = []
+        self.valInfoList = []
+
+        self.weights = torch.rand(80).cuda() ## just initialising it randomly for the first round
+
+        self.model_train.train()
+        self.model_val.train()
 
 
-    # set optimizer, similar attributes except for criterion
-    Epochs = 80
-    Stop_epoch = 40
-    weight_decay = 1e-4
-    # criterion = AsymmetricLoss(gamma_neg=4, gamma_pos=0, clip=0.05, disable_torch_grad_focal_loss=True)
-    
-    ## training model parameters
-    criterion_train = BCEloss()
-    parameters_train = add_weight_decay(model_train, weight_decay)
-    optimizer_train = torch.optim.Adam(params=parameters_train, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
-    scheduler_train = lr_scheduler.OneCycleLR(optimizer_train, max_lr=lr, steps_per_epoch=len(train_loader), epochs=Epochs,
-                                        pct_start=0.2)
-    
-    ## validation (metalearning) model parameters
-    parameters_val = add_weight_decay(model_val, weight_decay)
-    optimizer_val = torch.optim.Adam(params=parameters_val, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
-    scheduler_val = lr_scheduler.OneCycleLR(optimizer_val, max_lr=lr, steps_per_epoch=len(val_loader), epochs=Epochs,
-                                        pct_start=0.2)
-    criterion_val = BCEloss()
-    
-    steps_per_epoch_train = len(train_loader)
-    steps_per_epoch_val = len(val_loader)
-
-    highest_mAP = 0
-
-    trainInfoList = []
-    valInfoList = []
-
-    scaler_train = GradScaler()
-    scaler_val = GradScaler()
-
-    weights = torch.rand(80).cuda() ## just initialising it randomly for the first round
-
-    for epoch in range(Epochs):
-        if epoch > Stop_epoch:
-            break
-        for i, (inputData, target) in enumerate(train_loader):
+    def forward(self):
+        for epoch in range(self.epochs):
+            # print(self.weights)
+            if epoch > self.stop_epoch:
+                break
             
-            ## training model_train
-            inputData = inputData.cuda()
-            target = target.cuda()  # (batch,3,num_classes)
-            target = target.max(dim=1)[0]
-            with autocast():  # mixed precision
-                outputs_train = model_train(inputData).float()  # sigmoid will be done in loss !
-            loss = criterion_train(outputs_train, target, weights)   
-            loss = loss.sum()                                   ## sum over classes
-            model_train.zero_grad()
+            fasttrain = deepcopy(self.model_train)
+            parameters_fasttrain = add_weight_decay(fasttrain, self.weight_decay)
+            optimizer_fasttrain = torch.optim.Adam(params=parameters_fasttrain, lr=self.lr, weight_decay=0)
+            fasttrain.cuda()
+            fasttrain.train()
 
-            scaler_train.scale(loss).backward(retain_graph=True)
-            # loss.backward()
+            for i, (inputData, target) in enumerate(self.train_loader):
+                inputData = inputData.cuda()
+                target = target.cuda()
+                target = target.max(dim=1)[0]
+                with autocast():
+                    output_train = fasttrain(inputData).float()
+                loss = self.criteria(output_train, target, self.weights)
+                loss = loss.sum()                                   ## sum over classes
 
-            scaler_train.step(optimizer_train)
-            scaler_train.update()
-            # optimizer.step()
+                optimizer_fasttrain.zero_grad()
+                loss.backward(retain_graph=True)
+                optimizer_fasttrain.step()
 
-            scheduler_train.step()
-            ema_train.update(model_train) ## no ema here, but can be added for both train and val models
+                if i % 100 == 0:
+                    self.trainInfoList.append([epoch, i, loss.item()])
+                    print('Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
+                          .format(epoch, self.epochs, str(i).zfill(3), str(self.steps_per_epoch_train).zfill(3),
+                                  self.lr, \
+                                  loss.item()))
+            # 
+            # print("-----------training loop weights before step-------------\n")
+            # for name, p in self.model_train.named_parameters():
+                # /print(p)
+                # break
+                    
+            self.optimizer_train.zero_grad()
+            self.model_train.load_state_dict(fasttrain.state_dict())
 
-            # store information
-            if i % 100 == 0:
-                trainInfoList.append([epoch, i, loss.item()])
-                print('Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
-                      .format(epoch, Epochs, str(i).zfill(3), str(steps_per_epoch_train).zfill(3),
-                              scheduler_train.get_last_lr()[0], \
-                              loss.item()))
+            ## ema model update
+            self.model_train_ema.update(self.model_train)
 
-        ## validation model_val
-        for i_val, (inputData_val, target_val) in enumerate(val_loader):
-            inputData_val = inputData_val.cuda()
-            target_val = target_val.cuda()
-            target_val = target_val.max(dim=1)[0]
+            # print("-----------training loop weights after step-------------\n")
+            # for name, p in self.model_train.named_parameters():
+                # print(p)
+                # break
+
+            for i_val, (inputData_val, target_val) in enumerate(self.val_loader):
+                inputData_val = inputData_val.cuda()
+                target_val = target_val.cuda()
+                target_val = target_val.max(dim=1)[0]
+                with autocast():
+                    output_val = fasttrain(inputData_val).float()
+                loss_val = self.criteria(output_val, target_val, self.weights)
+                optimizer_fasttrain.zero_grad()
+                loss_val = loss_val.max()
+                loss_val.backward(retain_graph=True)
+                optimizer_fasttrain.step()
+
+                if i_val % 100 == 0:
+                    self.valInfoList.append([epoch, i_val, loss_val.max().item()])
+                    print('Outer loop Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
+                          .format(epoch, self.epochs, str(i_val).zfill(3), str(self.steps_per_epoch_val).zfill(3),
+                                  self.lr, \
+                                  loss_val.max().item()))
+
+            # print("-----------val loop gradients before-------------")
+            # for i,p in enumerate(self.model_val.parameters()):
+                # print(p.grad)
+                # if i == 2:
+                    # break
+
+            gradients = []
+            for i, params in enumerate(fasttrain.parameters()):
+                gradients.append(deepcopy(params.grad))
+
+            # print("-----------val loop gradients after-------------",len(gradients))
+            for i, p in enumerate(self.model_val.parameters()):
+                p.grad = gradients[i]
+
+            # for i,p in enumerate(self.model_val.parameters()):
+                # print(p.grad)
+                # if i == 2:
+                    # break
+            
+            # print("-----------val loop weights before step-------------\n")
+            # for name, p in self.model_val.named_parameters():
+                # print(p)
+                # break
+            self.optimizer_val.step()
+            self.optimizer_val.zero_grad()
+
+            ## ema model update
+            self.model_val_ema.update(self.model_val)
+            # print("-----------val loop weights after step-------------\n")
+            # for name, p in self.model_val.named_parameters():
+                # print(p)
+                # break
             with autocast():
-                outputs_val = model_val(inputData_val).float()
-                outputs_train = model_train(inputData_val).float()
-            
-            # Calculate the validation loss
-            loss_val = criterion_train(outputs_train, target_val, weights)
-            
-            # Backward pass lossmax and updating the parameters of model_val
-            # loss_max.requires_grad = True  ## dont know if should be doing this or not
-            model_val.zero_grad()
-            # scaler.scale(torch.max(loss_val)).backward()
-            scaler_val.scale(loss_val.max()).backward(retain_graph=True)
+                outputs_val = self.model_val(inputData_val).float()
+            self.weights = torch.sigmoid(outputs_val.mean(dim=0))  ## updating weights
 
-            # scaler_val.step(optimizer_val)
-            # scaler_val.update()
-            scheduler_val.step()
-
-            ## should look at weight updates once
-            weights = torch.sigmoid(outputs_val.mean(dim=0))  ## updating weights
-
-            # store information
+            del fasttrain, parameters_fasttrain, optimizer_fasttrain
+            torch.cuda.empty_cache()
+            del gradients
+            gc.collect()
+            # torch.cuda.empty_cache()
+            ## saving checkpoints
             if i % 100 == 0:
-                valInfoList.append([epoch, i_val, loss_val.max().item()])
-                print('Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
-                      .format(epoch, Epochs, str(i_val).zfill(3), str(steps_per_epoch_val).zfill(3),
-                              scheduler_val.get_last_lr()[0], \
-                              loss_val.max().item()))
+                torch.save(self.model_train.state_dict(), os.path.join(
+                    'models/{}/{}/models_train/'.format(self.type, self.model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))
+                torch.save(self.model_val.state_dict(), os.path.join(
+                    'models/{}/{}/models_val/'.format(self.type, self.model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))
+                torch.save(self.weights, os.path.join(
+                    'models/{}/{}/weights/'.format(self.type, self.model_name), 'weights-{}-{}.ckpt'.format(epoch + 1, i + 1)))  
+
+            ## evaluation of the models
+            print("---------evaluating the models---------\n")
+            self.model_train.eval()
+            self.model_val.eval()
+            mAP_score_train = validate_multi(self.train_loader, self.model_train, self.model_train_ema)
+            mAP_score_val = validate_multi(self.val_loader, self.model_val, self.model_val_ema)
+            self.model_train.train()
+            self.model_val.train()
+
+            if mAP_score_train > self.highest_mAP_train:
+                self.highest_mAP_train = mAP_score_train
+                torch.save(self.model_train.state_dict(), os.path.join(
+                    'models/{}/{}/models_train/'.format(self.type, self.model_name), 'model-highest.ckpt'))
+            print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score_train, self.highest_mAP_train))
 
 
-        try:
-            torch.save(model_train.state_dict(), os.path.join(
-                'models/{}/{}/models_train/'.format(type, model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))  ## changed path here, remember this
-        except:
-            pass
+            if mAP_score_val > self.highest_mAP_val:
+                self.highest_mAP_val = mAP_score_val
+                torch.save(self.model_val.state_dict(), os.path.join(
+                    'models/{}/{}/models_val/'.format(self.type, self.model_name), 'model-highest.ckpt'))    
+            print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score_val, self.highest_mAP_val))
 
-        try:
-            torch.save(model_val.state_dict(), os.path.join(
-                'models/{}/{}/models_val/'.format(type ,model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))  ## changed path here, remember this
-        except:
-            pass
-
-
-        
-        ## should write a validation loop here, donot forget to do it
-        model_train.eval()
-        mAP_score = validate_multi(val_loader, model_train, ema_train)
-        model_train.train()
-        if mAP_score > highest_mAP:
-            highest_mAP = mAP_score
-            try:
-                torch.save(model_train.state_dict(), os.path.join(
-                    'models/{}/{}/models_train'.format(type ,model_name), 'model-highest.ckpt'))    
-            except:
-                pass
-        print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score, highest_mAP))
+        ## printing train and val info lists
+        for i in range(len(self.trainInfoList)):
+            print(self.trainInfoList[i])
+        for i in range(len(self.valInfoList)):
+            print(self.valInfoList[i])
 
 def validate_multi(val_loader, model, ema_model):
     print("starting validation")
@@ -342,3 +406,240 @@ def validate_multi(val_loader, model, ema_model):
 
 if __name__ == '__main__':
     main()
+
+# def train_multi_label_coco2(model_train, model_val, train_loader, val_loader, lr, args):
+
+#     """
+#     model train: model for training
+#     model val: model for learning weights (aka \lambdas)
+#     Consists of meta learning loop
+#     """
+
+#     ## added this to smoothen the training and validation models weights
+#     ema_train = ModelEma(model_train, 0.9997)  # 0.9997^641=0.82
+#     ema_val = ModelEma(model_val, 0.9997)  # 0.9997^641=0.82
+
+#     # set optimizer, similar attributes except for criterion
+#     Epochs = 80
+#     Stop_epoch = 40   ## should set it later by finetuning it
+#     weight_decay = 1e-4
+#     # criterion = AsymmetricLoss(gamma_neg=4, gamma_pos=0, clip=0.05, disable_torch_grad_focal_loss=True)
+    
+#     ## training model parameters
+#     criterion_train = BCEloss()
+#     parameters_train = add_weight_decay(model_train, weight_decay)
+#     optimizer_train = torch.optim.Adam(params=parameters_train, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
+#     scheduler_train = lr_scheduler.OneCycleLR(optimizer_train, max_lr=lr, steps_per_epoch=len(train_loader), epochs=Epochs,
+#                                         pct_start=0.2)
+    
+#     ## validation (metalearning) model parameters
+#     parameters_val = add_weight_decay(model_val, weight_decay)
+#     optimizer_val = torch.optim.Adam(params=parameters_val, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
+#     scheduler_val = lr_scheduler.OneCycleLR(optimizer_val, max_lr=lr, steps_per_epoch=len(val_loader), epochs=Epochs,
+#                                         pct_start=0.2)
+#     ## no need of criterion for validation model, as it is just learning weights for the training model
+    
+#     steps_per_epoch_train = len(train_loader)
+#     steps_per_epoch_val = len(val_loader)
+
+#     highest_mAP_train = 0
+#     highest_mAP_val = 0
+
+#     trainInfoList = []
+#     valInfoList = []
+
+#     scaler_train = GradScaler()
+#     scaler_val = GradScaler()
+
+#     weights = torch.rand(80).cuda() ## just initialising it randomly for the first round
+
+#     for epoch in range(Epochs):
+#         if epoch > Stop_epoch:
+#             break
+        
+#         for i, (inputData, target) in enumerate(train_loader):
+            
+#             ## training model_train
+#             inputData = inputData.cuda()
+#             target = target.cuda()  # (batch,3,num_classes)
+#             target = target.max(dim=1)[0]
+#             with autocast():  # mixed precision
+#                 outputs_train = model_train(inputData).float()  # sigmoid will be done in loss !
+#             loss = criterion_train(outputs_train, target, weights)   
+#             loss = loss.sum()                                   ## sum over classes
+#             # model_train.zero_grad()
+
+#             # scaler_train.scale(loss).backward(retain_graph=True)
+#             scaler_train.scale(loss).backward(retain_graph=True)     ## will update it if it doesn't work
+
+#             # loss.backward()
+
+#             scaler_train.step(optimizer_train)
+#             scaler_train.update()
+#             # optimizer.step()
+
+#             scheduler_train.step()
+#             model_train.zero_grad()
+#             ema_train.update(model_train) ## no ema here, but can be added for both train and val models
+#             # model_train.zero_grad()
+#             # store information
+#             if i % 100 == 0:
+#                 trainInfoList.append([epoch, i, loss.item()])
+#                 print('Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
+#                       .format(epoch, Epochs, str(i).zfill(3), str(steps_per_epoch_train).zfill(3),
+#                               scheduler_train.get_last_lr()[0], \
+#                               loss.item()))
+
+#         ## validation model_val
+#         # fasttrain = deepcopy(model_train.to(torch.device('cpu')))   ## this will be used to update the weights of model_val 
+#         #                                     ## because we don't want to update the weights of model_train when we do backward()
+#         #                                     ## during the validation (or metalearning) loop
+#         # fasttrain = type(model_train)()  # Create a new instance of the same model class
+#         # fasttrain = create_model(args).cuda()
+#         fasttrain = create_model(args).cuda()
+                
+#         try:
+#             fasttrain.load_state_dict(model_train.state_dict())  # Copy the weights from model_train
+#         except:
+#             print("error in loading the weights")
+#         # statedict = model_train.state_dict()
+
+#         # filtereddict = {k: v for k, v in statedict.items() if 'head.fc' not in k}
+#         # fasttrain.load_state_dict(filtereddict)  # Copy the weights from model_train
+#         # fasttrain.load_state_dict(model_train.state_dict()).cuda()  # Copy the weights from model_train
+# # fasttrain.to(torch.device('cpu'))  # Move the model to the CPU
+#         scaler_fasttrain = GradScaler()
+#         parameters_fasttrain = add_weight_decay(fasttrain, weight_decay)
+#         optimizer_fasttrain = torch.optim.Adam(params=parameters_fasttrain, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
+#         scheduler_fasttrain = lr_scheduler.OneCycleLR(optimizer_fasttrain, max_lr=lr, steps_per_epoch=len(val_loader), epochs=Epochs,
+#                                         pct_start=0.2)
+        
+#         # fasttrain.cuda()
+
+
+#         for i_val, (inputData_val, target_val) in enumerate(val_loader):
+#             gradients = []
+#             inputData_val = inputData_val.cuda()
+#             target_val = target_val.cuda()
+#             target_val = target_val.max(dim=1)[0]
+#             with autocast():
+#                 # outputs_val = model_val(inputData_val).float() ## should be done after updating the val model
+#                 outputs_train = fasttrain(inputData_val).float()
+            
+#             # Calculate the validation loss
+#             loss_val = criterion_train(outputs_train, target_val, weights)
+
+#             ## backward pass and calculates the gradients which are used to update the weights of model_val
+#             scaler_fasttrain.scale(loss_val.max()).backward(retain_graph=True)
+#             scaler_fasttrain.step(optimizer_fasttrain)
+#             scaler_fasttrain.update()
+#             scheduler_fasttrain.step()
+
+#             model_val.zero_grad()
+
+#             # ## updating the weights of model_val
+#             for i, params in enumerate(fasttrain.parameters()):
+#             #     if i == 0:
+#                 gradients.append(deepcopy(params.grad.to(torch.device('cpu'))))
+#             #     else:
+#             # gradients.append(deepcopy(fasttrain.parameters.grad.to(torch.device('cpu'))))
+#             for i, p in enumerate(model_val.parameters()):
+#                 p.grad = gradients[i].cuda()
+            
+#             ## updating the weights of model_val
+#             # for p_global, p_local in zip(model_val.parameters(), fasttrain.parameters()):
+#             #         p_global.grad += p_local.grad
+            
+#             # scaler_val.step(optimizer_val)
+#             optimizer_val.step()
+#             # scaler_val.update()
+#             # model_val.zero_grad()  
+#             scheduler_val.step()
+
+#             # del gradients
+#             # del fasttrain
+#             # gc.collect()
+            
+#             # Backward pass lossmax and updating the parameters of model_val
+#             # # loss_max.requires_grad = True  ## dont know if should be doing this or not
+#             # model_val.zero_grad()
+#             # # scaler.scale(torch.max(loss_val)).backward()
+#             # # scaler_val.scale(loss_val.max()).backward(retain_graph=True)
+
+#             # # scaler_val.step(optimizer_val)
+#             # # scaler_val.update()
+#             # scheduler_val.step()
+
+#             ## should look at weight updates once
+#             # # store information
+#             if i_val % 100 == 0: 
+#                 valInfoList.append([epoch, i_val, loss_val.max().item()])
+#                 print('Outer loop Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
+#                       .format(epoch, Epochs, str(i_val).zfill(3), str(steps_per_epoch_val).zfill(3),
+#                               scheduler_val.get_last_lr()[0], \
+#                               loss_val.max().item()))
+        
+#         with autocast():
+#             outputs_val = model_val(inputData_val).float()
+#         weights = torch.sigmoid(outputs_val.mean(dim=0))  ## updating weights
+#         print("weights: ", weights)
+
+            
+
+
+#         try:
+#             torch.save(model_train.state_dict(), os.path.join(
+#                 'models/{}/{}/models_train/'.format(args.type, args.model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))  ## changed path here, remember this
+#         except:
+#             pass
+
+#         try:
+#             torch.save(model_val.state_dict(), os.path.join(
+#                 'models/{}/{}/models_val/'.format(args.type ,args.model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))  ## changed path here, remember this
+#         except:
+#             pass
+
+
+        
+#         ## should write a validation loop here, donot forget to do it
+#         model_train.eval()
+#         mAP_score_train = validate_multi(val_loader, model_train, ema_train)
+#         model_train.train()
+#         if mAP_score_train > highest_mAP_train:
+#             highest_mAP_train = mAP_score_train
+#             try:
+#                 torch.save(model_train.state_dict(), os.path.join(
+#                     'models/{}/{}/models_train'.format(args.type ,args.model_name), 'model-highest.ckpt'))    
+#             except:
+#                 pass
+#         print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score_train, highest_mAP_train))
+
+#         model_val.eval()
+#         mAP_score_val = validate_multi(val_loader, model_val, ema_train)
+#         model_val.train()
+#         if mAP_score_val > highest_mAP_val:
+#             highest_mAP_val = mAP_score_val
+#             try:
+#                 torch.save(model_val.state_dict(), os.path.join(
+#                     'models/{}/{}/models_val'.format(args.type ,args.model_name), 'model-highest.ckpt'))    
+#             except:
+#                 pass
+#         print('current_mAP = {:.2f}, highest_mAP = {:.2f}\n'.format(mAP_score_val, highest_mAP_val))
+
+#     ## if printed correctly then directly write it to a file
+#     for i in range(len(trainInfoList)):
+#         print(trainInfoList[i])
+
+#     for i in range(len(valInfoList)):
+#         print(valInfoList[i])
+
+#     # ## writing to a csv file, may be put this into a function? 
+#     ##(a helper function for writing to csv file which takes in the list and the path to write to)
+#     # with open(os.path.join('models/{}/{}/trainInfo.csv'.format(type,model_name)), 'w') as f:
+#     #     for i in range(len(trainInfoList)):
+#     #         f.write(trainInfoList[i])
+#     # with open(os.path.join('models/{}/{}/valInfo.csv'.format(type,model_name)), 'w') as f:
+#     #     for i in range(len(valInfoList)):
+#     #         f.write(valInfoList[i])
+
+        
