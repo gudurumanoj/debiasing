@@ -1,0 +1,1325 @@
+creating models for obj12...
+done
+
+loading annotations into memory...
+Done (t=5.55s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=11.91s)
+creating index...
+index created!
+len(val_dataset)):  40137
+len(train_dataset)):  82081
+Epoch [0/80], Step [000/642], LR 1.0e-04, Loss: 3759.1
+Epoch [0/80], Step [100/642], LR 1.0e-04, Loss: 421.2
+Epoch [0/80], Step [200/642], LR 1.0e-04, Loss: 369.1
+Epoch [0/80], Step [300/642], LR 1.0e-04, Loss: 278.8
+Epoch [0/80], Step [400/642], LR 1.0e-04, Loss: 285.3
+Epoch [0/80], Step [500/642], LR 1.0e-04, Loss: 304.8
+Epoch [0/80], Step [600/642], LR 1.0e-04, Loss: 306.1
+Outer loop Epoch [0/80], Step [000/314], LR 1.0e-04, Loss: 354.8
+Outer loop Epoch [0/80], Step [100/314], LR 1.0e-04, Loss: 86.2
+Outer loop Epoch [0/80], Step [200/314], LR 1.0e-04, Loss: 76.3
+Outer loop Epoch [0/80], Step [300/314], LR 1.0e-04, Loss: 72.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 76.20, mAP score EMA 4.48
+starting validation
+mAP score regular 4.46, mAP score EMA 4.41
+current_mAP = 76.20, highest_mAP = 76.20
+
+current_mAP = 4.46, highest_mAP = 4.46
+
+Epoch [1/80], Step [000/642], LR 1.0e-04, Loss: 257.4
+Epoch [1/80], Step [100/642], LR 1.0e-04, Loss: 264.3
+Epoch [1/80], Step [200/642], LR 1.0e-04, Loss: 243.6
+Epoch [1/80], Step [300/642], LR 1.0e-04, Loss: 262.4
+Epoch [1/80], Step [400/642], LR 1.0e-04, Loss: 245.7
+Epoch [1/80], Step [500/642], LR 1.0e-04, Loss: 267.1
+Epoch [1/80], Step [600/642], LR 1.0e-04, Loss: 246.1
+Outer loop Epoch [1/80], Step [000/314], LR 1.0e-04, Loss: 274.3
+Outer loop Epoch [1/80], Step [100/314], LR 1.0e-04, Loss: 46.3
+Outer loop Epoch [1/80], Step [200/314], LR 1.0e-04, Loss: 54.1
+Outer loop Epoch [1/80], Step [300/314], LR 1.0e-04, Loss: 42.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 81.53, mAP score EMA 4.51
+starting validation
+mAP score regular 4.47, mAP score EMA 4.41
+current_mAP = 81.53, highest_mAP = 81.53
+
+current_mAP = 4.47, highest_mAP = 4.47
+
+Epoch [2/80], Step [000/642], LR 1.0e-04, Loss: 223.3
+Epoch [2/80], Step [100/642], LR 1.0e-04, Loss: 241.6
+Epoch [2/80], Step [200/642], LR 1.0e-04, Loss: 215.4
+Epoch [2/80], Step [300/642], LR 1.0e-04, Loss: 235.2
+Epoch [2/80], Step [400/642], LR 1.0e-04, Loss: 225.2
+Epoch [2/80], Step [500/642], LR 1.0e-04, Loss: 202.9
+Epoch [2/80], Step [600/642], LR 1.0e-04, Loss: 217.9
+Outer loop Epoch [2/80], Step [000/314], LR 1.0e-04, Loss: 269.9
+Outer loop Epoch [2/80], Step [100/314], LR 1.0e-04, Loss: 45.2
+Outer loop Epoch [2/80], Step [200/314], LR 1.0e-04, Loss: 55.2
+Outer loop Epoch [2/80], Step [300/314], LR 1.0e-04, Loss: 42.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 83.77, mAP score EMA 4.53
+starting validation
+mAP score regular 4.47, mAP score EMA 4.41
+current_mAP = 83.77, highest_mAP = 83.77
+
+current_mAP = 4.47, highest_mAP = 4.47
+
+Epoch [3/80], Step [000/642], LR 1.0e-04, Loss: 220.8
+Epoch [3/80], Step [100/642], LR 1.0e-04, Loss: 235.0
+Epoch [3/80], Step [200/642], LR 1.0e-04, Loss: 220.5
+Epoch [3/80], Step [300/642], LR 1.0e-04, Loss: 239.8
+Epoch [3/80], Step [400/642], LR 1.0e-04, Loss: 232.0
+Epoch [3/80], Step [500/642], LR 1.0e-04, Loss: 218.8
+Epoch [3/80], Step [600/642], LR 1.0e-04, Loss: 194.7
+Outer loop Epoch [3/80], Step [000/314], LR 1.0e-04, Loss: 272.3
+Outer loop Epoch [3/80], Step [100/314], LR 1.0e-04, Loss: 47.5
+Outer loop Epoch [3/80], Step [200/314], LR 1.0e-04, Loss: 54.8
+Outer loop Epoch [3/80], Step [300/314], LR 1.0e-04, Loss: 42.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 85.90, mAP score EMA 4.56
+starting validation
+mAP score regular 4.46, mAP score EMA 4.41
+current_mAP = 85.90, highest_mAP = 85.90
+
+current_mAP = 4.46, highest_mAP = 4.47
+
+Epoch [4/80], Step [000/642], LR 1.0e-04, Loss: 187.9
+Epoch [4/80], Step [100/642], LR 1.0e-04, Loss: 161.2
+Epoch [4/80], Step [200/642], LR 1.0e-04, Loss: 197.7
+Epoch [4/80], Step [300/642], LR 1.0e-04, Loss: 215.0
+Epoch [4/80], Step [400/642], LR 1.0e-04, Loss: 169.8
+Epoch [4/80], Step [500/642], LR 1.0e-04, Loss: 194.3
+Epoch [4/80], Step [600/642], LR 1.0e-04, Loss: 190.8
+Outer loop Epoch [4/80], Step [000/314], LR 1.0e-04, Loss: 282.9
+Outer loop Epoch [4/80], Step [100/314], LR 1.0e-04, Loss: 46.4
+Outer loop Epoch [4/80], Step [200/314], LR 1.0e-04, Loss: 52.6
+Outer loop Epoch [4/80], Step [300/314], LR 1.0e-04, Loss: 42.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 87.54, mAP score EMA 4.59
+starting validation
+mAP score regular 4.43, mAP score EMA 4.41
+current_mAP = 87.54, highest_mAP = 87.54
+
+current_mAP = 4.43, highest_mAP = 4.47
+
+Epoch [5/80], Step [000/642], LR 1.0e-04, Loss: 136.8
+Epoch [5/80], Step [100/642], LR 1.0e-04, Loss: 149.2
+Epoch [5/80], Step [200/642], LR 1.0e-04, Loss: 204.3
+Epoch [5/80], Step [300/642], LR 1.0e-04, Loss: 154.7
+Epoch [5/80], Step [400/642], LR 1.0e-04, Loss: 169.7
+Epoch [5/80], Step [500/642], LR 1.0e-04, Loss: 184.7
+Epoch [5/80], Step [600/642], LR 1.0e-04, Loss: 173.5
+Outer loop Epoch [5/80], Step [000/314], LR 1.0e-04, Loss: 312.6
+Outer loop Epoch [5/80], Step [100/314], LR 1.0e-04, Loss: 46.4
+Outer loop Epoch [5/80], Step [200/314], LR 1.0e-04, Loss: 51.3
+Outer loop Epoch [5/80], Step [300/314], LR 1.0e-04, Loss: 40.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 88.69, mAP score EMA 4.62
+starting validation
+mAP score regular 4.41, mAP score EMA 4.41
+current_mAP = 88.69, highest_mAP = 88.69
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [6/80], Step [000/642], LR 1.0e-04, Loss: 162.2
+Epoch [6/80], Step [100/642], LR 1.0e-04, Loss: 156.7
+Epoch [6/80], Step [200/642], LR 1.0e-04, Loss: 194.9
+Epoch [6/80], Step [300/642], LR 1.0e-04, Loss: 157.1
+Epoch [6/80], Step [400/642], LR 1.0e-04, Loss: 173.7
+Epoch [6/80], Step [500/642], LR 1.0e-04, Loss: 151.2
+Epoch [6/80], Step [600/642], LR 1.0e-04, Loss: 157.7
+Outer loop Epoch [6/80], Step [000/314], LR 1.0e-04, Loss: 304.1
+Outer loop Epoch [6/80], Step [100/314], LR 1.0e-04, Loss: 47.7
+Outer loop Epoch [6/80], Step [200/314], LR 1.0e-04, Loss: 50.0
+Outer loop Epoch [6/80], Step [300/314], LR 1.0e-04, Loss: 39.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 89.96, mAP score EMA 4.67
+starting validation
+mAP score regular 4.38, mAP score EMA 4.41
+current_mAP = 89.96, highest_mAP = 89.96
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [7/80], Step [000/642], LR 1.0e-04, Loss: 162.9
+Epoch [7/80], Step [100/642], LR 1.0e-04, Loss: 169.0
+Epoch [7/80], Step [200/642], LR 1.0e-04, Loss: 163.2
+Epoch [7/80], Step [300/642], LR 1.0e-04, Loss: 145.9
+Epoch [7/80], Step [400/642], LR 1.0e-04, Loss: 146.4
+Epoch [7/80], Step [500/642], LR 1.0e-04, Loss: 158.4
+Epoch [7/80], Step [600/642], LR 1.0e-04, Loss: 163.7
+Outer loop Epoch [7/80], Step [000/314], LR 1.0e-04, Loss: 303.0
+Outer loop Epoch [7/80], Step [100/314], LR 1.0e-04, Loss: 45.6
+Outer loop Epoch [7/80], Step [200/314], LR 1.0e-04, Loss: 49.5
+Outer loop Epoch [7/80], Step [300/314], LR 1.0e-04, Loss: 40.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 91.00, mAP score EMA 4.70
+starting validation
+mAP score regular 4.34, mAP score EMA 4.41
+current_mAP = 91.00, highest_mAP = 91.00
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [8/80], Step [000/642], LR 1.0e-04, Loss: 155.3
+Epoch [8/80], Step [100/642], LR 1.0e-04, Loss: 145.9
+Epoch [8/80], Step [200/642], LR 1.0e-04, Loss: 152.2
+Epoch [8/80], Step [300/642], LR 1.0e-04, Loss: 142.3
+Epoch [8/80], Step [400/642], LR 1.0e-04, Loss: 152.0
+Epoch [8/80], Step [500/642], LR 1.0e-04, Loss: 153.8
+Epoch [8/80], Step [600/642], LR 1.0e-04, Loss: 174.1
+Outer loop Epoch [8/80], Step [000/314], LR 1.0e-04, Loss: 326.2
+Outer loop Epoch [8/80], Step [100/314], LR 1.0e-04, Loss: 47.2
+Outer loop Epoch [8/80], Step [200/314], LR 1.0e-04, Loss: 48.7
+Outer loop Epoch [8/80], Step [300/314], LR 1.0e-04, Loss: 39.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 91.84, mAP score EMA 4.73
+starting validation
+mAP score regular 4.30, mAP score EMA 4.41
+current_mAP = 91.84, highest_mAP = 91.84
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [9/80], Step [000/642], LR 1.0e-04, Loss: 132.2
+Epoch [9/80], Step [100/642], LR 1.0e-04, Loss: 117.6
+Epoch [9/80], Step [200/642], LR 1.0e-04, Loss: 148.8
+Epoch [9/80], Step [300/642], LR 1.0e-04, Loss: 141.3
+Epoch [9/80], Step [400/642], LR 1.0e-04, Loss: 124.7
+Epoch [9/80], Step [500/642], LR 1.0e-04, Loss: 154.1
+Epoch [9/80], Step [600/642], LR 1.0e-04, Loss: 137.3
+Outer loop Epoch [9/80], Step [000/314], LR 1.0e-04, Loss: 298.5
+Outer loop Epoch [9/80], Step [100/314], LR 1.0e-04, Loss: 47.9
+Outer loop Epoch [9/80], Step [200/314], LR 1.0e-04, Loss: 48.0
+Outer loop Epoch [9/80], Step [300/314], LR 1.0e-04, Loss: 40.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 92.61, mAP score EMA 4.79
+starting validation
+mAP score regular 4.27, mAP score EMA 4.41
+current_mAP = 92.61, highest_mAP = 92.61
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [10/80], Step [000/642], LR 1.0e-04, Loss: 145.4
+Epoch [10/80], Step [100/642], LR 1.0e-04, Loss: 166.0
+Epoch [10/80], Step [200/642], LR 1.0e-04, Loss: 139.5
+Epoch [10/80], Step [300/642], LR 1.0e-04, Loss: 116.2
+Epoch [10/80], Step [400/642], LR 1.0e-04, Loss: 130.4
+Epoch [10/80], Step [500/642], LR 1.0e-04, Loss: 103.5
+Epoch [10/80], Step [600/642], LR 1.0e-04, Loss: 157.8
+Outer loop Epoch [10/80], Step [000/314], LR 1.0e-04, Loss: 327.3
+Outer loop Epoch [10/80], Step [100/314], LR 1.0e-04, Loss: 49.0
+Outer loop Epoch [10/80], Step [200/314], LR 1.0e-04, Loss: 48.0
+Outer loop Epoch [10/80], Step [300/314], LR 1.0e-04, Loss: 40.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 93.43, mAP score EMA 4.84
+starting validation
+mAP score regular 4.23, mAP score EMA 4.41
+current_mAP = 93.43, highest_mAP = 93.43
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [11/80], Step [000/642], LR 1.0e-04, Loss: 122.2
+Epoch [11/80], Step [100/642], LR 1.0e-04, Loss: 117.0
+Epoch [11/80], Step [200/642], LR 1.0e-04, Loss: 140.8
+Epoch [11/80], Step [300/642], LR 1.0e-04, Loss: 147.5
+Epoch [11/80], Step [400/642], LR 1.0e-04, Loss: 151.1
+Epoch [11/80], Step [500/642], LR 1.0e-04, Loss: 133.5
+Epoch [11/80], Step [600/642], LR 1.0e-04, Loss: 131.3
+Outer loop Epoch [11/80], Step [000/314], LR 1.0e-04, Loss: 331.6
+Outer loop Epoch [11/80], Step [100/314], LR 1.0e-04, Loss: 46.3
+Outer loop Epoch [11/80], Step [200/314], LR 1.0e-04, Loss: 47.4
+Outer loop Epoch [11/80], Step [300/314], LR 1.0e-04, Loss: 38.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 94.07, mAP score EMA 4.89
+starting validation
+mAP score regular 4.20, mAP score EMA 4.41
+current_mAP = 94.07, highest_mAP = 94.07
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [12/80], Step [000/642], LR 1.0e-04, Loss: 82.7
+Epoch [12/80], Step [100/642], LR 1.0e-04, Loss: 103.1
+Epoch [12/80], Step [200/642], LR 1.0e-04, Loss: 114.3
+Epoch [12/80], Step [300/642], LR 1.0e-04, Loss: 112.8
+Epoch [12/80], Step [400/642], LR 1.0e-04, Loss: 118.3
+Epoch [12/80], Step [500/642], LR 1.0e-04, Loss: 106.1
+Epoch [12/80], Step [600/642], LR 1.0e-04, Loss: 122.3
+Outer loop Epoch [12/80], Step [000/314], LR 1.0e-04, Loss: 354.3
+Outer loop Epoch [12/80], Step [100/314], LR 1.0e-04, Loss: 45.6
+Outer loop Epoch [12/80], Step [200/314], LR 1.0e-04, Loss: 47.1
+Outer loop Epoch [12/80], Step [300/314], LR 1.0e-04, Loss: 41.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 94.33, mAP score EMA 4.94
+starting validation
+mAP score regular 4.18, mAP score EMA 4.41
+current_mAP = 94.33, highest_mAP = 94.33
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [13/80], Step [000/642], LR 1.0e-04, Loss: 111.9
+Epoch [13/80], Step [100/642], LR 1.0e-04, Loss: 96.9
+Epoch [13/80], Step [200/642], LR 1.0e-04, Loss: 92.7
+Epoch [13/80], Step [300/642], LR 1.0e-04, Loss: 122.7
+Epoch [13/80], Step [400/642], LR 1.0e-04, Loss: 90.1
+Epoch [13/80], Step [500/642], LR 1.0e-04, Loss: 117.6
+Epoch [13/80], Step [600/642], LR 1.0e-04, Loss: 123.6
+Outer loop Epoch [13/80], Step [000/314], LR 1.0e-04, Loss: 335.8
+Outer loop Epoch [13/80], Step [100/314], LR 1.0e-04, Loss: 45.7
+Outer loop Epoch [13/80], Step [200/314], LR 1.0e-04, Loss: 45.9
+Outer loop Epoch [13/80], Step [300/314], LR 1.0e-04, Loss: 43.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 94.86, mAP score EMA 4.99
+starting validation
+mAP score regular 4.16, mAP score EMA 4.41
+current_mAP = 94.86, highest_mAP = 94.86
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [14/80], Step [000/642], LR 1.0e-04, Loss: 101.1
+Epoch [14/80], Step [100/642], LR 1.0e-04, Loss: 108.5
+Epoch [14/80], Step [200/642], LR 1.0e-04, Loss: 114.2
+Epoch [14/80], Step [300/642], LR 1.0e-04, Loss: 103.9
+Epoch [14/80], Step [400/642], LR 1.0e-04, Loss: 101.5
+Epoch [14/80], Step [500/642], LR 1.0e-04, Loss: 114.4
+Epoch [14/80], Step [600/642], LR 1.0e-04, Loss: 110.8
+Outer loop Epoch [14/80], Step [000/314], LR 1.0e-04, Loss: 369.4
+Outer loop Epoch [14/80], Step [100/314], LR 1.0e-04, Loss: 46.6
+Outer loop Epoch [14/80], Step [200/314], LR 1.0e-04, Loss: 46.1
+Outer loop Epoch [14/80], Step [300/314], LR 1.0e-04, Loss: 36.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 95.48, mAP score EMA 5.06
+starting validation
+mAP score regular 4.14, mAP score EMA 4.41
+current_mAP = 95.48, highest_mAP = 95.48
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [15/80], Step [000/642], LR 1.0e-04, Loss: 100.7
+Epoch [15/80], Step [100/642], LR 1.0e-04, Loss: 118.3
+Epoch [15/80], Step [200/642], LR 1.0e-04, Loss: 81.2
+Epoch [15/80], Step [300/642], LR 1.0e-04, Loss: 118.0
+Epoch [15/80], Step [400/642], LR 1.0e-04, Loss: 93.4
+Epoch [15/80], Step [500/642], LR 1.0e-04, Loss: 105.0
+Epoch [15/80], Step [600/642], LR 1.0e-04, Loss: 98.8
+Outer loop Epoch [15/80], Step [000/314], LR 1.0e-04, Loss: 356.1
+Outer loop Epoch [15/80], Step [100/314], LR 1.0e-04, Loss: 51.4
+Outer loop Epoch [15/80], Step [200/314], LR 1.0e-04, Loss: 45.6
+Outer loop Epoch [15/80], Step [300/314], LR 1.0e-04, Loss: 39.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 95.68, mAP score EMA 5.13
+starting validation
+mAP score regular 4.12, mAP score EMA 4.41
+current_mAP = 95.68, highest_mAP = 95.68
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [16/80], Step [000/642], LR 1.0e-04, Loss: 89.9
+Epoch [16/80], Step [100/642], LR 1.0e-04, Loss: 85.1
+Epoch [16/80], Step [200/642], LR 1.0e-04, Loss: 94.0
+Epoch [16/80], Step [300/642], LR 1.0e-04, Loss: 109.4
+Epoch [16/80], Step [400/642], LR 1.0e-04, Loss: 98.8
+Epoch [16/80], Step [500/642], LR 1.0e-04, Loss: 106.4
+Epoch [16/80], Step [600/642], LR 1.0e-04, Loss: 92.7
+Outer loop Epoch [16/80], Step [000/314], LR 1.0e-04, Loss: 371.4
+Outer loop Epoch [16/80], Step [100/314], LR 1.0e-04, Loss: 54.1
+Outer loop Epoch [16/80], Step [200/314], LR 1.0e-04, Loss: 46.1
+Outer loop Epoch [16/80], Step [300/314], LR 1.0e-04, Loss: 41.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 95.98, mAP score EMA 5.19
+starting validation
+mAP score regular 4.10, mAP score EMA 4.41
+current_mAP = 95.98, highest_mAP = 95.98
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [17/80], Step [000/642], LR 1.0e-04, Loss: 103.0
+Epoch [17/80], Step [100/642], LR 1.0e-04, Loss: 101.9
+Epoch [17/80], Step [200/642], LR 1.0e-04, Loss: 101.7
+Epoch [17/80], Step [300/642], LR 1.0e-04, Loss: 93.0
+Epoch [17/80], Step [400/642], LR 1.0e-04, Loss: 92.5
+Epoch [17/80], Step [500/642], LR 1.0e-04, Loss: 104.6
+Epoch [17/80], Step [600/642], LR 1.0e-04, Loss: 90.5
+Outer loop Epoch [17/80], Step [000/314], LR 1.0e-04, Loss: 367.9
+Outer loop Epoch [17/80], Step [100/314], LR 1.0e-04, Loss: 48.8
+Outer loop Epoch [17/80], Step [200/314], LR 1.0e-04, Loss: 46.6
+Outer loop Epoch [17/80], Step [300/314], LR 1.0e-04, Loss: 40.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 96.36, mAP score EMA 5.26
+starting validation
+mAP score regular 4.09, mAP score EMA 4.41
+current_mAP = 96.36, highest_mAP = 96.36
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [18/80], Step [000/642], LR 1.0e-04, Loss: 83.8
+Epoch [18/80], Step [100/642], LR 1.0e-04, Loss: 79.0
+Epoch [18/80], Step [200/642], LR 1.0e-04, Loss: 88.9
+Epoch [18/80], Step [300/642], LR 1.0e-04, Loss: 101.7
+Epoch [18/80], Step [400/642], LR 1.0e-04, Loss: 96.1
+Epoch [18/80], Step [500/642], LR 1.0e-04, Loss: 106.0
+Epoch [18/80], Step [600/642], LR 1.0e-04, Loss: 85.1
+Outer loop Epoch [18/80], Step [000/314], LR 1.0e-04, Loss: 404.3
+Outer loop Epoch [18/80], Step [100/314], LR 1.0e-04, Loss: 46.2
+Outer loop Epoch [18/80], Step [200/314], LR 1.0e-04, Loss: 44.9
+Outer loop Epoch [18/80], Step [300/314], LR 1.0e-04, Loss: 39.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 96.55, mAP score EMA 5.33
+starting validation
+mAP score regular 4.08, mAP score EMA 4.41
+current_mAP = 96.55, highest_mAP = 96.55
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [19/80], Step [000/642], LR 1.0e-04, Loss: 70.6
+Epoch [19/80], Step [100/642], LR 1.0e-04, Loss: 83.9
+Epoch [19/80], Step [200/642], LR 1.0e-04, Loss: 92.2
+Epoch [19/80], Step [300/642], LR 1.0e-04, Loss: 95.0
+Epoch [19/80], Step [400/642], LR 1.0e-04, Loss: 92.1
+Epoch [19/80], Step [500/642], LR 1.0e-04, Loss: 90.9
+Epoch [19/80], Step [600/642], LR 1.0e-04, Loss: 115.8
+Outer loop Epoch [19/80], Step [000/314], LR 1.0e-04, Loss: 375.4
+Outer loop Epoch [19/80], Step [100/314], LR 1.0e-04, Loss: 48.3
+Outer loop Epoch [19/80], Step [200/314], LR 1.0e-04, Loss: 45.3
+Outer loop Epoch [19/80], Step [300/314], LR 1.0e-04, Loss: 41.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 96.56, mAP score EMA 5.39
+starting validation
+mAP score regular 4.07, mAP score EMA 4.41
+current_mAP = 96.56, highest_mAP = 96.56
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [20/80], Step [000/642], LR 1.0e-04, Loss: 65.3
+Epoch [20/80], Step [100/642], LR 1.0e-04, Loss: 81.0
+Epoch [20/80], Step [200/642], LR 1.0e-04, Loss: 67.4
+Epoch [20/80], Step [300/642], LR 1.0e-04, Loss: 73.2
+Epoch [20/80], Step [400/642], LR 1.0e-04, Loss: 97.8
+Epoch [20/80], Step [500/642], LR 1.0e-04, Loss: 81.7
+Epoch [20/80], Step [600/642], LR 1.0e-04, Loss: 71.7
+Outer loop Epoch [20/80], Step [000/314], LR 1.0e-04, Loss: 375.7
+Outer loop Epoch [20/80], Step [100/314], LR 1.0e-04, Loss: 45.0
+Outer loop Epoch [20/80], Step [200/314], LR 1.0e-04, Loss: 45.0
+Outer loop Epoch [20/80], Step [300/314], LR 1.0e-04, Loss: 34.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.00, mAP score EMA 5.49
+starting validation
+mAP score regular 4.06, mAP score EMA 4.41
+current_mAP = 97.00, highest_mAP = 97.00
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [21/80], Step [000/642], LR 1.0e-04, Loss: 82.1
+Epoch [21/80], Step [100/642], LR 1.0e-04, Loss: 111.4
+Epoch [21/80], Step [200/642], LR 1.0e-04, Loss: 78.3
+Epoch [21/80], Step [300/642], LR 1.0e-04, Loss: 89.6
+Epoch [21/80], Step [400/642], LR 1.0e-04, Loss: 72.8
+Epoch [21/80], Step [500/642], LR 1.0e-04, Loss: 81.6
+Epoch [21/80], Step [600/642], LR 1.0e-04, Loss: 107.5
+Outer loop Epoch [21/80], Step [000/314], LR 1.0e-04, Loss: 411.9
+Outer loop Epoch [21/80], Step [100/314], LR 1.0e-04, Loss: 49.0
+Outer loop Epoch [21/80], Step [200/314], LR 1.0e-04, Loss: 45.4
+Outer loop Epoch [21/80], Step [300/314], LR 1.0e-04, Loss: 39.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.11, mAP score EMA 5.57
+starting validation
+mAP score regular 4.05, mAP score EMA 4.41
+current_mAP = 97.11, highest_mAP = 97.11
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [22/80], Step [000/642], LR 1.0e-04, Loss: 78.5
+Epoch [22/80], Step [100/642], LR 1.0e-04, Loss: 74.4
+Epoch [22/80], Step [200/642], LR 1.0e-04, Loss: 80.2
+Epoch [22/80], Step [300/642], LR 1.0e-04, Loss: 61.0
+Epoch [22/80], Step [400/642], LR 1.0e-04, Loss: 83.8
+Epoch [22/80], Step [500/642], LR 1.0e-04, Loss: 72.4
+Epoch [22/80], Step [600/642], LR 1.0e-04, Loss: 83.6
+Outer loop Epoch [22/80], Step [000/314], LR 1.0e-04, Loss: 402.7
+Outer loop Epoch [22/80], Step [100/314], LR 1.0e-04, Loss: 47.7
+Outer loop Epoch [22/80], Step [200/314], LR 1.0e-04, Loss: 43.0
+Outer loop Epoch [22/80], Step [300/314], LR 1.0e-04, Loss: 40.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.30, mAP score EMA 5.67
+starting validation
+mAP score regular 4.04, mAP score EMA 4.41
+current_mAP = 97.30, highest_mAP = 97.30
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [23/80], Step [000/642], LR 1.0e-04, Loss: 67.7
+Epoch [23/80], Step [100/642], LR 1.0e-04, Loss: 70.2
+Epoch [23/80], Step [200/642], LR 1.0e-04, Loss: 82.4
+Epoch [23/80], Step [300/642], LR 1.0e-04, Loss: 64.4
+Epoch [23/80], Step [400/642], LR 1.0e-04, Loss: 78.0
+Epoch [23/80], Step [500/642], LR 1.0e-04, Loss: 96.8
+Epoch [23/80], Step [600/642], LR 1.0e-04, Loss: 89.4
+Outer loop Epoch [23/80], Step [000/314], LR 1.0e-04, Loss: 402.7
+Outer loop Epoch [23/80], Step [100/314], LR 1.0e-04, Loss: 45.2
+Outer loop Epoch [23/80], Step [200/314], LR 1.0e-04, Loss: 43.4
+Outer loop Epoch [23/80], Step [300/314], LR 1.0e-04, Loss: 38.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.49, mAP score EMA 5.75
+starting validation
+mAP score regular 4.04, mAP score EMA 4.41
+current_mAP = 97.49, highest_mAP = 97.49
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [24/80], Step [000/642], LR 1.0e-04, Loss: 85.2
+Epoch [24/80], Step [100/642], LR 1.0e-04, Loss: 83.1
+Epoch [24/80], Step [200/642], LR 1.0e-04, Loss: 75.3
+Epoch [24/80], Step [300/642], LR 1.0e-04, Loss: 64.5
+Epoch [24/80], Step [400/642], LR 1.0e-04, Loss: 68.3
+Epoch [24/80], Step [500/642], LR 1.0e-04, Loss: 90.6
+Epoch [24/80], Step [600/642], LR 1.0e-04, Loss: 97.2
+Outer loop Epoch [24/80], Step [000/314], LR 1.0e-04, Loss: 408.4
+Outer loop Epoch [24/80], Step [100/314], LR 1.0e-04, Loss: 54.9
+Outer loop Epoch [24/80], Step [200/314], LR 1.0e-04, Loss: 47.4
+Outer loop Epoch [24/80], Step [300/314], LR 1.0e-04, Loss: 37.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.70, mAP score EMA 5.87
+starting validation
+mAP score regular 4.03, mAP score EMA 4.41
+current_mAP = 97.70, highest_mAP = 97.70
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [25/80], Step [000/642], LR 1.0e-04, Loss: 64.0
+Epoch [25/80], Step [100/642], LR 1.0e-04, Loss: 51.6
+Epoch [25/80], Step [200/642], LR 1.0e-04, Loss: 67.6
+Epoch [25/80], Step [300/642], LR 1.0e-04, Loss: 62.2
+Epoch [25/80], Step [400/642], LR 1.0e-04, Loss: 68.1
+Epoch [25/80], Step [500/642], LR 1.0e-04, Loss: 78.8
+Epoch [25/80], Step [600/642], LR 1.0e-04, Loss: 77.3
+Outer loop Epoch [25/80], Step [000/314], LR 1.0e-04, Loss: 393.8
+Outer loop Epoch [25/80], Step [100/314], LR 1.0e-04, Loss: 52.7
+Outer loop Epoch [25/80], Step [200/314], LR 1.0e-04, Loss: 47.5
+Outer loop Epoch [25/80], Step [300/314], LR 1.0e-04, Loss: 39.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.77, mAP score EMA 5.96
+starting validation
+mAP score regular 4.02, mAP score EMA 4.41
+current_mAP = 97.77, highest_mAP = 97.77
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [26/80], Step [000/642], LR 1.0e-04, Loss: 72.0
+Epoch [26/80], Step [100/642], LR 1.0e-04, Loss: 65.0
+Epoch [26/80], Step [200/642], LR 1.0e-04, Loss: 67.6
+Epoch [26/80], Step [300/642], LR 1.0e-04, Loss: 68.9
+Epoch [26/80], Step [400/642], LR 1.0e-04, Loss: 65.5
+Epoch [26/80], Step [500/642], LR 1.0e-04, Loss: 65.4
+Epoch [26/80], Step [600/642], LR 1.0e-04, Loss: 65.7
+Outer loop Epoch [26/80], Step [000/314], LR 1.0e-04, Loss: 420.4
+Outer loop Epoch [26/80], Step [100/314], LR 1.0e-04, Loss: 54.0
+Outer loop Epoch [26/80], Step [200/314], LR 1.0e-04, Loss: 43.4
+Outer loop Epoch [26/80], Step [300/314], LR 1.0e-04, Loss: 38.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 97.80, mAP score EMA 6.09
+starting validation
+mAP score regular 4.01, mAP score EMA 4.41
+current_mAP = 97.80, highest_mAP = 97.80
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [27/80], Step [000/642], LR 1.0e-04, Loss: 77.2
+Epoch [27/80], Step [100/642], LR 1.0e-04, Loss: 76.4
+Epoch [27/80], Step [200/642], LR 1.0e-04, Loss: 82.0
+Epoch [27/80], Step [300/642], LR 1.0e-04, Loss: 55.4
+Epoch [27/80], Step [400/642], LR 1.0e-04, Loss: 59.7
+Epoch [27/80], Step [500/642], LR 1.0e-04, Loss: 70.7
+Epoch [27/80], Step [600/642], LR 1.0e-04, Loss: 66.1
+Outer loop Epoch [27/80], Step [000/314], LR 1.0e-04, Loss: 429.3
+Outer loop Epoch [27/80], Step [100/314], LR 1.0e-04, Loss: 54.1
+Outer loop Epoch [27/80], Step [200/314], LR 1.0e-04, Loss: 44.7
+Outer loop Epoch [27/80], Step [300/314], LR 1.0e-04, Loss: 37.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.01, mAP score EMA 6.21
+starting validation
+mAP score regular 4.00, mAP score EMA 4.41
+current_mAP = 98.01, highest_mAP = 98.01
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [28/80], Step [000/642], LR 1.0e-04, Loss: 57.7
+Epoch [28/80], Step [100/642], LR 1.0e-04, Loss: 64.6
+Epoch [28/80], Step [200/642], LR 1.0e-04, Loss: 63.6
+Epoch [28/80], Step [300/642], LR 1.0e-04, Loss: 73.0
+Epoch [28/80], Step [400/642], LR 1.0e-04, Loss: 58.0
+Epoch [28/80], Step [500/642], LR 1.0e-04, Loss: 89.8
+Epoch [28/80], Step [600/642], LR 1.0e-04, Loss: 58.0
+Outer loop Epoch [28/80], Step [000/314], LR 1.0e-04, Loss: 429.6
+Outer loop Epoch [28/80], Step [100/314], LR 1.0e-04, Loss: 59.5
+Outer loop Epoch [28/80], Step [200/314], LR 1.0e-04, Loss: 55.7
+Outer loop Epoch [28/80], Step [300/314], LR 1.0e-04, Loss: 35.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.08, mAP score EMA 6.36
+starting validation
+mAP score regular 3.99, mAP score EMA 4.41
+current_mAP = 98.08, highest_mAP = 98.08
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [29/80], Step [000/642], LR 1.0e-04, Loss: 68.8
+Epoch [29/80], Step [100/642], LR 1.0e-04, Loss: 61.0
+Epoch [29/80], Step [200/642], LR 1.0e-04, Loss: 55.5
+Epoch [29/80], Step [300/642], LR 1.0e-04, Loss: 54.6
+Epoch [29/80], Step [400/642], LR 1.0e-04, Loss: 74.8
+Epoch [29/80], Step [500/642], LR 1.0e-04, Loss: 54.8
+Epoch [29/80], Step [600/642], LR 1.0e-04, Loss: 54.0
+Outer loop Epoch [29/80], Step [000/314], LR 1.0e-04, Loss: 472.6
+Outer loop Epoch [29/80], Step [100/314], LR 1.0e-04, Loss: 55.2
+Outer loop Epoch [29/80], Step [200/314], LR 1.0e-04, Loss: 46.4
+Outer loop Epoch [29/80], Step [300/314], LR 1.0e-04, Loss: 41.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.10, mAP score EMA 6.42
+starting validation
+mAP score regular 3.98, mAP score EMA 4.41
+current_mAP = 98.10, highest_mAP = 98.10
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [30/80], Step [000/642], LR 1.0e-04, Loss: 58.6
+Epoch [30/80], Step [100/642], LR 1.0e-04, Loss: 64.0
+Epoch [30/80], Step [200/642], LR 1.0e-04, Loss: 38.1
+Epoch [30/80], Step [300/642], LR 1.0e-04, Loss: 62.2
+Epoch [30/80], Step [400/642], LR 1.0e-04, Loss: 62.6
+Epoch [30/80], Step [500/642], LR 1.0e-04, Loss: 76.9
+Epoch [30/80], Step [600/642], LR 1.0e-04, Loss: 53.0
+Outer loop Epoch [30/80], Step [000/314], LR 1.0e-04, Loss: 449.5
+Outer loop Epoch [30/80], Step [100/314], LR 1.0e-04, Loss: 55.2
+Outer loop Epoch [30/80], Step [200/314], LR 1.0e-04, Loss: 44.9
+Outer loop Epoch [30/80], Step [300/314], LR 1.0e-04, Loss: 38.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.15, mAP score EMA 6.57
+starting validation
+mAP score regular 3.97, mAP score EMA 4.41
+current_mAP = 98.15, highest_mAP = 98.15
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [31/80], Step [000/642], LR 1.0e-04, Loss: 60.8
+Epoch [31/80], Step [100/642], LR 1.0e-04, Loss: 44.3
+Epoch [31/80], Step [200/642], LR 1.0e-04, Loss: 47.1
+Epoch [31/80], Step [300/642], LR 1.0e-04, Loss: 73.6
+Epoch [31/80], Step [400/642], LR 1.0e-04, Loss: 56.2
+Epoch [31/80], Step [500/642], LR 1.0e-04, Loss: 54.1
+Epoch [31/80], Step [600/642], LR 1.0e-04, Loss: 53.6
+Outer loop Epoch [31/80], Step [000/314], LR 1.0e-04, Loss: 467.5
+Outer loop Epoch [31/80], Step [100/314], LR 1.0e-04, Loss: 59.1
+Outer loop Epoch [31/80], Step [200/314], LR 1.0e-04, Loss: 50.2
+Outer loop Epoch [31/80], Step [300/314], LR 1.0e-04, Loss: 38.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.35, mAP score EMA 6.72
+starting validation
+mAP score regular 3.96, mAP score EMA 4.41
+current_mAP = 98.35, highest_mAP = 98.35
+
+current_mAP = 4.41, highest_mAP = 4.47
+
+Epoch [32/80], Step [000/642], LR 1.0e-04, Loss: 72.7
+Epoch [32/80], Step [100/642], LR 1.0e-04, Loss: 60.3
+Epoch [32/80], Step [200/642], LR 1.0e-04, Loss: 66.0
+Epoch [32/80], Step [300/642], LR 1.0e-04, Loss: 50.5
+Epoch [32/80], Step [400/642], LR 1.0e-04, Loss: 46.3
+Epoch [32/80], Step [500/642], LR 1.0e-04, Loss: 47.0
+Epoch [32/80], Step [600/642], LR 1.0e-04, Loss: 64.2
+Outer loop Epoch [32/80], Step [000/314], LR 1.0e-04, Loss: 459.8
+Outer loop Epoch [32/80], Step [100/314], LR 1.0e-04, Loss: 56.6
+Outer loop Epoch [32/80], Step [200/314], LR 1.0e-04, Loss: 59.7
+Outer loop Epoch [32/80], Step [300/314], LR 1.0e-04, Loss: 42.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.38, mAP score EMA 6.85
+starting validation
+mAP score regular 3.96, mAP score EMA 4.40
+current_mAP = 98.38, highest_mAP = 98.38
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [33/80], Step [000/642], LR 1.0e-04, Loss: 63.3
+Epoch [33/80], Step [100/642], LR 1.0e-04, Loss: 53.3
+Epoch [33/80], Step [200/642], LR 1.0e-04, Loss: 43.8
+Epoch [33/80], Step [300/642], LR 1.0e-04, Loss: 52.5
+Epoch [33/80], Step [400/642], LR 1.0e-04, Loss: 42.6
+Epoch [33/80], Step [500/642], LR 1.0e-04, Loss: 54.7
+Epoch [33/80], Step [600/642], LR 1.0e-04, Loss: 60.1
+Outer loop Epoch [33/80], Step [000/314], LR 1.0e-04, Loss: 462.2
+Outer loop Epoch [33/80], Step [100/314], LR 1.0e-04, Loss: 56.1
+Outer loop Epoch [33/80], Step [200/314], LR 1.0e-04, Loss: 49.6
+Outer loop Epoch [33/80], Step [300/314], LR 1.0e-04, Loss: 42.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.46, mAP score EMA 7.03
+starting validation
+mAP score regular 3.96, mAP score EMA 4.40
+current_mAP = 98.46, highest_mAP = 98.46
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [34/80], Step [000/642], LR 1.0e-04, Loss: 54.9
+Epoch [34/80], Step [100/642], LR 1.0e-04, Loss: 77.5
+Epoch [34/80], Step [200/642], LR 1.0e-04, Loss: 52.6
+Epoch [34/80], Step [300/642], LR 1.0e-04, Loss: 50.4
+Epoch [34/80], Step [400/642], LR 1.0e-04, Loss: 68.6
+Epoch [34/80], Step [500/642], LR 1.0e-04, Loss: 55.3
+Epoch [34/80], Step [600/642], LR 1.0e-04, Loss: 50.8
+Outer loop Epoch [34/80], Step [000/314], LR 1.0e-04, Loss: 492.1
+Outer loop Epoch [34/80], Step [100/314], LR 1.0e-04, Loss: 54.1
+Outer loop Epoch [34/80], Step [200/314], LR 1.0e-04, Loss: 53.0
+Outer loop Epoch [34/80], Step [300/314], LR 1.0e-04, Loss: 39.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.55, mAP score EMA 7.20
+starting validation
+mAP score regular 3.95, mAP score EMA 4.40
+current_mAP = 98.55, highest_mAP = 98.55
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [35/80], Step [000/642], LR 1.0e-04, Loss: 37.3
+Epoch [35/80], Step [100/642], LR 1.0e-04, Loss: 52.2
+Epoch [35/80], Step [200/642], LR 1.0e-04, Loss: 65.8
+Epoch [35/80], Step [300/642], LR 1.0e-04, Loss: 61.4
+Epoch [35/80], Step [400/642], LR 1.0e-04, Loss: 39.3
+Epoch [35/80], Step [500/642], LR 1.0e-04, Loss: 63.2
+Epoch [35/80], Step [600/642], LR 1.0e-04, Loss: 53.3
+Outer loop Epoch [35/80], Step [000/314], LR 1.0e-04, Loss: 481.6
+Outer loop Epoch [35/80], Step [100/314], LR 1.0e-04, Loss: 52.6
+Outer loop Epoch [35/80], Step [200/314], LR 1.0e-04, Loss: 59.0
+Outer loop Epoch [35/80], Step [300/314], LR 1.0e-04, Loss: 44.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.53, mAP score EMA 7.34
+starting validation
+mAP score regular 3.95, mAP score EMA 4.40
+current_mAP = 98.53, highest_mAP = 98.55
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [36/80], Step [000/642], LR 1.0e-04, Loss: 51.9
+Epoch [36/80], Step [100/642], LR 1.0e-04, Loss: 47.6
+Epoch [36/80], Step [200/642], LR 1.0e-04, Loss: 52.3
+Epoch [36/80], Step [300/642], LR 1.0e-04, Loss: 48.3
+Epoch [36/80], Step [400/642], LR 1.0e-04, Loss: 53.5
+Epoch [36/80], Step [500/642], LR 1.0e-04, Loss: 47.5
+Epoch [36/80], Step [600/642], LR 1.0e-04, Loss: 43.4
+Outer loop Epoch [36/80], Step [000/314], LR 1.0e-04, Loss: 470.5
+Outer loop Epoch [36/80], Step [100/314], LR 1.0e-04, Loss: 48.7
+Outer loop Epoch [36/80], Step [200/314], LR 1.0e-04, Loss: 57.2
+Outer loop Epoch [36/80], Step [300/314], LR 1.0e-04, Loss: 45.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.60, mAP score EMA 7.48
+starting validation
+mAP score regular 3.95, mAP score EMA 4.40
+current_mAP = 98.60, highest_mAP = 98.60
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [37/80], Step [000/642], LR 1.0e-04, Loss: 28.0
+Epoch [37/80], Step [100/642], LR 1.0e-04, Loss: 41.5
+Epoch [37/80], Step [200/642], LR 1.0e-04, Loss: 47.0
+Epoch [37/80], Step [300/642], LR 1.0e-04, Loss: 61.1
+Epoch [37/80], Step [400/642], LR 1.0e-04, Loss: 62.3
+Epoch [37/80], Step [500/642], LR 1.0e-04, Loss: 50.7
+Epoch [37/80], Step [600/642], LR 1.0e-04, Loss: 58.6
+Outer loop Epoch [37/80], Step [000/314], LR 1.0e-04, Loss: 472.7
+Outer loop Epoch [37/80], Step [100/314], LR 1.0e-04, Loss: 48.0
+Outer loop Epoch [37/80], Step [200/314], LR 1.0e-04, Loss: 43.7
+Outer loop Epoch [37/80], Step [300/314], LR 1.0e-04, Loss: 38.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.68, mAP score EMA 7.68
+starting validation
+mAP score regular 3.95, mAP score EMA 4.40
+current_mAP = 98.68, highest_mAP = 98.68
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [38/80], Step [000/642], LR 1.0e-04, Loss: 46.5
+Epoch [38/80], Step [100/642], LR 1.0e-04, Loss: 44.5
+Epoch [38/80], Step [200/642], LR 1.0e-04, Loss: 51.6
+Epoch [38/80], Step [300/642], LR 1.0e-04, Loss: 44.4
+Epoch [38/80], Step [400/642], LR 1.0e-04, Loss: 35.2
+Epoch [38/80], Step [500/642], LR 1.0e-04, Loss: 54.6
+Epoch [38/80], Step [600/642], LR 1.0e-04, Loss: 52.4
+Outer loop Epoch [38/80], Step [000/314], LR 1.0e-04, Loss: 491.8
+Outer loop Epoch [38/80], Step [100/314], LR 1.0e-04, Loss: 53.0
+Outer loop Epoch [38/80], Step [200/314], LR 1.0e-04, Loss: 47.7
+Outer loop Epoch [38/80], Step [300/314], LR 1.0e-04, Loss: 50.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.71, mAP score EMA 7.87
+starting validation
+mAP score regular 3.94, mAP score EMA 4.40
+current_mAP = 98.71, highest_mAP = 98.71
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [39/80], Step [000/642], LR 1.0e-04, Loss: 36.6
+Epoch [39/80], Step [100/642], LR 1.0e-04, Loss: 36.3
+Epoch [39/80], Step [200/642], LR 1.0e-04, Loss: 45.5
+Epoch [39/80], Step [300/642], LR 1.0e-04, Loss: 87.7
+Epoch [39/80], Step [400/642], LR 1.0e-04, Loss: 47.6
+Epoch [39/80], Step [500/642], LR 1.0e-04, Loss: 58.0
+Epoch [39/80], Step [600/642], LR 1.0e-04, Loss: 64.4
+Outer loop Epoch [39/80], Step [000/314], LR 1.0e-04, Loss: 477.5
+Outer loop Epoch [39/80], Step [100/314], LR 1.0e-04, Loss: 57.0
+Outer loop Epoch [39/80], Step [200/314], LR 1.0e-04, Loss: 48.3
+Outer loop Epoch [39/80], Step [300/314], LR 1.0e-04, Loss: 42.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.71, mAP score EMA 8.07
+starting validation
+mAP score regular 3.94, mAP score EMA 4.40
+current_mAP = 98.71, highest_mAP = 98.71
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+Epoch [40/80], Step [000/642], LR 1.0e-04, Loss: 53.0
+Epoch [40/80], Step [100/642], LR 1.0e-04, Loss: 48.9
+Epoch [40/80], Step [200/642], LR 1.0e-04, Loss: 40.2
+Epoch [40/80], Step [300/642], LR 1.0e-04, Loss: 46.7
+Epoch [40/80], Step [400/642], LR 1.0e-04, Loss: 53.9
+Epoch [40/80], Step [500/642], LR 1.0e-04, Loss: 51.6
+Epoch [40/80], Step [600/642], LR 1.0e-04, Loss: 61.3
+Outer loop Epoch [40/80], Step [000/314], LR 1.0e-04, Loss: 505.3
+Outer loop Epoch [40/80], Step [100/314], LR 1.0e-04, Loss: 55.5
+Outer loop Epoch [40/80], Step [200/314], LR 1.0e-04, Loss: 47.8
+Outer loop Epoch [40/80], Step [300/314], LR 1.0e-04, Loss: 40.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 98.81, mAP score EMA 8.23
+starting validation
+mAP score regular 3.94, mAP score EMA 4.40
+current_mAP = 98.81, highest_mAP = 98.81
+
+current_mAP = 4.40, highest_mAP = 4.47
+
+[0, 0, 3759.054931640625]
+[0, 100, 421.2041931152344]
+[0, 200, 369.0699157714844]
+[0, 300, 278.8299560546875]
+[0, 400, 285.3460693359375]
+[0, 500, 304.83544921875]
+[0, 600, 306.13385009765625]
+[1, 0, 257.35992431640625]
+[1, 100, 264.28619384765625]
+[1, 200, 243.6025848388672]
+[1, 300, 262.3999938964844]
+[1, 400, 245.69911193847656]
+[1, 500, 267.0751647949219]
+[1, 600, 246.12449645996094]
+[2, 0, 223.28585815429688]
+[2, 100, 241.64163208007812]
+[2, 200, 215.38076782226562]
+[2, 300, 235.23692321777344]
+[2, 400, 225.16549682617188]
+[2, 500, 202.88905334472656]
+[2, 600, 217.94422912597656]
+[3, 0, 220.84127807617188]
+[3, 100, 235.01226806640625]
+[3, 200, 220.530029296875]
+[3, 300, 239.8091278076172]
+[3, 400, 231.97463989257812]
+[3, 500, 218.846923828125]
+[3, 600, 194.72418212890625]
+[4, 0, 187.86976623535156]
+[4, 100, 161.17100524902344]
+[4, 200, 197.72943115234375]
+[4, 300, 214.9877471923828]
+[4, 400, 169.83966064453125]
+[4, 500, 194.27210998535156]
+[4, 600, 190.83740234375]
+[5, 0, 136.75067138671875]
+[5, 100, 149.1742706298828]
+[5, 200, 204.27749633789062]
+[5, 300, 154.6607666015625]
+[5, 400, 169.681884765625]
+[5, 500, 184.70465087890625]
+[5, 600, 173.54788208007812]
+[6, 0, 162.23089599609375]
+[6, 100, 156.7188720703125]
+[6, 200, 194.9088897705078]
+[6, 300, 157.05062866210938]
+[6, 400, 173.65545654296875]
+[6, 500, 151.1691131591797]
+[6, 600, 157.7131805419922]
+[7, 0, 162.8961944580078]
+[7, 100, 169.00833129882812]
+[7, 200, 163.17323303222656]
+[7, 300, 145.8693084716797]
+[7, 400, 146.38340759277344]
+[7, 500, 158.44882202148438]
+[7, 600, 163.68276977539062]
+[8, 0, 155.34463500976562]
+[8, 100, 145.90618896484375]
+[8, 200, 152.1869354248047]
+[8, 300, 142.32945251464844]
+[8, 400, 151.97933959960938]
+[8, 500, 153.825927734375]
+[8, 600, 174.14413452148438]
+[9, 0, 132.21499633789062]
+[9, 100, 117.61236572265625]
+[9, 200, 148.82733154296875]
+[9, 300, 141.32952880859375]
+[9, 400, 124.72200012207031]
+[9, 500, 154.087890625]
+[9, 600, 137.26254272460938]
+[10, 0, 145.38967895507812]
+[10, 100, 166.0176239013672]
+[10, 200, 139.5327606201172]
+[10, 300, 116.23734283447266]
+[10, 400, 130.38226318359375]
+[10, 500, 103.48600006103516]
+[10, 600, 157.78883361816406]
+[11, 0, 122.18727111816406]
+[11, 100, 117.03919982910156]
+[11, 200, 140.80419921875]
+[11, 300, 147.53135681152344]
+[11, 400, 151.0555419921875]
+[11, 500, 133.54269409179688]
+[11, 600, 131.31857299804688]
+[12, 0, 82.74862670898438]
+[12, 100, 103.07939147949219]
+[12, 200, 114.32032775878906]
+[12, 300, 112.77728271484375]
+[12, 400, 118.33160400390625]
+[12, 500, 106.12330627441406]
+[12, 600, 122.30604553222656]
+[13, 0, 111.90958404541016]
+[13, 100, 96.9054183959961]
+[13, 200, 92.74113464355469]
+[13, 300, 122.6773681640625]
+[13, 400, 90.07206726074219]
+[13, 500, 117.56549072265625]
+[13, 600, 123.5504379272461]
+[14, 0, 101.14335632324219]
+[14, 100, 108.51991271972656]
+[14, 200, 114.20310974121094]
+[14, 300, 103.8897476196289]
+[14, 400, 101.45624542236328]
+[14, 500, 114.443603515625]
+[14, 600, 110.828369140625]
+[15, 0, 100.71851348876953]
+[15, 100, 118.31073760986328]
+[15, 200, 81.19381713867188]
+[15, 300, 118.00397491455078]
+[15, 400, 93.36724853515625]
+[15, 500, 104.95662689208984]
+[15, 600, 98.84051513671875]
+[16, 0, 89.91517639160156]
+[16, 100, 85.1265869140625]
+[16, 200, 94.04093170166016]
+[16, 300, 109.37873840332031]
+[16, 400, 98.76303100585938]
+[16, 500, 106.42142486572266]
+[16, 600, 92.68570709228516]
+[17, 0, 102.96078491210938]
+[17, 100, 101.9378890991211]
+[17, 200, 101.70706176757812]
+[17, 300, 92.98695373535156]
+[17, 400, 92.48312377929688]
+[17, 500, 104.56612396240234]
+[17, 600, 90.51847076416016]
+[18, 0, 83.80818939208984]
+[18, 100, 79.01094055175781]
+[18, 200, 88.94419860839844]
+[18, 300, 101.71905517578125]
+[18, 400, 96.12080383300781]
+[18, 500, 105.95521545410156]
+[18, 600, 85.05519104003906]
+[19, 0, 70.60675048828125]
+[19, 100, 83.8910903930664]
+[19, 200, 92.24761962890625]
+[19, 300, 95.00503540039062]
+[19, 400, 92.12329864501953]
+[19, 500, 90.89532470703125]
+[19, 600, 115.78793334960938]
+[20, 0, 65.2903060913086]
+[20, 100, 80.95399475097656]
+[20, 200, 67.37580871582031]
+[20, 300, 73.22334289550781]
+[20, 400, 97.84111022949219]
+[20, 500, 81.71337127685547]
+[20, 600, 71.65133666992188]
+[21, 0, 82.0527572631836]
+[21, 100, 111.41302490234375]
+[21, 200, 78.26449584960938]
+[21, 300, 89.61310577392578]
+[21, 400, 72.83145904541016]
+[21, 500, 81.5656509399414]
+[21, 600, 107.54842376708984]
+[22, 0, 78.54017639160156]
+[22, 100, 74.39179992675781]
+[22, 200, 80.17987060546875]
+[22, 300, 60.98998260498047]
+[22, 400, 83.78724670410156]
+[22, 500, 72.3817367553711]
+[22, 600, 83.64181518554688]
+[23, 0, 67.66133880615234]
+[23, 100, 70.24468231201172]
+[23, 200, 82.39643859863281]
+[23, 300, 64.4149169921875]
+[23, 400, 78.0233154296875]
+[23, 500, 96.79893493652344]
+[23, 600, 89.41625213623047]
+[24, 0, 85.20011901855469]
+[24, 100, 83.14114379882812]
+[24, 200, 75.3204345703125]
+[24, 300, 64.48216247558594]
+[24, 400, 68.28572082519531]
+[24, 500, 90.56773376464844]
+[24, 600, 97.2031478881836]
+[25, 0, 63.990936279296875]
+[25, 100, 51.58160400390625]
+[25, 200, 67.64667510986328]
+[25, 300, 62.240596771240234]
+[25, 400, 68.06360626220703]
+[25, 500, 78.76622009277344]
+[25, 600, 77.28126525878906]
+[26, 0, 71.97138977050781]
+[26, 100, 65.00029754638672]
+[26, 200, 67.55252075195312]
+[26, 300, 68.89013671875]
+[26, 400, 65.48695373535156]
+[26, 500, 65.36747741699219]
+[26, 600, 65.68875122070312]
+[27, 0, 77.18247985839844]
+[27, 100, 76.42251586914062]
+[27, 200, 82.04460906982422]
+[27, 300, 55.39607620239258]
+[27, 400, 59.67271041870117]
+[27, 500, 70.67282104492188]
+[27, 600, 66.093505859375]
+[28, 0, 57.67871856689453]
+[28, 100, 64.63347625732422]
+[28, 200, 63.563209533691406]
+[28, 300, 72.98428344726562]
+[28, 400, 58.004066467285156]
+[28, 500, 89.78702545166016]
+[28, 600, 58.02299118041992]
+[29, 0, 68.78097534179688]
+[29, 100, 61.02997589111328]
+[29, 200, 55.53046417236328]
+[29, 300, 54.5860481262207]
+[29, 400, 74.80089569091797]
+[29, 500, 54.776161193847656]
+[29, 600, 53.95752716064453]
+[30, 0, 58.592777252197266]
+[30, 100, 64.0260009765625]
+[30, 200, 38.08045959472656]
+[30, 300, 62.18965530395508]
+[30, 400, 62.60443878173828]
+[30, 500, 76.90621948242188]
+[30, 600, 52.95886993408203]
+[31, 0, 60.79898452758789]
+[31, 100, 44.28227615356445]
+[31, 200, 47.13801956176758]
+[31, 300, 73.56434631347656]
+[31, 400, 56.17791748046875]
+[31, 500, 54.14530563354492]
+[31, 600, 53.570072174072266]
+[32, 0, 72.71941375732422]
+[32, 100, 60.27935028076172]
+[32, 200, 65.99105834960938]
+[32, 300, 50.492286682128906]
+[32, 400, 46.31415939331055]
+[32, 500, 47.0211181640625]
+[32, 600, 64.17949676513672]
+[33, 0, 63.26214599609375]
+[33, 100, 53.345523834228516]
+[33, 200, 43.75823974609375]
+[33, 300, 52.45064926147461]
+[33, 400, 42.593719482421875]
+[33, 500, 54.655677795410156]
+[33, 600, 60.0877571105957]
+[34, 0, 54.9353141784668]
+[34, 100, 77.4831314086914]
+[34, 200, 52.603355407714844]
+[34, 300, 50.41777420043945]
+[34, 400, 68.59004974365234]
+[34, 500, 55.28611755371094]
+[34, 600, 50.794864654541016]
+[35, 0, 37.326194763183594]
+[35, 100, 52.210357666015625]
+[35, 200, 65.80931091308594]
+[35, 300, 61.412208557128906]
+[35, 400, 39.34122848510742]
+[35, 500, 63.185447692871094]
+[35, 600, 53.31631851196289]
+[36, 0, 51.85255432128906]
+[36, 100, 47.5669059753418]
+[36, 200, 52.25264358520508]
+[36, 300, 48.34732437133789]
+[36, 400, 53.513641357421875]
+[36, 500, 47.47267150878906]
+[36, 600, 43.40317153930664]
+[37, 0, 27.969303131103516]
+[37, 100, 41.539424896240234]
+[37, 200, 46.9804801940918]
+[37, 300, 61.110130310058594]
+[37, 400, 62.251312255859375]
+[37, 500, 50.6719856262207]
+[37, 600, 58.565338134765625]
+[38, 0, 46.540008544921875]
+[38, 100, 44.519100189208984]
+[38, 200, 51.577980041503906]
+[38, 300, 44.392581939697266]
+[38, 400, 35.20219039916992]
+[38, 500, 54.59703826904297]
+[38, 600, 52.35429000854492]
+[39, 0, 36.63744354248047]
+[39, 100, 36.29161071777344]
+[39, 200, 45.49467086791992]
+[39, 300, 87.68208312988281]
+[39, 400, 47.55493927001953]
+[39, 500, 57.967193603515625]
+[39, 600, 64.40348052978516]
+[40, 0, 52.95896911621094]
+[40, 100, 48.940067291259766]
+[40, 200, 40.1900749206543]
+[40, 300, 46.74334716796875]
+[40, 400, 53.93801498413086]
+[40, 500, 51.571197509765625]
+[40, 600, 61.31669235229492]
+[0, 0, 354.81732177734375]
+[0, 100, 86.20263671875]
+[0, 200, 76.34864807128906]
+[0, 300, 71.98968505859375]
+[1, 0, 274.29559326171875]
+[1, 100, 46.291648864746094]
+[1, 200, 54.06212615966797]
+[1, 300, 42.67982482910156]
+[2, 0, 269.88623046875]
+[2, 100, 45.21589279174805]
+[2, 200, 55.207000732421875]
+[2, 300, 42.372711181640625]
+[3, 0, 272.26068115234375]
+[3, 100, 47.47229766845703]
+[3, 200, 54.77979278564453]
+[3, 300, 42.166046142578125]
+[4, 0, 282.911376953125]
+[4, 100, 46.44573974609375]
+[4, 200, 52.631103515625]
+[4, 300, 42.538421630859375]
+[5, 0, 312.64971923828125]
+[5, 100, 46.37334060668945]
+[5, 200, 51.25322723388672]
+[5, 300, 40.36144256591797]
+[6, 0, 304.10400390625]
+[6, 100, 47.66301727294922]
+[6, 200, 49.97311782836914]
+[6, 300, 39.02116775512695]
+[7, 0, 302.990478515625]
+[7, 100, 45.59172058105469]
+[7, 200, 49.4857177734375]
+[7, 300, 40.056549072265625]
+[8, 0, 326.2003173828125]
+[8, 100, 47.165985107421875]
+[8, 200, 48.74081039428711]
+[8, 300, 39.00074005126953]
+[9, 0, 298.45550537109375]
+[9, 100, 47.868629455566406]
+[9, 200, 48.04740905761719]
+[9, 300, 40.727718353271484]
+[10, 0, 327.33502197265625]
+[10, 100, 49.04387283325195]
+[10, 200, 48.02867889404297]
+[10, 300, 40.63406753540039]
+[11, 0, 331.56121826171875]
+[11, 100, 46.274749755859375]
+[11, 200, 47.40946960449219]
+[11, 300, 38.115169525146484]
+[12, 0, 354.28778076171875]
+[12, 100, 45.61530685424805]
+[12, 200, 47.084800720214844]
+[12, 300, 41.53789138793945]
+[13, 0, 335.8001708984375]
+[13, 100, 45.685035705566406]
+[13, 200, 45.854705810546875]
+[13, 300, 43.41017532348633]
+[14, 0, 369.4249267578125]
+[14, 100, 46.612144470214844]
+[14, 200, 46.11174774169922]
+[14, 300, 36.095916748046875]
+[15, 0, 356.07232666015625]
+[15, 100, 51.378013610839844]
+[15, 200, 45.60475540161133]
+[15, 300, 38.960365295410156]
+[16, 0, 371.404541015625]
+[16, 100, 54.06455993652344]
+[16, 200, 46.13008117675781]
+[16, 300, 41.32752227783203]
+[17, 0, 367.89434814453125]
+[17, 100, 48.76378631591797]
+[17, 200, 46.567100524902344]
+[17, 300, 40.77407455444336]
+[18, 0, 404.28350830078125]
+[18, 100, 46.24516296386719]
+[18, 200, 44.89563751220703]
+[18, 300, 39.70039367675781]
+[19, 0, 375.4175109863281]
+[19, 100, 48.26776123046875]
+[19, 200, 45.25261688232422]
+[19, 300, 41.71957778930664]
+[20, 0, 375.68194580078125]
+[20, 100, 44.978309631347656]
+[20, 200, 45.00834655761719]
+[20, 300, 34.82487869262695]
+[21, 0, 411.86029052734375]
+[21, 100, 49.006954193115234]
+[21, 200, 45.36128616333008]
+[21, 300, 39.88639450073242]
+[22, 0, 402.67742919921875]
+[22, 100, 47.658729553222656]
+[22, 200, 43.00675964355469]
+[22, 300, 40.94571304321289]
+[23, 0, 402.7438659667969]
+[23, 100, 45.217063903808594]
+[23, 200, 43.398773193359375]
+[23, 300, 38.11952209472656]
+[24, 0, 408.43328857421875]
+[24, 100, 54.90316390991211]
+[24, 200, 47.38819122314453]
+[24, 300, 37.8114128112793]
+[25, 0, 393.76226806640625]
+[25, 100, 52.71479797363281]
+[25, 200, 47.462318420410156]
+[25, 300, 39.71866226196289]
+[26, 0, 420.42449951171875]
+[26, 100, 53.97348403930664]
+[26, 200, 43.39961242675781]
+[26, 300, 38.53375244140625]
+[27, 0, 429.27020263671875]
+[27, 100, 54.14091873168945]
+[27, 200, 44.65167999267578]
+[27, 300, 37.48004150390625]
+[28, 0, 429.55352783203125]
+[28, 100, 59.47950744628906]
+[28, 200, 55.67402648925781]
+[28, 300, 35.25023651123047]
+[29, 0, 472.6373291015625]
+[29, 100, 55.201377868652344]
+[29, 200, 46.439395904541016]
+[29, 300, 41.93804931640625]
+[30, 0, 449.533203125]
+[30, 100, 55.167503356933594]
+[30, 200, 44.86035919189453]
+[30, 300, 38.70878219604492]
+[31, 0, 467.504638671875]
+[31, 100, 59.08717727661133]
+[31, 200, 50.227481842041016]
+[31, 300, 38.219627380371094]
+[32, 0, 459.79144287109375]
+[32, 100, 56.55940628051758]
+[32, 200, 59.721031188964844]
+[32, 300, 42.09210205078125]
+[33, 0, 462.22705078125]
+[33, 100, 56.05397415161133]
+[33, 200, 49.64496612548828]
+[33, 300, 42.294105529785156]
+[34, 0, 492.06756591796875]
+[34, 100, 54.14561462402344]
+[34, 200, 53.024845123291016]
+[34, 300, 39.55071258544922]
+[35, 0, 481.56982421875]
+[35, 100, 52.578670501708984]
+[35, 200, 59.01802444458008]
+[35, 300, 44.23411560058594]
+[36, 0, 470.5086669921875]
+[36, 100, 48.73329162597656]
+[36, 200, 57.21361541748047]
+[36, 300, 45.79872131347656]
+[37, 0, 472.66046142578125]
+[37, 100, 48.03704071044922]
+[37, 200, 43.73284149169922]
+[37, 300, 38.09500503540039]
+[38, 0, 491.79888916015625]
+[38, 100, 53.01371765136719]
+[38, 200, 47.6922607421875]
+[38, 300, 50.69172286987305]
+[39, 0, 477.4935302734375]
+[39, 100, 57.01380157470703]
+[39, 200, 48.268531799316406]
+[39, 300, 42.73868942260742]
+[40, 0, 505.26043701171875]
+[40, 100, 55.54802322387695]
+[40, 200, 47.76426315307617]
+[40, 300, 40.564109802246094]

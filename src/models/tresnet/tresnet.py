@@ -8,6 +8,13 @@ from .layers.general_layers import SEModule, SpaceToDepthModule
 from inplace_abn import InPlaceABN, ABN
 
 
+'''
+InplaceABN refers to an "In-Place Activation Batch Normalization" layer. 
+This layer combines the functionality of both activation normalization (e.g., Batch Normalization) and an activation function 
+(e.g., ReLU or Leaky ReLU) into a single operation. The term "in-place" indicates that the operation is performed directly 
+on the input tensor without creating an additional copy.
+'''
+
 def InplacABN_to_ABN(module: nn.Module) -> nn.Module:
     # convert all InplaceABN layer to bit-accurate ABN layers.
     if isinstance(module, InPlaceABN):
@@ -176,7 +183,7 @@ class TResNet(Module):
         self.embeddings = []
         self.global_pool = nn.Sequential(OrderedDict([('global_pool_layer', global_pool_layer)]))
         self.num_features = (self.planes * 8) * Bottleneck.expansion
-        if do_bottleneck_head:
+        if do_bottleneck_head:  ## do_bottleneck_head – to decide whether head should be a fc linear or of bottleneck_head block
             fc = bottleneck_head(self.num_features, num_classes,
                                  bottleneck_features=bottleneck_features)
         else:

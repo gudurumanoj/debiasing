@@ -99,24 +99,24 @@ class AverageMeter(object):
 class CocoDetection(datasets.coco.CocoDetection):
     def __init__(self, root, annFile, transform=None, target_transform=None):
         self.root = root
-        self.coco = COCO(annFile)
+        self.coco = COCO(annFile)  ## initializes a coco object with the supplied annotation file
 
-        self.ids = list(self.coco.imgToAnns.keys())
+        self.ids = list(self.coco.imgToAnns.keys())     ## initializes list of image ids
         self.transform = transform
         self.target_transform = target_transform
-        self.cat2cat = dict()
+        self.cat2cat = dict()                       ## to map category ids to integer indices, only for internal usage
         for cat in self.coco.cats.keys():
             self.cat2cat[cat] = len(self.cat2cat)
         # print(self.cat2cat)
 
     def __getitem__(self, index):
         coco = self.coco
-        img_id = self.ids[index]
-        ann_ids = coco.getAnnIds(imgIds=img_id)
-        target = coco.loadAnns(ann_ids)
+        img_id = self.ids[index]    ## gets the image id at specified index
+        ann_ids = coco.getAnnIds(imgIds=img_id)     ## annotation ids for the given image
+        target = coco.loadAnns(ann_ids)             ## loads the annotations for the given image
 
-        output = torch.zeros((3, 80), dtype=torch.long)
-        for obj in target:
+        output = torch.zeros((3, 80), dtype=torch.long)      ## 3*(total classes)
+        for obj in target:      ## assigns 1 to all classes associated with it 
             if obj['area'] < 32 * 32:
                 output[0][self.cat2cat[obj['category_id']]] = 1
             elif obj['area'] < 96 * 96:
@@ -126,13 +126,13 @@ class CocoDetection(datasets.coco.CocoDetection):
         target = output
 
         path = coco.loadImgs(img_id)[0]['file_name']
-        img = Image.open(os.path.join(self.root, path)).convert('RGB')
+        img = Image.open(os.path.join(self.root, path)).convert('RGB')  ## opening the image present in the path
         if self.transform is not None:
             img = self.transform(img)
 
         if self.target_transform is not None:
             target = self.target_transform(target)
-        return img, target
+        return img, target      ## returns the image and the target (it's associated labels, like x,y)
 
 
 class ModelEma(torch.nn.Module):
