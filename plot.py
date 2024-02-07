@@ -90,16 +90,16 @@ args = parser.parse_args()
 ## loading the csv file
 ## joining path of the directory with train.csv and val.csv to get the full path and then loading the csv file
 
-train_file = os.path.join(args.file_path, 'train.csv')
-# val_file = os.path.join(args.file_path, 'val.csv')
-train_df = pd.read_csv(train_file, names=['epoch', 'step', 'loss'])
-train_df.dropna(inplace=True)
-# val_df = pd.read_csv(val_file, names=['epoch', 'step', 'loss'])
-
+# train_file = os.path.join(args.file_path, 'train.csv')
+val_file = os.path.join(args.file_path, 'val.csv')
+# train_df = pd.read_csv(train_file, names=['epoch', 'step', 'loss'])
+# train_df.dropna(inplace=True)
+val_df = pd.read_csv(val_file, names=['epoch', 'step', 'loss'])
+val_df.dropna(inplace=True)
 ## creating the save path by joining the save_path with train.csv and val.csv
-trainpng = os.path.join(args.save_path, 'train')
-# valpng = os.path.join(args.save_path, 'val')
+# trainpng = os.path.join(args.save_path, 'train')
+valpng = os.path.join(args.save_path, 'val')
 
 ## calling the function to plot the data
-plot_loss(train_df, 7, trainpng)
-# plot_loss(val_df, 4, valpng)
+# plot_loss(train_df, 7, trainpng)
+plot_loss(val_df, 4, valpng)
