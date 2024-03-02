@@ -80,12 +80,17 @@ def convert_to_df(file_name):
             data.append(lines[i].split(' ')[-2:])
         elif 'Epoch' in lines[i]:
             data.append(lines[i].split(' ')[-1])
+    return data
 
 ## argument parsing
 parser = argparse.ArgumentParser(description='Plot the data from the txt file and save the plot as a png file')
-parser.add_argument('--file-path', type=str, help='path of the csv files')
+parser.add_argument('--txt-path', type=str, help='path of the txt files')
+parser.add_argument('--csv-path', type=str, help='path of the csv files')
 parser.add_argument('--save-path', type=str, help='path to save the plots')
 args = parser.parse_args()
+
+# convert txt to csv
+
 
 ## loading the csv file
 ## joining path of the directory with train.csv and val.csv to get the full path and then loading the csv file

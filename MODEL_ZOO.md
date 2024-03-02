@@ -14,3 +14,24 @@ We provide a collection models trained with ASL on various multi-label datasets
 
 
 
+
+TODOs:
+
+
+Label Frequency, (Final Lamda against label frequency)
+Label Imbalance (Final Lamda against label imbalance)
+Baseline model accuracy
+
+
+
+Label Correlation
+    (   )
+    Find worst performing/ most frequent label -> zero them out
+    explicit constraint -> degenerate loss
+
+Obj to check
+
+unweighted training loss + weighted (lambda) training loss
+
+
+max => sum ()

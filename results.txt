@@ -1,0 +1,7 @@
+Sum w/o regularization: 
+mAP score regular 62.65, mAP score EMA 63.24
+current_mAP = 63.24, highest_mAP = 63.24 
+
+Gumbel w/o regularization:
+mAP score regular 64.47, mAP score EMA 65.20
+current_mAP = 65.20, highest_mAP = 65.20

@@ -972,7 +972,7 @@ def plot_weights(savepath):
         fig, ax = plt.subplots(10, figsize=(10,20), sharex = True, sharey = True)
         ax = ax.ravel()
         for j in range(10):
-            ax[j].plot(a[:,i+j])
+            ax[j].hist(a[:,i+j])
             ax[j].set_title(f'Class {i+j+1}')
             ax[j].set_ylabel('Weight')
         plt.savefig(os.path.join(savepath, 'weights_' + str(i) + '.png'))
