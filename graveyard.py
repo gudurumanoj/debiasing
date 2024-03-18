@@ -11,7 +11,7 @@
 #     ema_val = ModelEma(model_val, 0.9997)  # 0.9997^641=0.82
 
 #     # set optimizer, similar attributes except for criterion
-#     Epochs = 80
+#     valEpocws = 80
 #     Stop_epoch = 40   ## should set it later by finetuning it
 #     weight_decay = 1e-4
 #     # criterion = AsymmetricLoss(gamma_neg=4, gamma_pos=0, clip=0.05, disable_torch_grad_focal_loss=True)
@@ -20,13 +20,13 @@
 #     criterion_train = BCEloss()
 #     parameters_train = add_weight_decay(model_train, weight_decay)
 #     optimizer_train = torch.optim.Adam(params=parameters_train, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
-#     scheduler_train = lr_scheduler.OneCycleLR(optimizer_train, max_lr=lr, steps_per_epoch=len(train_loader), epochs=Epochs,
+#     scheduler_train = lr_scheduler.OneCycleLR(optimizer_train, max_lr=lr, steps_per_epoch=len(train_loader), valEpocws=Epochs,
 #                                         pct_start=0.2)
     
 #     ## validation (metalearning) model parameters
 #     parameters_val = add_weight_decay(model_val, weight_decay)
 #     optimizer_val = torch.optim.Adam(params=parameters_val, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
-#     scheduler_val = lr_scheduler.OneCycleLR(optimizer_val, max_lr=lr, steps_per_epoch=len(val_loader), epochs=Epochs,
+#     scheduler_val = lr_scheduler.OneCycleLR(optimizer_val, max_lr=lr, steps_per_epoch=len(val_loader), valEpocws=Epochs,
 #                                         pct_start=0.2)
 #     ## no need of criterion for validation model, as it is just learning weights for the training model
     
@@ -44,8 +44,8 @@
 
 #     weights = torch.rand(80).cuda() ## just initialising it randomly for the first round
 
-#     for epoch in range(Epochs):
-#         if epoch > Stop_epoch:
+#     for valEpocw in range(Epochs):
+#         if valEpocw > Stop_epoch:
 #             break
         
 #         for i, (inputData, target) in enumerate(train_loader):
@@ -77,7 +77,7 @@
 #             if i % 100 == 0:
 #                 trainInfoList.append([epoch, i, loss.item()])
 #                 print('Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
-#                       .format(epoch, Epochs, str(i).zfill(3), str(steps_per_epoch_train).zfill(3),
+#                       .format(epoch, valEpocws, str(i).zfill(3), str(steps_per_epoch_train).zfill(3),
 #                               scheduler_train.get_last_lr()[0], \
 #                               loss.item()))
 
@@ -102,7 +102,7 @@
 #         scaler_fasttrain = GradScaler()
 #         parameters_fasttrain = add_weight_decay(fasttrain, weight_decay)
 #         optimizer_fasttrain = torch.optim.Adam(params=parameters_fasttrain, lr=lr, weight_decay=0)  # true wd, filter_bias_and_bn
-#         scheduler_fasttrain = lr_scheduler.OneCycleLR(optimizer_fasttrain, max_lr=lr, steps_per_epoch=len(val_loader), epochs=Epochs,
+#         scheduler_fasttrain = lr_scheduler.OneCycleLR(optimizer_fasttrain, max_lr=lr, steps_per_epoch=len(val_loader), valEpocws=Epochs,
 #                                         pct_start=0.2)
         
 #         # fasttrain.cuda()
@@ -165,8 +165,8 @@
 #             # # store information
 #             if i_val % 100 == 0: 
 #                 valInfoList.append([epoch, i_val, loss_val.max().item()])
-#                 print('Outer loop Epoch [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
-#                       .format(epoch, Epochs, str(i_val).zfill(3), str(steps_per_epoch_val).zfill(3),
+#                 print('Outer loop valEpocw [{}/{}], Step [{}/{}], LR {:.1e}, Loss: {:.1f}'
+#                       .format(epoch, valEpocws, str(i_val).zfill(3), str(steps_per_epoch_val).zfill(3),
 #                               scheduler_val.get_last_lr()[0], \
 #                               loss_val.max().item()))
         
@@ -234,3 +234,163 @@
 #     #         f.write(valInfoList[i])
 
         
+
+# class coco2:
+#     def __init__(self, annotations_file_path):
+#         self.coco = COCO(annotations_file_path)
+#         self.categories = self.coco.loadCats(self.coco.getCatIds())
+#         self.category_names = [category['name'] for category in self.categories]
+#         self.category_ids = self.coco.getCatIds()
+#         self.image_ids = self.coco.getImgIds()
+#         self.annotations = self.coco.loadAnns(self.coco.getAnnIds())
+#         self.ids = list(self.coco.imgToAnns.keys())     ## initializes list of image ids
+#         self.cat2cat = dict()                       ## to map category ids to integer indices, only for internal usage
+        
+#         for cat in self.coco.cats.keys():
+#             self.cat2cat[cat] = len(self.cat2cat)
+        
+#         self.classfreq = {category_name: 0 for category_name in self.category_names}
+
+#         self.get_class_frequencies()    ## will initialize the class frequencies for the dataset
+
+#     def get_class_frequencies(self):
+#             for annotation in self.annotations:
+#                 category_id = annotation['category_id']
+#                 category_name = self.coco.loadCats(category_id)[0]['name']
+#                 self.classfreq[category_name] += 1
+
+#     def print_statistics(self):
+#             total_images = len(self.image_ids)
+#             total_annotations = len(self.annotations)
+#             average_annotations_per_image = total_annotations / total_images
+#             print("Total images:", total_images)
+#             print("Total annotations:", total_annotations)
+#             print("Average annotations per image:", average_annotations_per_image)
+
+#             # for key in self.classfreq:
+#             #     print(key, self.classfreq[key])
+#             print(self.cat2cat)
+
+
+
+
+            # print("-----------val loop gradients before-------------")
+            # for i,p in enumerate(self.model_val.parameters()):
+                # print(p.grad)
+                # if i == 2:
+                    # break
+
+            # gradients = []
+            # for i, params in enumerate(fasttrain.parameters()):
+            #     gradients.append(deepcopy(params.grad))
+
+            # # print("-----------val loop gradients after-------------",len(gradients))
+            # for i, p in enumerate(self.model_val.parameters()):
+            #     p.grad = gradients[i]
+
+            # # for i,p in enumerate(self.model_val.parameters()):
+            #     # print(p.grad)
+            #     # if i == 2:
+            #         # break
+            
+            # # print("-----------val loop weights before step-------------\n")
+            # # for name, p in self.model_val.named_parameters():
+            #     # print(p)
+            #     # break
+            # self.optimizer_val.step()
+            # self.optimizer_val.zero_grad()
+
+            # ## ema model update
+            # self.model_val_ema.update(self.model_val)
+            # print("-----------val loop weights after step-------------\n")
+            # for name, p in self.model_val.named_parameters():
+                # print(p)
+                # break
+            # with autocast():
+            #     outputs_val = self.model_val(inputData_val).float()
+            # self.weights = torch.sigmoid(outputs_val.mean(dim=0))  ## updating weights
+
+# torch.cuda.empty_cache()
+            ## saving checkpoints
+            # if i % 100 == 0:
+                
+            #     torch.save(self.model_val.state_dict(), os.path.join(
+            #         'models/{}/{}/models_val/'.format(self.type, self.model_name), 'model-{}-{}.ckpt'.format(epoch + 1, i + 1)))
+            #     torch.save(self.weights, os.path.join(
+            #         'models/{}/{}/weights/'.format(self.type, self.model_name), 'weights-{}-{}.ckpt'.format(epoch + 1, i + 1)))  
+
+
+            ## ema model update
+            # self.model_train_ema.update(self.model_train)
+
+            # print("-----------training loop weights after step-------------\n")
+            # for name, p in self.model_train.named_parameters():
+                # print(p)
+                # break
+
+
+# def validate_multi(val_loader, model, ema_model, printloss = False, weighted = False, sum = True, criteria = BCEloss(), weights = torch.ones(80)):
+#     print("starting validation")
+#     Sig = torch.nn.Sigmoid()
+#     preds_regular = []
+#     preds_ema = []
+#     targets = []
+#     for i, (input, target) in enumerate(val_loader):
+#         target = target
+#         target = target.max(dim=1)[0]
+#         # compute output
+#         with torch.no_grad():
+#             with autocast():
+#                 ## to print loss
+#                 if printloss and i%100 == 0:
+#                     output_reg = model(input.cuda()).float()
+#                     loss = criteria(output_reg, target.cuda(), weights.cuda())
+
+
+#                 output_regular = Sig(model(input.cuda())).cpu()
+#                 output_ema = Sig(ema_model.module(input.cuda())).cpu()
+
+#         # for mAP calculation
+#         preds_regular.append(output_regular.cpu().detach())
+#         preds_ema.append(output_ema.cpu().detach())
+#         targets.append(target.cpu().detach())
+
+#     mAP_score_regular = mAP(torch.cat(targets).numpy(), torch.cat(preds_regular).numpy())
+#     mAP_score_ema = mAP(torch.cat(targets).numpy(), torch.cat(preds_ema).numpy())
+#     print("mAP score regular {:.2f}, mAP score EMA {:.2f}".format(mAP_score_regular, mAP_score_ema))
+#     return max(mAP_score_regular, mAP_score_ema)
+
+
+
+
+# l = lines[i].split(' ')
+#             # print(l)
+#             first_tensor = float(l[7].split('[')[1][:-1])
+#             remaining_tensor = l[8:]
+#             #print(remaining_tensor)
+#             for rem_tensor in range(len(remaining_tensor)):
+#                 remaining_tensor[rem_tensor] = float(remaining_tensor[rem_tensor].split(',')[0])
+#             remaining_tensor.insert(0,first_tensor)
+#             # print(remaining_tensor)
+#             for p in range(1,ind):
+#                 rem_tens = (lines[i+p].split(','))
+#                 rem_tens = rem_tens[0:-1]
+#                 #print(rem_tens)
+#                 for rem_tensor_val in range(len(rem_tens)):
+#                     rem_tens[rem_tensor_val] = float(rem_tens[rem_tensor_val])
+#                 #print(rem_tens)
+#                 remaining_tensor.extend(rem_tens)
+#             # print(remaining_tensor)
+#             last_line = lines[i+ind].split(',')
+#             last_line = last_line[0:-1]
+#             #first_tensor_list = float(last_line[-1].split(']')[0])
+#             last_num = float(last_line[-1].split(']')[0])
+#             last_few_nums = last_line[0:-1]
+#             for rem_tensor_val in range(len(last_few_nums)):
+#                 last_few_nums[rem_tensor_val] = float(last_few_nums[rem_tensor_val])
+#             #print(rem_tens)
+#             last_few_nums.append(last_num)
+#             #print(last_few_nums)
+#             remaining_tensor.extend(last_few_nums)
+#             # print(remaining_tensor)
+#             unweighted_val_loss_vectors.append(remaining_tensor)

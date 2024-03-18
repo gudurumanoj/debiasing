@@ -10,6 +10,7 @@ from torchvision import datasets as datasets
 import torch
 from PIL import ImageDraw
 from pycocotools.coco import COCO
+from sklearn.metrics import accuracy_score
 
 
 def parse_args(parser):
@@ -46,7 +47,7 @@ def average_precision(output, target):
     return precision_at_i
 
 
-def mAP(targs, preds):
+def mAP(targs, preds, print_info = 'no'):
     """Returns the model's average precision for each class
     Return:
         ap (FloatTensor): 1xK tensor, with avg precision for each class k
@@ -55,13 +56,26 @@ def mAP(targs, preds):
     if np.size(preds) == 0:
         return 0
     ap = np.zeros((preds.shape[1]))
+    accuracy1 = np.zeros((preds.shape[1]))
+    accuracy2 = np.zeros((preds.shape[1]))
     # compute average precision for each class
     for k in range(preds.shape[1]):
         # sort scores
         scores = preds[:, k]
         targets = targs[:, k]
-        # compute average precision
         ap[k] = average_precision(scores, targets)
+        
+        scores1 = scores > 0.5
+        scores2 = scores > 0.7   
+        accuracy1[k] = accuracy_score(scores1,targets)
+        accuracy2[k] = accuracy_score(scores2, targets)
+        # print('Accuracy for class {} is {}'.format(k,accuracy[k]))
+    
+    if print_info=='yes':
+        print('Accuracy th:0.5 is {}'.format(accuracy1*100))
+        print('Accuracy th:0.7 is {}'.format(accuracy2*100))
+        print('Avg Prec: is {}'.format(ap*100))
+        
     return 100 * ap.mean()
 
 
@@ -107,6 +121,8 @@ class CocoDetection(datasets.coco.CocoDetection):
         self.cat2cat = dict()                       ## to map category ids to integer indices, only for internal usage
         for cat in self.coco.cats.keys():
             self.cat2cat[cat] = len(self.cat2cat)
+
+        # print(self.classfreq)
         # print(self.cat2cat)
 
     def __getitem__(self, index):

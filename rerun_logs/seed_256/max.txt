@@ -1,0 +1,1541 @@
+creating models for obj12...
+done
+
+loading annotations into memory...
+Done (t=3.16s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=7.60s)
+creating index...
+index created!
+len(val_dataset)):  40137
+len(train_dataset)):  82081
+FORWARD MAX-ING
+tensor([0.5643, 0.5696, 0.5408, 0.9703, 0.4574, 0.0270, 0.0125, 0.6970, 0.9792,
+        0.6985, 0.6465, 0.1946, 0.9806, 0.9458, 0.9607, 0.0969, 0.9027, 0.6459,
+        0.1506, 0.2766, 0.4612, 0.6878, 0.6356, 0.6824, 0.9767, 0.7958, 0.1993,
+        0.7118, 0.2123, 0.6544, 0.8803, 0.5574, 0.7666, 0.8610, 0.8679, 0.6127,
+        0.1791, 0.3925, 0.0832, 0.0349, 0.8082, 0.5917, 0.6810, 0.9258, 0.3118,
+        0.7505, 0.7711, 0.2964, 0.8835, 0.2156, 0.8096, 0.2233, 0.2738, 0.0613,
+        0.2623, 0.4371, 0.3397, 0.7728, 0.9801, 0.9881, 0.3919, 0.9348, 0.1613,
+        0.5796, 0.6344, 0.5463, 0.7957, 0.2724, 0.8642, 0.9224, 0.5715, 0.0553,
+        0.1541, 0.7331, 0.2273, 0.6817, 0.0111, 0.3151, 0.9095, 0.6404],
+       device='cuda:0')
+Epoch [0/80], Step [000/642], LR 1.0e-04, Loss: 114.1
+Epoch [0/80], Step [100/642], LR 1.0e-04, Loss: 48.7
+Epoch [0/80], Step [200/642], LR 1.0e-04, Loss: 46.1
+Epoch [0/80], Step [300/642], LR 1.0e-04, Loss: 45.6
+Epoch [0/80], Step [400/642], LR 1.0e-04, Loss: 39.1
+Epoch [0/80], Step [500/642], LR 1.0e-04, Loss: 40.2
+Epoch [0/80], Step [600/642], LR 1.0e-04, Loss: 41.2
+Outer loop valEpocw Maximum [0/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 262.8
+model_train val_loss valEpocw [0/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 332.4
+model_train val_loss  valEpocw [0/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 368.2
+Outer loop valEpocw Maximum [0/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 49.6
+model_train val_loss valEpocw [0/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 59.2
+model_train val_loss  valEpocw [0/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 132.8
+Outer loop valEpocw Maximum [0/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 53.8
+model_train val_loss valEpocw [0/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 174.7
+model_train val_loss  valEpocw [0/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 404.0
+Outer loop valEpocw Maximum [0/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 55.3
+model_train val_loss valEpocw [0/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 86.1
+model_train val_loss  valEpocw [0/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 148.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 4.17, mAP score EMA 3.75
+starting validation
+mAP score regular 4.40, mAP score EMA 4.18
+Train_data_mAP: current_mAP = 4.17, highest_mAP = 4.17
+Val_data_mAP: current_mAP = 4.40, highest_mAP = 4.40
+tensor([0.5365, 0.5073, 0.5635, 0.6205, 0.5779, 0.3640, 0.3947, 0.4640, 0.4441,
+        0.4612, 0.4498, 0.4844, 0.5492, 0.5001, 0.4304, 0.5214, 0.5319, 0.4231,
+        0.5107, 0.4723, 0.5264, 0.4452, 0.4220, 0.5307, 0.4739, 0.7154, 0.4611,
+        0.5245, 0.4168, 0.5910, 0.4938, 0.4729, 0.5708, 0.6787, 0.2955, 0.3336,
+        0.3006, 0.2859, 0.4066, 0.5213, 0.3660, 0.4369, 0.4831, 0.2891, 0.4553,
+        0.6132, 0.4347, 0.4893, 0.3955, 0.5063, 0.4907, 0.5040, 0.4995, 0.4532,
+        0.5097, 0.5174, 0.4169, 0.3546, 0.6056, 0.3681, 0.6640, 0.5607, 0.3918,
+        0.4373, 0.6136, 0.5880, 0.4836, 0.4464, 0.5977, 0.5401, 0.4503, 0.4887,
+        0.4480, 0.3109, 0.4890, 0.3317, 0.4543, 0.4896, 0.4110, 0.5626],
+       device='cuda:0')
+Epoch [1/80], Step [000/642], LR 1.0e-04, Loss: 46.7
+Epoch [1/80], Step [100/642], LR 1.0e-04, Loss: 35.8
+Epoch [1/80], Step [200/642], LR 1.0e-04, Loss: 35.9
+Epoch [1/80], Step [300/642], LR 1.0e-04, Loss: 40.3
+Epoch [1/80], Step [400/642], LR 1.0e-04, Loss: 31.9
+Epoch [1/80], Step [500/642], LR 1.0e-04, Loss: 33.8
+Epoch [1/80], Step [600/642], LR 1.0e-04, Loss: 35.6
+Outer loop valEpocw Maximum [1/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 196.3
+model_train val_loss valEpocw [1/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 188.4
+model_train val_loss  valEpocw [1/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 354.1
+Outer loop valEpocw Maximum [1/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.8
+model_train val_loss valEpocw [1/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 49.1
+model_train val_loss  valEpocw [1/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 101.7
+Outer loop valEpocw Maximum [1/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 53.4
+model_train val_loss valEpocw [1/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 77.9
+model_train val_loss  valEpocw [1/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 158.8
+Outer loop valEpocw Maximum [1/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 55.7
+model_train val_loss valEpocw [1/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 77.2
+model_train val_loss  valEpocw [1/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 157.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 5.16, mAP score EMA 3.76
+starting validation
+mAP score regular 5.53, mAP score EMA 4.16
+Train_data_mAP: current_mAP = 5.16, highest_mAP = 5.16
+Val_data_mAP: current_mAP = 5.53, highest_mAP = 5.53
+tensor([0.5307, 0.5292, 0.5679, 0.5939, 0.4905, 0.5252, 0.3906, 0.5035, 0.5710,
+        0.5235, 0.4441, 0.4181, 0.5073, 0.5560, 0.5483, 0.5430, 0.5948, 0.4303,
+        0.5065, 0.4724, 0.5163, 0.4491, 0.4372, 0.5579, 0.4783, 0.6458, 0.4571,
+        0.6264, 0.4285, 0.5377, 0.5754, 0.4836, 0.5001, 0.6388, 0.3306, 0.3515,
+        0.3211, 0.3178, 0.4305, 0.5624, 0.3913, 0.4294, 0.4917, 0.3241, 0.4571,
+        0.6228, 0.5150, 0.4841, 0.4733, 0.5279, 0.5311, 0.4980, 0.4945, 0.4804,
+        0.5206, 0.5540, 0.4246, 0.3845, 0.6659, 0.3757, 0.5033, 0.5612, 0.4299,
+        0.4372, 0.6081, 0.4834, 0.4871, 0.4513, 0.6633, 0.6111, 0.4589, 0.4925,
+        0.4336, 0.3338, 0.4769, 0.4296, 0.4700, 0.4856, 0.4240, 0.5077],
+       device='cuda:0')
+Epoch [2/80], Step [000/642], LR 1.0e-04, Loss: 37.3
+Epoch [2/80], Step [100/642], LR 1.0e-04, Loss: 29.6
+Epoch [2/80], Step [200/642], LR 1.0e-04, Loss: 29.5
+Epoch [2/80], Step [300/642], LR 1.0e-04, Loss: 29.2
+Epoch [2/80], Step [400/642], LR 1.0e-04, Loss: 23.4
+Epoch [2/80], Step [500/642], LR 1.0e-04, Loss: 24.7
+Epoch [2/80], Step [600/642], LR 1.0e-04, Loss: 32.6
+Outer loop valEpocw Maximum [2/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 139.0
+model_train val_loss valEpocw [2/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 135.6
+model_train val_loss  valEpocw [2/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 227.9
+Outer loop valEpocw Maximum [2/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 51.0
+model_train val_loss valEpocw [2/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 49.1
+model_train val_loss  valEpocw [2/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 116.8
+Outer loop valEpocw Maximum [2/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 55.6
+model_train val_loss valEpocw [2/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 80.1
+model_train val_loss  valEpocw [2/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 139.9
+Outer loop valEpocw Maximum [2/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.1
+model_train val_loss valEpocw [2/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 72.2
+model_train val_loss  valEpocw [2/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 143.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 5.22, mAP score EMA 3.76
+starting validation
+mAP score regular 5.51, mAP score EMA 4.17
+Train_data_mAP: current_mAP = 5.22, highest_mAP = 5.22
+Val_data_mAP: current_mAP = 5.51, highest_mAP = 5.53
+tensor([0.4875, 0.5574, 0.5553, 0.6169, 0.4878, 0.5595, 0.4001, 0.5934, 0.5335,
+        0.5222, 0.4477, 0.4183, 0.4938, 0.5606, 0.5232, 0.5577, 0.5873, 0.4333,
+        0.5114, 0.5581, 0.5076, 0.4658, 0.5015, 0.5452, 0.4819, 0.6191, 0.4576,
+        0.5713, 0.4293, 0.4939, 0.5270, 0.4830, 0.4930, 0.6218, 0.3538, 0.3796,
+        0.3444, 0.3462, 0.4530, 0.6074, 0.4062, 0.4466, 0.4948, 0.3513, 0.4534,
+        0.6199, 0.5489, 0.4703, 0.4824, 0.5135, 0.5048, 0.4953, 0.4966, 0.4155,
+        0.4360, 0.6395, 0.4302, 0.4025, 0.6685, 0.3841, 0.4986, 0.5279, 0.4423,
+        0.4484, 0.6109, 0.5275, 0.4816, 0.4571, 0.6554, 0.5855, 0.4530, 0.5024,
+        0.4201, 0.3569, 0.4957, 0.3500, 0.4775, 0.4948, 0.4295, 0.4796],
+       device='cuda:0')
+Epoch [3/80], Step [000/642], LR 1.0e-04, Loss: 26.0
+Epoch [3/80], Step [100/642], LR 1.0e-04, Loss: 25.0
+Epoch [3/80], Step [200/642], LR 1.0e-04, Loss: 24.3
+Epoch [3/80], Step [300/642], LR 1.0e-04, Loss: 32.9
+Epoch [3/80], Step [400/642], LR 1.0e-04, Loss: 23.5
+Epoch [3/80], Step [500/642], LR 1.0e-04, Loss: 27.9
+Epoch [3/80], Step [600/642], LR 1.0e-04, Loss: 27.4
+Outer loop valEpocw Maximum [3/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 147.8
+model_train val_loss valEpocw [3/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 144.8
+model_train val_loss  valEpocw [3/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 246.5
+Outer loop valEpocw Maximum [3/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 52.8
+model_train val_loss valEpocw [3/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 58.1
+model_train val_loss  valEpocw [3/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 133.5
+Outer loop valEpocw Maximum [3/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.7
+model_train val_loss valEpocw [3/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 75.0
+model_train val_loss  valEpocw [3/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 155.4
+Outer loop valEpocw Maximum [3/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.7
+model_train val_loss valEpocw [3/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 92.2
+model_train val_loss  valEpocw [3/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 245.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 6.15, mAP score EMA 3.76
+starting validation
+mAP score regular 6.37, mAP score EMA 4.18
+Train_data_mAP: current_mAP = 6.15, highest_mAP = 6.15
+Val_data_mAP: current_mAP = 6.37, highest_mAP = 6.37
+tensor([0.4826, 0.5198, 0.5473, 0.6059, 0.4817, 0.5859, 0.4034, 0.5888, 0.4987,
+        0.5211, 0.4513, 0.4289, 0.4770, 0.5584, 0.4359, 0.5872, 0.5627, 0.4534,
+        0.4767, 0.5307, 0.4688, 0.4750, 0.4035, 0.5321, 0.4737, 0.5233, 0.4598,
+        0.5448, 0.4263, 0.5090, 0.5035, 0.5139, 0.5125, 0.6069, 0.3685, 0.3972,
+        0.3649, 0.3641, 0.4689, 0.6166, 0.4127, 0.4363, 0.5144, 0.3651, 0.4656,
+        0.6076, 0.5815, 0.4833, 0.3488, 0.5063, 0.4955, 0.2738, 0.4861, 0.4346,
+        0.4493, 0.5190, 0.5133, 0.4210, 0.6365, 0.3904, 0.4882, 0.4825, 0.4008,
+        0.4449, 0.6199, 0.4523, 0.4869, 0.4474, 0.5855, 0.5666, 0.4656, 0.4770,
+        0.4212, 0.3931, 0.3623, 0.4292, 0.5321, 0.5587, 0.4568, 0.5063],
+       device='cuda:0')
+Epoch [4/80], Step [000/642], LR 1.0e-04, Loss: 28.7
+Epoch [4/80], Step [100/642], LR 1.0e-04, Loss: 27.7
+Epoch [4/80], Step [200/642], LR 1.0e-04, Loss: 24.4
+Epoch [4/80], Step [300/642], LR 1.0e-04, Loss: 24.3
+Epoch [4/80], Step [400/642], LR 1.0e-04, Loss: 25.2
+Epoch [4/80], Step [500/642], LR 1.0e-04, Loss: 24.3
+Epoch [4/80], Step [600/642], LR 1.0e-04, Loss: 22.1
+Outer loop valEpocw Maximum [4/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 163.4
+model_train val_loss valEpocw [4/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 158.9
+model_train val_loss  valEpocw [4/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 282.3
+Outer loop valEpocw Maximum [4/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 53.6
+model_train val_loss valEpocw [4/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 58.9
+model_train val_loss  valEpocw [4/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 136.1
+Outer loop valEpocw Maximum [4/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 50.9
+model_train val_loss valEpocw [4/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 53.6
+model_train val_loss  valEpocw [4/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 112.5
+Outer loop valEpocw Maximum [4/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.2
+model_train val_loss valEpocw [4/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 127.6
+model_train val_loss  valEpocw [4/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 271.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 6.47, mAP score EMA 3.76
+starting validation
+mAP score regular 6.73, mAP score EMA 4.21
+Train_data_mAP: current_mAP = 6.47, highest_mAP = 6.47
+Val_data_mAP: current_mAP = 6.73, highest_mAP = 6.73
+tensor([0.4793, 0.5197, 0.5073, 0.5719, 0.5105, 0.5550, 0.4076, 0.5768, 0.4849,
+        0.4818, 0.4587, 0.4353, 0.4670, 0.5324, 0.4296, 0.5472, 0.5504, 0.4461,
+        0.4927, 0.5407, 0.4561, 0.4847, 0.4269, 0.5010, 0.4699, 0.5088, 0.4788,
+        0.4627, 0.4118, 0.4769, 0.4749, 0.4988, 0.5246, 0.4991, 0.3997, 0.4149,
+        0.3823, 0.4180, 0.4304, 0.5764, 0.4266, 0.4249, 0.4995, 0.3856, 0.4649,
+        0.5866, 0.5481, 0.4859, 0.4032, 0.5257, 0.4857, 0.3290, 0.4074, 0.4717,
+        0.4459, 0.4808, 0.5682, 0.4628, 0.6008, 0.3883, 0.4748, 0.4728, 0.4456,
+        0.4497, 0.6051, 0.4465, 0.4779, 0.4360, 0.5443, 0.5209, 0.4738, 0.4721,
+        0.4058, 0.4200, 0.4697, 0.5413, 0.4044, 0.5533, 0.4718, 0.4577],
+       device='cuda:0')
+Epoch [5/80], Step [000/642], LR 1.0e-04, Loss: 22.8
+Epoch [5/80], Step [100/642], LR 1.0e-04, Loss: 28.5
+Epoch [5/80], Step [200/642], LR 1.0e-04, Loss: 24.9
+Epoch [5/80], Step [300/642], LR 1.0e-04, Loss: 23.3
+Epoch [5/80], Step [400/642], LR 1.0e-04, Loss: 23.1
+Epoch [5/80], Step [500/642], LR 1.0e-04, Loss: 20.1
+Epoch [5/80], Step [600/642], LR 1.0e-04, Loss: 28.0
+Outer loop valEpocw Maximum [5/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 159.7
+model_train val_loss valEpocw [5/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 158.3
+model_train val_loss  valEpocw [5/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 287.6
+Outer loop valEpocw Maximum [5/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.8
+model_train val_loss valEpocw [5/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 64.7
+model_train val_loss  valEpocw [5/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 142.9
+Outer loop valEpocw Maximum [5/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.1
+model_train val_loss valEpocw [5/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 63.1
+model_train val_loss  valEpocw [5/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 133.0
+Outer loop valEpocw Maximum [5/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 49.4
+model_train val_loss valEpocw [5/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 121.0
+model_train val_loss  valEpocw [5/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 255.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 6.71, mAP score EMA 3.76
+starting validation
+mAP score regular 7.03, mAP score EMA 4.21
+Train_data_mAP: current_mAP = 6.71, highest_mAP = 6.71
+Val_data_mAP: current_mAP = 7.03, highest_mAP = 7.03
+tensor([0.4910, 0.4850, 0.5031, 0.5278, 0.5158, 0.5260, 0.4032, 0.5102, 0.4608,
+        0.4809, 0.4614, 0.4479, 0.4675, 0.5037, 0.4252, 0.4809, 0.5048, 0.4688,
+        0.5093, 0.4607, 0.4571, 0.4796, 0.4534, 0.4873, 0.4685, 0.4725, 0.4883,
+        0.4381, 0.4099, 0.4959, 0.4443, 0.4923, 0.4966, 0.4907, 0.4401, 0.4444,
+        0.4274, 0.4918, 0.4540, 0.4974, 0.4528, 0.4245, 0.4896, 0.4339, 0.4773,
+        0.5274, 0.4758, 0.4902, 0.4756, 0.5131, 0.4443, 0.3916, 0.4416, 0.4888,
+        0.4822, 0.4735, 0.5014, 0.4754, 0.5265, 0.3958, 0.4731, 0.4595, 0.5133,
+        0.4531, 0.5283, 0.4474, 0.4893, 0.4641, 0.4967, 0.4755, 0.4796, 0.5038,
+        0.4164, 0.4553, 0.5125, 0.5445, 0.4355, 0.5123, 0.4845, 0.4528],
+       device='cuda:0')
+Epoch [6/80], Step [000/642], LR 1.0e-04, Loss: 22.8
+Epoch [6/80], Step [100/642], LR 1.0e-04, Loss: 25.8
+Epoch [6/80], Step [200/642], LR 1.0e-04, Loss: 22.5
+Epoch [6/80], Step [300/642], LR 1.0e-04, Loss: 28.3
+Epoch [6/80], Step [400/642], LR 1.0e-04, Loss: 21.9
+Epoch [6/80], Step [500/642], LR 1.0e-04, Loss: 25.2
+Epoch [6/80], Step [600/642], LR 1.0e-04, Loss: 21.0
+Outer loop valEpocw Maximum [6/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 143.3
+model_train val_loss valEpocw [6/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 140.6
+model_train val_loss  valEpocw [6/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 278.6
+Outer loop valEpocw Maximum [6/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.3
+model_train val_loss valEpocw [6/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 60.8
+model_train val_loss  valEpocw [6/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 134.1
+Outer loop valEpocw Maximum [6/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.1
+model_train val_loss valEpocw [6/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 53.9
+model_train val_loss  valEpocw [6/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 114.7
+Outer loop valEpocw Maximum [6/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 52.4
+model_train val_loss valEpocw [6/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 124.3
+model_train val_loss  valEpocw [6/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 246.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 6.95, mAP score EMA 3.75
+starting validation
+mAP score regular 7.22, mAP score EMA 4.23
+Train_data_mAP: current_mAP = 6.95, highest_mAP = 6.95
+Val_data_mAP: current_mAP = 7.22, highest_mAP = 7.22
+tensor([0.4749, 0.4533, 0.5071, 0.5207, 0.5062, 0.4954, 0.4033, 0.4789, 0.4677,
+        0.4736, 0.4605, 0.4646, 0.4776, 0.5069, 0.4496, 0.4378, 0.4777, 0.4379,
+        0.5124, 0.4498, 0.4553, 0.4804, 0.4656, 0.4875, 0.4777, 0.4772, 0.4942,
+        0.4247, 0.4061, 0.4766, 0.4538, 0.4741, 0.5011, 0.4844, 0.4697, 0.4494,
+        0.4583, 0.5088, 0.4855, 0.4680, 0.4691, 0.4186, 0.4756, 0.4582, 0.4740,
+        0.4848, 0.4732, 0.4921, 0.4918, 0.4949, 0.4395, 0.4306, 0.4608, 0.5104,
+        0.4881, 0.4709, 0.5008, 0.4772, 0.4846, 0.4045, 0.4683, 0.4552, 0.5128,
+        0.4597, 0.5149, 0.4517, 0.4938, 0.4673, 0.4651, 0.4550, 0.4805, 0.5115,
+        0.4248, 0.4683, 0.5167, 0.5424, 0.4563, 0.5126, 0.4923, 0.4452],
+       device='cuda:0')
+Epoch [7/80], Step [000/642], LR 1.0e-04, Loss: 23.6
+Epoch [7/80], Step [100/642], LR 1.0e-04, Loss: 28.6
+Epoch [7/80], Step [200/642], LR 1.0e-04, Loss: 21.3
+Epoch [7/80], Step [300/642], LR 1.0e-04, Loss: 24.5
+Epoch [7/80], Step [400/642], LR 1.0e-04, Loss: 20.1
+Epoch [7/80], Step [500/642], LR 1.0e-04, Loss: 19.1
+Epoch [7/80], Step [600/642], LR 1.0e-04, Loss: 19.7
+Outer loop valEpocw Maximum [7/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 170.9
+model_train val_loss valEpocw [7/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 163.4
+model_train val_loss  valEpocw [7/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 342.1
+Outer loop valEpocw Maximum [7/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.7
+model_train val_loss valEpocw [7/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 62.3
+model_train val_loss  valEpocw [7/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 135.0
+Outer loop valEpocw Maximum [7/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.8
+model_train val_loss valEpocw [7/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 59.1
+model_train val_loss  valEpocw [7/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 120.4
+Outer loop valEpocw Maximum [7/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 50.2
+model_train val_loss valEpocw [7/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 150.4
+model_train val_loss  valEpocw [7/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 299.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 6.97, mAP score EMA 3.76
+starting validation
+mAP score regular 7.30, mAP score EMA 4.23
+Train_data_mAP: current_mAP = 6.97, highest_mAP = 6.97
+Val_data_mAP: current_mAP = 7.30, highest_mAP = 7.30
+tensor([0.4938, 0.4451, 0.5010, 0.5027, 0.4836, 0.4817, 0.3985, 0.4727, 0.4726,
+        0.4678, 0.4605, 0.4711, 0.4824, 0.4886, 0.4453, 0.4235, 0.4691, 0.4404,
+        0.5164, 0.4552, 0.4634, 0.4795, 0.4672, 0.4853, 0.4703, 0.4768, 0.4871,
+        0.4236, 0.4023, 0.4777, 0.4440, 0.4567, 0.5006, 0.4665, 0.4648, 0.4608,
+        0.4814, 0.4771, 0.4901, 0.4445, 0.4771, 0.4164, 0.4872, 0.4681, 0.4716,
+        0.4759, 0.4638, 0.5092, 0.4937, 0.4813, 0.4373, 0.4495, 0.4657, 0.4906,
+        0.4968, 0.4755, 0.4881, 0.4929, 0.4683, 0.4101, 0.4646, 0.4567, 0.5182,
+        0.4942, 0.4972, 0.4558, 0.4960, 0.4741, 0.4449, 0.4530, 0.4807, 0.4999,
+        0.4270, 0.4745, 0.5158, 0.5344, 0.4584, 0.4952, 0.4942, 0.4632],
+       device='cuda:0')
+Epoch [8/80], Step [000/642], LR 1.0e-04, Loss: 20.9
+Epoch [8/80], Step [100/642], LR 1.0e-04, Loss: 23.0
+Epoch [8/80], Step [200/642], LR 1.0e-04, Loss: 20.7
+Epoch [8/80], Step [300/642], LR 1.0e-04, Loss: 22.1
+Epoch [8/80], Step [400/642], LR 1.0e-04, Loss: 19.1
+Epoch [8/80], Step [500/642], LR 1.0e-04, Loss: 18.4
+Epoch [8/80], Step [600/642], LR 1.0e-04, Loss: 19.4
+Outer loop valEpocw Maximum [8/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 123.1
+model_train val_loss valEpocw [8/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 116.9
+model_train val_loss  valEpocw [8/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 249.3
+Outer loop valEpocw Maximum [8/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.2
+model_train val_loss valEpocw [8/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 64.4
+model_train val_loss  valEpocw [8/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 137.5
+Outer loop valEpocw Maximum [8/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.5
+model_train val_loss valEpocw [8/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 44.0
+model_train val_loss  valEpocw [8/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 94.9
+Outer loop valEpocw Maximum [8/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.1
+model_train val_loss valEpocw [8/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 173.3
+model_train val_loss  valEpocw [8/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 342.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 7.04, mAP score EMA 3.76
+starting validation
+mAP score regular 7.35, mAP score EMA 4.25
+Train_data_mAP: current_mAP = 7.04, highest_mAP = 7.04
+Val_data_mAP: current_mAP = 7.35, highest_mAP = 7.35
+tensor([0.4808, 0.4479, 0.4966, 0.4951, 0.4711, 0.4769, 0.4509, 0.4783, 0.4707,
+        0.4662, 0.4722, 0.4654, 0.4796, 0.4945, 0.4636, 0.4301, 0.4703, 0.4530,
+        0.5025, 0.4564, 0.4699, 0.4591, 0.4620, 0.4943, 0.4749, 0.4758, 0.4899,
+        0.4413, 0.4082, 0.4729, 0.4645, 0.4715, 0.4868, 0.4600, 0.4627, 0.4821,
+        0.4625, 0.4901, 0.4891, 0.4376, 0.4719, 0.4176, 0.4878, 0.4711, 0.4755,
+        0.4743, 0.4594, 0.5151, 0.4686, 0.4811, 0.4375, 0.4522, 0.4745, 0.5033,
+        0.4869, 0.4737, 0.4825, 0.5061, 0.4577, 0.4164, 0.4657, 0.4510, 0.5103,
+        0.5092, 0.4914, 0.4580, 0.4977, 0.4647, 0.4473, 0.4565, 0.4809, 0.4896,
+        0.4505, 0.4752, 0.5160, 0.5350, 0.4571, 0.4888, 0.4951, 0.4711],
+       device='cuda:0')
+Epoch [9/80], Step [000/642], LR 1.0e-04, Loss: 22.7
+Epoch [9/80], Step [100/642], LR 1.0e-04, Loss: 24.2
+Epoch [9/80], Step [200/642], LR 1.0e-04, Loss: 20.4
+Epoch [9/80], Step [300/642], LR 1.0e-04, Loss: 21.3
+Epoch [9/80], Step [400/642], LR 1.0e-04, Loss: 22.1
+Epoch [9/80], Step [500/642], LR 1.0e-04, Loss: 21.9
+Epoch [9/80], Step [600/642], LR 1.0e-04, Loss: 21.8
+Outer loop valEpocw Maximum [9/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 143.3
+model_train val_loss valEpocw [9/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 136.0
+model_train val_loss  valEpocw [9/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 289.1
+Outer loop valEpocw Maximum [9/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.6
+model_train val_loss valEpocw [9/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 67.4
+model_train val_loss  valEpocw [9/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 145.9
+Outer loop valEpocw Maximum [9/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.8
+model_train val_loss valEpocw [9/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 60.3
+model_train val_loss  valEpocw [9/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 131.0
+Outer loop valEpocw Maximum [9/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.2
+model_train val_loss valEpocw [9/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 165.2
+model_train val_loss  valEpocw [9/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 326.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 7.64, mAP score EMA 3.77
+starting validation
+mAP score regular 7.88, mAP score EMA 4.26
+Train_data_mAP: current_mAP = 7.64, highest_mAP = 7.64
+Val_data_mAP: current_mAP = 7.88, highest_mAP = 7.88
+tensor([0.4806, 0.4334, 0.4946, 0.4947, 0.4773, 0.4755, 0.4633, 0.4782, 0.4698,
+        0.4590, 0.4683, 0.4718, 0.4779, 0.4929, 0.4592, 0.4218, 0.4735, 0.4599,
+        0.5031, 0.4588, 0.4751, 0.4558, 0.4561, 0.4947, 0.4719, 0.4703, 0.4884,
+        0.4543, 0.4054, 0.4710, 0.4705, 0.4776, 0.4866, 0.4655, 0.4633, 0.4741,
+        0.4654, 0.5021, 0.4869, 0.4351, 0.4770, 0.4188, 0.4863, 0.4683, 0.4596,
+        0.4723, 0.4600, 0.4839, 0.4563, 0.4775, 0.4700, 0.4559, 0.4715, 0.4886,
+        0.4951, 0.4661, 0.4849, 0.5055, 0.4470, 0.4171, 0.4611, 0.4585, 0.4956,
+        0.5172, 0.4901, 0.4604, 0.4763, 0.4665, 0.4446, 0.4516, 0.4802, 0.4722,
+        0.4675, 0.4755, 0.5112, 0.5406, 0.4634, 0.4901, 0.4940, 0.4784],
+       device='cuda:0')
+Epoch [10/80], Step [000/642], LR 1.0e-04, Loss: 19.5
+Epoch [10/80], Step [100/642], LR 1.0e-04, Loss: 23.9
+Epoch [10/80], Step [200/642], LR 1.0e-04, Loss: 19.3
+Epoch [10/80], Step [300/642], LR 1.0e-04, Loss: 17.3
+Epoch [10/80], Step [400/642], LR 1.0e-04, Loss: 22.8
+Epoch [10/80], Step [500/642], LR 1.0e-04, Loss: 17.9
+Epoch [10/80], Step [600/642], LR 1.0e-04, Loss: 20.7
+Outer loop valEpocw Maximum [10/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 142.7
+model_train val_loss valEpocw [10/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 139.8
+model_train val_loss  valEpocw [10/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 295.3
+Outer loop valEpocw Maximum [10/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.2
+model_train val_loss valEpocw [10/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 73.8
+model_train val_loss  valEpocw [10/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 156.7
+Outer loop valEpocw Maximum [10/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.4
+model_train val_loss valEpocw [10/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 47.0
+model_train val_loss  valEpocw [10/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 103.1
+Outer loop valEpocw Maximum [10/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.8
+model_train val_loss valEpocw [10/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 172.5
+model_train val_loss  valEpocw [10/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 348.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 7.91, mAP score EMA 3.76
+starting validation
+mAP score regular 8.27, mAP score EMA 4.28
+Train_data_mAP: current_mAP = 7.91, highest_mAP = 7.91
+Val_data_mAP: current_mAP = 8.27, highest_mAP = 8.27
+tensor([0.4924, 0.4221, 0.4799, 0.4845, 0.4760, 0.4705, 0.4525, 0.4710, 0.4594,
+        0.4508, 0.4620, 0.4759, 0.4800, 0.4817, 0.4492, 0.4048, 0.4735, 0.4638,
+        0.4946, 0.4461, 0.4722, 0.4587, 0.4535, 0.4894, 0.4545, 0.4761, 0.4618,
+        0.4463, 0.3986, 0.4573, 0.4452, 0.4590, 0.4715, 0.4578, 0.4628, 0.4568,
+        0.4528, 0.4935, 0.4712, 0.4288, 0.4705, 0.4164, 0.4788, 0.4707, 0.4585,
+        0.4550, 0.4529, 0.4789, 0.4663, 0.4655, 0.4682, 0.4639, 0.4775, 0.4818,
+        0.4974, 0.4549, 0.4647, 0.4840, 0.4233, 0.4155, 0.4509, 0.4517, 0.4856,
+        0.4870, 0.4827, 0.4581, 0.4730, 0.4628, 0.4389, 0.4456, 0.4805, 0.4615,
+        0.4755, 0.4710, 0.4971, 0.5217, 0.4630, 0.4724, 0.4565, 0.4663],
+       device='cuda:0')
+Epoch [11/80], Step [000/642], LR 1.0e-04, Loss: 20.8
+Epoch [11/80], Step [100/642], LR 1.0e-04, Loss: 22.0
+Epoch [11/80], Step [200/642], LR 1.0e-04, Loss: 16.8
+Epoch [11/80], Step [300/642], LR 1.0e-04, Loss: 21.1
+Epoch [11/80], Step [400/642], LR 1.0e-04, Loss: 18.5
+Epoch [11/80], Step [500/642], LR 1.0e-04, Loss: 16.1
+Epoch [11/80], Step [600/642], LR 1.0e-04, Loss: 17.0
+Outer loop valEpocw Maximum [11/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 142.3
+model_train val_loss valEpocw [11/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 138.9
+model_train val_loss  valEpocw [11/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 293.4
+Outer loop valEpocw Maximum [11/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.3
+model_train val_loss valEpocw [11/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 69.8
+model_train val_loss  valEpocw [11/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 146.0
+Outer loop valEpocw Maximum [11/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.6
+model_train val_loss valEpocw [11/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 50.6
+model_train val_loss  valEpocw [11/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 112.3
+Outer loop valEpocw Maximum [11/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.9
+model_train val_loss valEpocw [11/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 154.7
+model_train val_loss  valEpocw [11/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 316.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 7.96, mAP score EMA 3.78
+starting validation
+mAP score regular 8.26, mAP score EMA 4.29
+Train_data_mAP: current_mAP = 7.96, highest_mAP = 7.96
+Val_data_mAP: current_mAP = 8.26, highest_mAP = 8.27
+tensor([0.4838, 0.4117, 0.4783, 0.4830, 0.4770, 0.4656, 0.4556, 0.4693, 0.4624,
+        0.4439, 0.4687, 0.4653, 0.4791, 0.4761, 0.4511, 0.3971, 0.4741, 0.4547,
+        0.4864, 0.4572, 0.4717, 0.4613, 0.4631, 0.4866, 0.4525, 0.4748, 0.4621,
+        0.4432, 0.3960, 0.4530, 0.4464, 0.4579, 0.4740, 0.4603, 0.4739, 0.4472,
+        0.4499, 0.4831, 0.4569, 0.4254, 0.4694, 0.4154, 0.4652, 0.4694, 0.4596,
+        0.4528, 0.4502, 0.4792, 0.4630, 0.4651, 0.4708, 0.4618, 0.4658, 0.4749,
+        0.4937, 0.4556, 0.4612, 0.4797, 0.4163, 0.4132, 0.4486, 0.4482, 0.4869,
+        0.4753, 0.4854, 0.4581, 0.4747, 0.4645, 0.4358, 0.4461, 0.4826, 0.4589,
+        0.4901, 0.4636, 0.4899, 0.5186, 0.4606, 0.4626, 0.4576, 0.4574],
+       device='cuda:0')
+Epoch [12/80], Step [000/642], LR 1.0e-04, Loss: 18.6
+Epoch [12/80], Step [100/642], LR 1.0e-04, Loss: 21.9
+Epoch [12/80], Step [200/642], LR 1.0e-04, Loss: 18.3
+Epoch [12/80], Step [300/642], LR 1.0e-04, Loss: 17.1
+Epoch [12/80], Step [400/642], LR 1.0e-04, Loss: 20.6
+Epoch [12/80], Step [500/642], LR 1.0e-04, Loss: 22.7
+Epoch [12/80], Step [600/642], LR 1.0e-04, Loss: 20.5
+Outer loop valEpocw Maximum [12/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 148.3
+model_train val_loss valEpocw [12/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 151.8
+model_train val_loss  valEpocw [12/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 320.1
+Outer loop valEpocw Maximum [12/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.6
+model_train val_loss valEpocw [12/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 92.4
+model_train val_loss  valEpocw [12/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 199.4
+Outer loop valEpocw Maximum [12/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.9
+model_train val_loss valEpocw [12/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 50.9
+model_train val_loss  valEpocw [12/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 109.6
+Outer loop valEpocw Maximum [12/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.3
+model_train val_loss valEpocw [12/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 183.2
+model_train val_loss  valEpocw [12/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 377.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 8.09, mAP score EMA 3.76
+starting validation
+mAP score regular 8.38, mAP score EMA 4.31
+Train_data_mAP: current_mAP = 8.09, highest_mAP = 8.09
+Val_data_mAP: current_mAP = 8.38, highest_mAP = 8.38
+tensor([0.4917, 0.4047, 0.4733, 0.4845, 0.4774, 0.4595, 0.4547, 0.4582, 0.4583,
+        0.4573, 0.4715, 0.4642, 0.4850, 0.4633, 0.4507, 0.4025, 0.4752, 0.4580,
+        0.4899, 0.4616, 0.4754, 0.4598, 0.4694, 0.4798, 0.4450, 0.4820, 0.4576,
+        0.4506, 0.3983, 0.4516, 0.4441, 0.4531, 0.4757, 0.4664, 0.4824, 0.4422,
+        0.4461, 0.4689, 0.4586, 0.4309, 0.4663, 0.4166, 0.4589, 0.4672, 0.4619,
+        0.4525, 0.4504, 0.4718, 0.4662, 0.4622, 0.4578, 0.4563, 0.4654, 0.4752,
+        0.4920, 0.4599, 0.4652, 0.4735, 0.4019, 0.4110, 0.4560, 0.4488, 0.4833,
+        0.4660, 0.4791, 0.4482, 0.4686, 0.4673, 0.4357, 0.4443, 0.4834, 0.4619,
+        0.4967, 0.4586, 0.4905, 0.5070, 0.4617, 0.4572, 0.4617, 0.4574],
+       device='cuda:0')
+Epoch [13/80], Step [000/642], LR 1.0e-04, Loss: 16.8
+Epoch [13/80], Step [100/642], LR 1.0e-04, Loss: 22.0
+Epoch [13/80], Step [200/642], LR 1.0e-04, Loss: 19.0
+Epoch [13/80], Step [300/642], LR 1.0e-04, Loss: 18.3
+Epoch [13/80], Step [400/642], LR 1.0e-04, Loss: 18.9
+Epoch [13/80], Step [500/642], LR 1.0e-04, Loss: 22.8
+Epoch [13/80], Step [600/642], LR 1.0e-04, Loss: 21.8
+Outer loop valEpocw Maximum [13/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 141.4
+model_train val_loss valEpocw [13/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 140.1
+model_train val_loss  valEpocw [13/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 294.8
+Outer loop valEpocw Maximum [13/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.1
+model_train val_loss valEpocw [13/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 95.8
+model_train val_loss  valEpocw [13/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 207.7
+Outer loop valEpocw Maximum [13/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.7
+model_train val_loss valEpocw [13/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 49.4
+model_train val_loss  valEpocw [13/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 105.4
+Outer loop valEpocw Maximum [13/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.2
+model_train val_loss valEpocw [13/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 160.9
+model_train val_loss  valEpocw [13/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 331.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 7.92, mAP score EMA 3.77
+starting validation
+mAP score regular 8.24, mAP score EMA 4.30
+Train_data_mAP: current_mAP = 7.92, highest_mAP = 8.09
+Val_data_mAP: current_mAP = 8.24, highest_mAP = 8.38
+tensor([0.4824, 0.3953, 0.4693, 0.4797, 0.4649, 0.4595, 0.4478, 0.4636, 0.4516,
+        0.4572, 0.4628, 0.4688, 0.4868, 0.4580, 0.4500, 0.3923, 0.4747, 0.4513,
+        0.4879, 0.4644, 0.4686, 0.4563, 0.4578, 0.4811, 0.4428, 0.4840, 0.4563,
+        0.4508, 0.3992, 0.4554, 0.4415, 0.4498, 0.4630, 0.4735, 0.4638, 0.4369,
+        0.4482, 0.4610, 0.4491, 0.4251, 0.4613, 0.4131, 0.4602, 0.4664, 0.4644,
+        0.4496, 0.4520, 0.4671, 0.4624, 0.4586, 0.4507, 0.4581, 0.4675, 0.4667,
+        0.4796, 0.4586, 0.4593, 0.4623, 0.3963, 0.4099, 0.4538, 0.4362, 0.4722,
+        0.4575, 0.4837, 0.4590, 0.4673, 0.4668, 0.4358, 0.4437, 0.4487, 0.4546,
+        0.4910, 0.4584, 0.4924, 0.5030, 0.4621, 0.4515, 0.4645, 0.4588],
+       device='cuda:0')
+Epoch [14/80], Step [000/642], LR 1.0e-04, Loss: 18.0
+Epoch [14/80], Step [100/642], LR 1.0e-04, Loss: 21.5
+Epoch [14/80], Step [200/642], LR 1.0e-04, Loss: 18.5
+Epoch [14/80], Step [300/642], LR 1.0e-04, Loss: 19.3
+Epoch [14/80], Step [400/642], LR 1.0e-04, Loss: 17.2
+Epoch [14/80], Step [500/642], LR 1.0e-04, Loss: 23.7
+Epoch [14/80], Step [600/642], LR 1.0e-04, Loss: 21.5
+Outer loop valEpocw Maximum [14/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 147.6
+model_train val_loss valEpocw [14/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 140.3
+model_train val_loss  valEpocw [14/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 295.6
+Outer loop valEpocw Maximum [14/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.7
+model_train val_loss valEpocw [14/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 67.5
+model_train val_loss  valEpocw [14/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 143.9
+Outer loop valEpocw Maximum [14/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.4
+model_train val_loss valEpocw [14/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 43.1
+model_train val_loss  valEpocw [14/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 94.4
+Outer loop valEpocw Maximum [14/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.0
+model_train val_loss valEpocw [14/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 148.6
+model_train val_loss  valEpocw [14/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 304.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 8.63, mAP score EMA 3.77
+starting validation
+mAP score regular 9.06, mAP score EMA 4.31
+Train_data_mAP: current_mAP = 8.63, highest_mAP = 8.63
+Val_data_mAP: current_mAP = 9.06, highest_mAP = 9.06
+tensor([0.4738, 0.3867, 0.4739, 0.4815, 0.4590, 0.4660, 0.4569, 0.4623, 0.4544,
+        0.4488, 0.4515, 0.4720, 0.4518, 0.4647, 0.4534, 0.4030, 0.4730, 0.4468,
+        0.4899, 0.4677, 0.4669, 0.4582, 0.4652, 0.4884, 0.4472, 0.4849, 0.4529,
+        0.4621, 0.4006, 0.4522, 0.4377, 0.4472, 0.4570, 0.4759, 0.4635, 0.4366,
+        0.4437, 0.4604, 0.4617, 0.4282, 0.4640, 0.4149, 0.4613, 0.4583, 0.4624,
+        0.4493, 0.4560, 0.4682, 0.4602, 0.4499, 0.4615, 0.4545, 0.4631, 0.4693,
+        0.4768, 0.4562, 0.4579, 0.4711, 0.3914, 0.4097, 0.4728, 0.4277, 0.4659,
+        0.4697, 0.4741, 0.4715, 0.4657, 0.4625, 0.4332, 0.4442, 0.4498, 0.4449,
+        0.4907, 0.4609, 0.4922, 0.5059, 0.4615, 0.4503, 0.4613, 0.4529],
+       device='cuda:0')
+Epoch [15/80], Step [000/642], LR 1.0e-04, Loss: 17.0
+Epoch [15/80], Step [100/642], LR 1.0e-04, Loss: 20.7
+Epoch [15/80], Step [200/642], LR 1.0e-04, Loss: 17.9
+Epoch [15/80], Step [300/642], LR 1.0e-04, Loss: 18.7
+Epoch [15/80], Step [400/642], LR 1.0e-04, Loss: 18.1
+Epoch [15/80], Step [500/642], LR 1.0e-04, Loss: 16.1
+Epoch [15/80], Step [600/642], LR 1.0e-04, Loss: 16.2
+Outer loop valEpocw Maximum [15/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 145.2
+model_train val_loss valEpocw [15/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 141.8
+model_train val_loss  valEpocw [15/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 299.8
+Outer loop valEpocw Maximum [15/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.8
+model_train val_loss valEpocw [15/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 67.9
+model_train val_loss  valEpocw [15/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 146.4
+Outer loop valEpocw Maximum [15/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.2
+model_train val_loss valEpocw [15/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 48.7
+model_train val_loss  valEpocw [15/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 108.6
+Outer loop valEpocw Maximum [15/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.1
+model_train val_loss valEpocw [15/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 148.1
+model_train val_loss  valEpocw [15/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 312.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.07, mAP score EMA 3.76
+starting validation
+mAP score regular 9.44, mAP score EMA 4.31
+Train_data_mAP: current_mAP = 9.07, highest_mAP = 9.07
+Val_data_mAP: current_mAP = 9.44, highest_mAP = 9.44
+tensor([0.4822, 0.3844, 0.4613, 0.4664, 0.4575, 0.4587, 0.4478, 0.4433, 0.4520,
+        0.4534, 0.4530, 0.4660, 0.4531, 0.4522, 0.4563, 0.4026, 0.4689, 0.4492,
+        0.4807, 0.4478, 0.4623, 0.4575, 0.4640, 0.4788, 0.4377, 0.4770, 0.4419,
+        0.4552, 0.3970, 0.4389, 0.4344, 0.4599, 0.4406, 0.4622, 0.4619, 0.4321,
+        0.4289, 0.4530, 0.4575, 0.4251, 0.4559, 0.4126, 0.4562, 0.4540, 0.4518,
+        0.4446, 0.4582, 0.4595, 0.4602, 0.4427, 0.4672, 0.4441, 0.4541, 0.4680,
+        0.4664, 0.4470, 0.4487, 0.4645, 0.3859, 0.4131, 0.4570, 0.4156, 0.4606,
+        0.4573, 0.4789, 0.4677, 0.4503, 0.4600, 0.4323, 0.4424, 0.4513, 0.4400,
+        0.4831, 0.4565, 0.4829, 0.4997, 0.4616, 0.4440, 0.4638, 0.4541],
+       device='cuda:0')
+Epoch [16/80], Step [000/642], LR 1.0e-04, Loss: 17.2
+Epoch [16/80], Step [100/642], LR 1.0e-04, Loss: 19.8
+Epoch [16/80], Step [200/642], LR 1.0e-04, Loss: 19.1
+Epoch [16/80], Step [300/642], LR 1.0e-04, Loss: 16.3
+Epoch [16/80], Step [400/642], LR 1.0e-04, Loss: 15.8
+Epoch [16/80], Step [500/642], LR 1.0e-04, Loss: 17.6
+Epoch [16/80], Step [600/642], LR 1.0e-04, Loss: 21.6
+Outer loop valEpocw Maximum [16/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 148.1
+model_train val_loss valEpocw [16/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 146.1
+model_train val_loss  valEpocw [16/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 311.6
+Outer loop valEpocw Maximum [16/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.3
+model_train val_loss valEpocw [16/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 74.8
+model_train val_loss  valEpocw [16/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 162.4
+Outer loop valEpocw Maximum [16/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.2
+model_train val_loss valEpocw [16/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 46.7
+model_train val_loss  valEpocw [16/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 105.5
+Outer loop valEpocw Maximum [16/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.8
+model_train val_loss valEpocw [16/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 149.0
+model_train val_loss  valEpocw [16/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 315.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.34, mAP score EMA 3.75
+starting validation
+mAP score regular 9.84, mAP score EMA 4.31
+Train_data_mAP: current_mAP = 9.34, highest_mAP = 9.34
+Val_data_mAP: current_mAP = 9.84, highest_mAP = 9.84
+tensor([0.5023, 0.3887, 0.4511, 0.4625, 0.4592, 0.4571, 0.4432, 0.4402, 0.4463,
+        0.4508, 0.4481, 0.4429, 0.4584, 0.4450, 0.4463, 0.3969, 0.4690, 0.4524,
+        0.4741, 0.4395, 0.4570, 0.4686, 0.4633, 0.4727, 0.4255, 0.4690, 0.4170,
+        0.4444, 0.4001, 0.4209, 0.4309, 0.4419, 0.4414, 0.4433, 0.4117, 0.4196,
+        0.4178, 0.4348, 0.4491, 0.4221, 0.4390, 0.4122, 0.4365, 0.4512, 0.4313,
+        0.4394, 0.4528, 0.4518, 0.4589, 0.4353, 0.4601, 0.4460, 0.4465, 0.4692,
+        0.4555, 0.4501, 0.4447, 0.4460, 0.4017, 0.4276, 0.4479, 0.4118, 0.4611,
+        0.4422, 0.4427, 0.4454, 0.4487, 0.4533, 0.4306, 0.4447, 0.4561, 0.4404,
+        0.4666, 0.4452, 0.4704, 0.4804, 0.4646, 0.4390, 0.4708, 0.4565],
+       device='cuda:0')
+Epoch [17/80], Step [000/642], LR 1.0e-04, Loss: 19.8
+Epoch [17/80], Step [100/642], LR 1.0e-04, Loss: 23.1
+Epoch [17/80], Step [200/642], LR 1.0e-04, Loss: 17.8
+Epoch [17/80], Step [300/642], LR 1.0e-04, Loss: 15.8
+Epoch [17/80], Step [400/642], LR 1.0e-04, Loss: 18.3
+Epoch [17/80], Step [500/642], LR 1.0e-04, Loss: 16.7
+Epoch [17/80], Step [600/642], LR 1.0e-04, Loss: 21.4
+Outer loop valEpocw Maximum [17/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 161.4
+model_train val_loss valEpocw [17/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 159.9
+model_train val_loss  valEpocw [17/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 341.0
+Outer loop valEpocw Maximum [17/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 49.8
+model_train val_loss valEpocw [17/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 71.0
+model_train val_loss  valEpocw [17/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 158.6
+Outer loop valEpocw Maximum [17/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.4
+model_train val_loss valEpocw [17/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 52.5
+model_train val_loss  valEpocw [17/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 117.4
+Outer loop valEpocw Maximum [17/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.6
+model_train val_loss valEpocw [17/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 164.7
+model_train val_loss  valEpocw [17/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 353.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.19, mAP score EMA 3.78
+starting validation
+mAP score regular 9.51, mAP score EMA 4.31
+Train_data_mAP: current_mAP = 9.19, highest_mAP = 9.34
+Val_data_mAP: current_mAP = 9.51, highest_mAP = 9.84
+tensor([0.4868, 0.3868, 0.4493, 0.4653, 0.4567, 0.4541, 0.4417, 0.4336, 0.4501,
+        0.4363, 0.4532, 0.4460, 0.4560, 0.4433, 0.4535, 0.3960, 0.4659, 0.4469,
+        0.4697, 0.4368, 0.4519, 0.4573, 0.4589, 0.4710, 0.4226, 0.4617, 0.4153,
+        0.4491, 0.4040, 0.4194, 0.4271, 0.4284, 0.4391, 0.4387, 0.4064, 0.4192,
+        0.4138, 0.4296, 0.4467, 0.4256, 0.4401, 0.4115, 0.4341, 0.4437, 0.4314,
+        0.4553, 0.4484, 0.4515, 0.4533, 0.4340, 0.4599, 0.4439, 0.4467, 0.4578,
+        0.4489, 0.4499, 0.4466, 0.4544, 0.3992, 0.4274, 0.4567, 0.4076, 0.4631,
+        0.4319, 0.4377, 0.4475, 0.4410, 0.4539, 0.4301, 0.4442, 0.4561, 0.4444,
+        0.4671, 0.4453, 0.4674, 0.4727, 0.4491, 0.4389, 0.4607, 0.4627],
+       device='cuda:0')
+Epoch [18/80], Step [000/642], LR 1.0e-04, Loss: 15.8
+Epoch [18/80], Step [100/642], LR 1.0e-04, Loss: 20.9
+Epoch [18/80], Step [200/642], LR 1.0e-04, Loss: 17.4
+Epoch [18/80], Step [300/642], LR 1.0e-04, Loss: 19.0
+Epoch [18/80], Step [400/642], LR 1.0e-04, Loss: 17.2
+Epoch [18/80], Step [500/642], LR 1.0e-04, Loss: 21.7
+Epoch [18/80], Step [600/642], LR 1.0e-04, Loss: 18.0
+Outer loop valEpocw Maximum [18/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 149.3
+model_train val_loss valEpocw [18/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 146.8
+model_train val_loss  valEpocw [18/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 315.0
+Outer loop valEpocw Maximum [18/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.8
+model_train val_loss valEpocw [18/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 73.0
+model_train val_loss  valEpocw [18/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 163.4
+Outer loop valEpocw Maximum [18/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.2
+model_train val_loss valEpocw [18/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 46.8
+model_train val_loss  valEpocw [18/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 106.7
+Outer loop valEpocw Maximum [18/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.0
+model_train val_loss valEpocw [18/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 142.1
+model_train val_loss  valEpocw [18/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 309.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.21, mAP score EMA 3.78
+starting validation
+mAP score regular 9.56, mAP score EMA 4.33
+Train_data_mAP: current_mAP = 9.21, highest_mAP = 9.34
+Val_data_mAP: current_mAP = 9.56, highest_mAP = 9.84
+tensor([0.4794, 0.3810, 0.4441, 0.4613, 0.4563, 0.4488, 0.4429, 0.4291, 0.4529,
+        0.4384, 0.4478, 0.4401, 0.4589, 0.4470, 0.4538, 0.3963, 0.4641, 0.4491,
+        0.4697, 0.4367, 0.4532, 0.4535, 0.4524, 0.4742, 0.4249, 0.4561, 0.4164,
+        0.4523, 0.4026, 0.4157, 0.4290, 0.4291, 0.4404, 0.4441, 0.4100, 0.4267,
+        0.4146, 0.4266, 0.4430, 0.4239, 0.4287, 0.4129, 0.4364, 0.4444, 0.4336,
+        0.4456, 0.4486, 0.4443, 0.4480, 0.4346, 0.4603, 0.4447, 0.4309, 0.4513,
+        0.4481, 0.4366, 0.4374, 0.4484, 0.3959, 0.4316, 0.4530, 0.4095, 0.4587,
+        0.4247, 0.4403, 0.4387, 0.4333, 0.4463, 0.4303, 0.4517, 0.4575, 0.4440,
+        0.4678, 0.4444, 0.4687, 0.4732, 0.4483, 0.4402, 0.4528, 0.4621],
+       device='cuda:0')
+Epoch [19/80], Step [000/642], LR 1.0e-04, Loss: 18.9
+Epoch [19/80], Step [100/642], LR 1.0e-04, Loss: 30.1
+Epoch [19/80], Step [200/642], LR 1.0e-04, Loss: 18.1
+Epoch [19/80], Step [300/642], LR 1.0e-04, Loss: 15.7
+Epoch [19/80], Step [400/642], LR 1.0e-04, Loss: 18.5
+Epoch [19/80], Step [500/642], LR 1.0e-04, Loss: 17.0
+Epoch [19/80], Step [600/642], LR 1.0e-04, Loss: 15.8
+Outer loop valEpocw Maximum [19/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 158.2
+model_train val_loss valEpocw [19/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 156.7
+model_train val_loss  valEpocw [19/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 337.7
+Outer loop valEpocw Maximum [19/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 47.1
+model_train val_loss valEpocw [19/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 71.2
+model_train val_loss  valEpocw [19/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 161.5
+Outer loop valEpocw Maximum [19/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.0
+model_train val_loss valEpocw [19/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 40.5
+model_train val_loss  valEpocw [19/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 92.5
+Outer loop valEpocw Maximum [19/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.8
+model_train val_loss valEpocw [19/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 126.8
+model_train val_loss  valEpocw [19/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 272.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.64, mAP score EMA 3.76
+starting validation
+mAP score regular 10.03, mAP score EMA 4.33
+Train_data_mAP: current_mAP = 9.64, highest_mAP = 9.64
+Val_data_mAP: current_mAP = 10.03, highest_mAP = 10.03
+tensor([0.4697, 0.3848, 0.4388, 0.4574, 0.4568, 0.4473, 0.4434, 0.4222, 0.4417,
+        0.4427, 0.4426, 0.4365, 0.4581, 0.4449, 0.4426, 0.3960, 0.4608, 0.4506,
+        0.4622, 0.4277, 0.4508, 0.4393, 0.4442, 0.4668, 0.4238, 0.4473, 0.4152,
+        0.4481, 0.4039, 0.4171, 0.4281, 0.4281, 0.4382, 0.4369, 0.4097, 0.4127,
+        0.4143, 0.4168, 0.4335, 0.4211, 0.4273, 0.4122, 0.4353, 0.4450, 0.4163,
+        0.4544, 0.4378, 0.4423, 0.4445, 0.4323, 0.4582, 0.4316, 0.4177, 0.4451,
+        0.4471, 0.4362, 0.4317, 0.4452, 0.3934, 0.4312, 0.4495, 0.4063, 0.4505,
+        0.4333, 0.4320, 0.4244, 0.4334, 0.4401, 0.4297, 0.4510, 0.4584, 0.4416,
+        0.4620, 0.4326, 0.4755, 0.4731, 0.4486, 0.4402, 0.4528, 0.4551],
+       device='cuda:0')
+Epoch [20/80], Step [000/642], LR 1.0e-04, Loss: 16.8
+Epoch [20/80], Step [100/642], LR 1.0e-04, Loss: 21.2
+Epoch [20/80], Step [200/642], LR 1.0e-04, Loss: 16.9
+Epoch [20/80], Step [300/642], LR 1.0e-04, Loss: 16.1
+Epoch [20/80], Step [400/642], LR 1.0e-04, Loss: 17.9
+Epoch [20/80], Step [500/642], LR 1.0e-04, Loss: 17.1
+Epoch [20/80], Step [600/642], LR 1.0e-04, Loss: 16.1
+Outer loop valEpocw Maximum [20/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 142.0
+model_train val_loss valEpocw [20/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 135.9
+model_train val_loss  valEpocw [20/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 294.8
+Outer loop valEpocw Maximum [20/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.8
+model_train val_loss valEpocw [20/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 74.3
+model_train val_loss  valEpocw [20/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 169.2
+Outer loop valEpocw Maximum [20/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.6
+model_train val_loss valEpocw [20/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 49.3
+model_train val_loss  valEpocw [20/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 115.8
+Outer loop valEpocw Maximum [20/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.7
+model_train val_loss valEpocw [20/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 145.3
+model_train val_loss  valEpocw [20/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 310.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 9.95, mAP score EMA 3.76
+starting validation
+mAP score regular 10.34, mAP score EMA 4.32
+Train_data_mAP: current_mAP = 9.95, highest_mAP = 9.95
+Val_data_mAP: current_mAP = 10.34, highest_mAP = 10.34
+tensor([0.4692, 0.3862, 0.4425, 0.4587, 0.4572, 0.4516, 0.4028, 0.4226, 0.4456,
+        0.4287, 0.4425, 0.4413, 0.4586, 0.4506, 0.4450, 0.3944, 0.4628, 0.4526,
+        0.4377, 0.4339, 0.4544, 0.4512, 0.4506, 0.4688, 0.4120, 0.4541, 0.4145,
+        0.4551, 0.4049, 0.3848, 0.4039, 0.4074, 0.4401, 0.4262, 0.4096, 0.4252,
+        0.3948, 0.3962, 0.4341, 0.4194, 0.4276, 0.4131, 0.4356, 0.4357, 0.4169,
+        0.4502, 0.4417, 0.4414, 0.4434, 0.4269, 0.4539, 0.4333, 0.4178, 0.4430,
+        0.4473, 0.4241, 0.4296, 0.4418, 0.4038, 0.4292, 0.4455, 0.4095, 0.4489,
+        0.4332, 0.4392, 0.4173, 0.4174, 0.4406, 0.4304, 0.4520, 0.4593, 0.4450,
+        0.4686, 0.4319, 0.4759, 0.4696, 0.4512, 0.4264, 0.4470, 0.4574],
+       device='cuda:0')
+Epoch [21/80], Step [000/642], LR 1.0e-04, Loss: 15.8
+Epoch [21/80], Step [100/642], LR 1.0e-04, Loss: 19.7
+Epoch [21/80], Step [200/642], LR 1.0e-04, Loss: 14.5
+Epoch [21/80], Step [300/642], LR 1.0e-04, Loss: 18.8
+Epoch [21/80], Step [400/642], LR 1.0e-04, Loss: 15.5
+Epoch [21/80], Step [500/642], LR 1.0e-04, Loss: 16.5
+Epoch [21/80], Step [600/642], LR 1.0e-04, Loss: 15.7
+Outer loop valEpocw Maximum [21/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 156.8
+model_train val_loss valEpocw [21/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 153.0
+model_train val_loss  valEpocw [21/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 330.6
+Outer loop valEpocw Maximum [21/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.5
+model_train val_loss valEpocw [21/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 73.2
+model_train val_loss  valEpocw [21/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 165.1
+Outer loop valEpocw Maximum [21/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.7
+model_train val_loss valEpocw [21/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 41.8
+model_train val_loss  valEpocw [21/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 97.6
+Outer loop valEpocw Maximum [21/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.4
+model_train val_loss valEpocw [21/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 149.6
+model_train val_loss  valEpocw [21/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 316.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 10.04, mAP score EMA 3.76
+starting validation
+mAP score regular 10.49, mAP score EMA 4.33
+Train_data_mAP: current_mAP = 10.04, highest_mAP = 10.04
+Val_data_mAP: current_mAP = 10.49, highest_mAP = 10.49
+tensor([0.4643, 0.3769, 0.4444, 0.4571, 0.4525, 0.4520, 0.4076, 0.4228, 0.4512,
+        0.4288, 0.4275, 0.4419, 0.4438, 0.4472, 0.4470, 0.3921, 0.4598, 0.4520,
+        0.4401, 0.4361, 0.4502, 0.4474, 0.4520, 0.4645, 0.4128, 0.4527, 0.4146,
+        0.4510, 0.4055, 0.3846, 0.4036, 0.4072, 0.4332, 0.4254, 0.4104, 0.4186,
+        0.3944, 0.3960, 0.4342, 0.4208, 0.4272, 0.4137, 0.4226, 0.4342, 0.4168,
+        0.4529, 0.4256, 0.4423, 0.4494, 0.4276, 0.4536, 0.4338, 0.4176, 0.4408,
+        0.4512, 0.4247, 0.4260, 0.4348, 0.3977, 0.4274, 0.4470, 0.4137, 0.4429,
+        0.4297, 0.4305, 0.4166, 0.4175, 0.4421, 0.4314, 0.4544, 0.4352, 0.4458,
+        0.4712, 0.4326, 0.4788, 0.4616, 0.4433, 0.4259, 0.4424, 0.4454],
+       device='cuda:0')
+Epoch [22/80], Step [000/642], LR 1.0e-04, Loss: 18.0
+Epoch [22/80], Step [100/642], LR 1.0e-04, Loss: 21.7
+Epoch [22/80], Step [200/642], LR 1.0e-04, Loss: 16.7
+Epoch [22/80], Step [300/642], LR 1.0e-04, Loss: 15.2
+Epoch [22/80], Step [400/642], LR 1.0e-04, Loss: 16.4
+Epoch [22/80], Step [500/642], LR 1.0e-04, Loss: 20.5
+Epoch [22/80], Step [600/642], LR 1.0e-04, Loss: 15.9
+Outer loop valEpocw Maximum [22/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 157.7
+model_train val_loss valEpocw [22/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 158.8
+model_train val_loss  valEpocw [22/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 345.3
+Outer loop valEpocw Maximum [22/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.9
+model_train val_loss valEpocw [22/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 79.2
+model_train val_loss  valEpocw [22/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 178.3
+Outer loop valEpocw Maximum [22/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.4
+model_train val_loss valEpocw [22/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 53.6
+model_train val_loss  valEpocw [22/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 122.2
+Outer loop valEpocw Maximum [22/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.5
+model_train val_loss valEpocw [22/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 154.1
+model_train val_loss  valEpocw [22/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 331.0
+---------evaluating the models---------
+
+starting validation
+mAP score regular 10.11, mAP score EMA 3.78
+starting validation
+mAP score regular 10.50, mAP score EMA 4.33
+Train_data_mAP: current_mAP = 10.11, highest_mAP = 10.11
+Val_data_mAP: current_mAP = 10.50, highest_mAP = 10.50
+tensor([0.4656, 0.3831, 0.4405, 0.4497, 0.4552, 0.4449, 0.4130, 0.4230, 0.4532,
+        0.4337, 0.4231, 0.4396, 0.4437, 0.4484, 0.4385, 0.3898, 0.4586, 0.4446,
+        0.4408, 0.4317, 0.4499, 0.4414, 0.4504, 0.4633, 0.4129, 0.4469, 0.4146,
+        0.4462, 0.4060, 0.3846, 0.4097, 0.3994, 0.4313, 0.4273, 0.4104, 0.4179,
+        0.3939, 0.3951, 0.4321, 0.4199, 0.4274, 0.4140, 0.4227, 0.4239, 0.4171,
+        0.4546, 0.4245, 0.4271, 0.4440, 0.4274, 0.4415, 0.4341, 0.4175, 0.4406,
+        0.4331, 0.4251, 0.4262, 0.4331, 0.3979, 0.4329, 0.4384, 0.4190, 0.4400,
+        0.4207, 0.4375, 0.4162, 0.4176, 0.4397, 0.4321, 0.4564, 0.4358, 0.4387,
+        0.4719, 0.4133, 0.4762, 0.4623, 0.4317, 0.4263, 0.4426, 0.4485],
+       device='cuda:0')
+Epoch [23/80], Step [000/642], LR 1.0e-04, Loss: 19.1
+Epoch [23/80], Step [100/642], LR 1.0e-04, Loss: 21.8
+Epoch [23/80], Step [200/642], LR 1.0e-04, Loss: 17.9
+Epoch [23/80], Step [300/642], LR 1.0e-04, Loss: 19.0
+Epoch [23/80], Step [400/642], LR 1.0e-04, Loss: 17.7
+Epoch [23/80], Step [500/642], LR 1.0e-04, Loss: 14.5
+Epoch [23/80], Step [600/642], LR 1.0e-04, Loss: 14.7
+Outer loop valEpocw Maximum [23/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 150.5
+model_train val_loss valEpocw [23/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 140.9
+model_train val_loss  valEpocw [23/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 307.2
+Outer loop valEpocw Maximum [23/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.5
+model_train val_loss valEpocw [23/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 66.8
+model_train val_loss  valEpocw [23/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 151.4
+Outer loop valEpocw Maximum [23/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.7
+model_train val_loss valEpocw [23/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 44.2
+model_train val_loss  valEpocw [23/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 103.5
+Outer loop valEpocw Maximum [23/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 48.6
+model_train val_loss valEpocw [23/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 131.5
+model_train val_loss  valEpocw [23/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 281.7
+---------evaluating the models---------
+
+starting validation
+mAP score regular 10.41, mAP score EMA 3.77
+starting validation
+mAP score regular 10.78, mAP score EMA 4.35
+Train_data_mAP: current_mAP = 10.41, highest_mAP = 10.41
+Val_data_mAP: current_mAP = 10.78, highest_mAP = 10.78
+tensor([0.4584, 0.3833, 0.4352, 0.4434, 0.4540, 0.4457, 0.4169, 0.4232, 0.4420,
+        0.4259, 0.4224, 0.4268, 0.4337, 0.4459, 0.4390, 0.3874, 0.4572, 0.4437,
+        0.4380, 0.4172, 0.4466, 0.4393, 0.4367, 0.4632, 0.4109, 0.4471, 0.4127,
+        0.4420, 0.4082, 0.3839, 0.4083, 0.3977, 0.4234, 0.4197, 0.4094, 0.4157,
+        0.3921, 0.3933, 0.4285, 0.4256, 0.4271, 0.3989, 0.4229, 0.4219, 0.4166,
+        0.4435, 0.4262, 0.4251, 0.4337, 0.4423, 0.4394, 0.4340, 0.4286, 0.4338,
+        0.4362, 0.4249, 0.4243, 0.4383, 0.3979, 0.4302, 0.4395, 0.4257, 0.4408,
+        0.4179, 0.4366, 0.4204, 0.4170, 0.4346, 0.4326, 0.4404, 0.4355, 0.4227,
+        0.4734, 0.4122, 0.4739, 0.4568, 0.4305, 0.4283, 0.4438, 0.4515],
+       device='cuda:0')
+Epoch [24/80], Step [000/642], LR 1.0e-04, Loss: 13.8
+Epoch [24/80], Step [100/642], LR 1.0e-04, Loss: 19.7
+Epoch [24/80], Step [200/642], LR 1.0e-04, Loss: 15.9
+Epoch [24/80], Step [300/642], LR 1.0e-04, Loss: 16.1
+Epoch [24/80], Step [400/642], LR 1.0e-04, Loss: 16.5
+Epoch [24/80], Step [500/642], LR 1.0e-04, Loss: 15.4
+Epoch [24/80], Step [600/642], LR 1.0e-04, Loss: 17.9
+Outer loop valEpocw Maximum [24/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 166.9
+model_train val_loss valEpocw [24/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 165.1
+model_train val_loss  valEpocw [24/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 361.0
+Outer loop valEpocw Maximum [24/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.7
+model_train val_loss valEpocw [24/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 83.3
+model_train val_loss  valEpocw [24/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 194.1
+Outer loop valEpocw Maximum [24/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.8
+model_train val_loss valEpocw [24/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 41.4
+model_train val_loss  valEpocw [24/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 96.9
+Outer loop valEpocw Maximum [24/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.2
+model_train val_loss valEpocw [24/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 143.0
+model_train val_loss  valEpocw [24/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 307.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 10.40, mAP score EMA 3.77
+starting validation
+mAP score regular 10.81, mAP score EMA 4.36
+Train_data_mAP: current_mAP = 10.40, highest_mAP = 10.41
+Val_data_mAP: current_mAP = 10.81, highest_mAP = 10.81
+tensor([0.4501, 0.3800, 0.4335, 0.4456, 0.4497, 0.4467, 0.4166, 0.4204, 0.4415,
+        0.4316, 0.4303, 0.4221, 0.4336, 0.4349, 0.4324, 0.3888, 0.4555, 0.4428,
+        0.4360, 0.4182, 0.4406, 0.4395, 0.4380, 0.4622, 0.4104, 0.4465, 0.4135,
+        0.4422, 0.4094, 0.3848, 0.4070, 0.3999, 0.4250, 0.4199, 0.4090, 0.4163,
+        0.3933, 0.3946, 0.4272, 0.4299, 0.4268, 0.3987, 0.4280, 0.4230, 0.4183,
+        0.4482, 0.4257, 0.4244, 0.4288, 0.4294, 0.4398, 0.4200, 0.4289, 0.4375,
+        0.4377, 0.4256, 0.4206, 0.4262, 0.3953, 0.4262, 0.4402, 0.4259, 0.4366,
+        0.4189, 0.4364, 0.4209, 0.4167, 0.4304, 0.4339, 0.4403, 0.4356, 0.4134,
+        0.4674, 0.4127, 0.4704, 0.4583, 0.4330, 0.4361, 0.4442, 0.4471],
+       device='cuda:0')
+Epoch [25/80], Step [000/642], LR 1.0e-04, Loss: 15.6
+Epoch [25/80], Step [100/642], LR 1.0e-04, Loss: 19.9
+Epoch [25/80], Step [200/642], LR 1.0e-04, Loss: 16.3
+Epoch [25/80], Step [300/642], LR 1.0e-04, Loss: 15.3
+Epoch [25/80], Step [400/642], LR 1.0e-04, Loss: 15.2
+Epoch [25/80], Step [500/642], LR 1.0e-04, Loss: 16.6
+Epoch [25/80], Step [600/642], LR 1.0e-04, Loss: 14.3
+Outer loop valEpocw Maximum [25/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 159.7
+model_train val_loss valEpocw [25/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 154.6
+model_train val_loss  valEpocw [25/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 339.4
+Outer loop valEpocw Maximum [25/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.9
+model_train val_loss valEpocw [25/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 75.5
+model_train val_loss  valEpocw [25/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 178.4
+Outer loop valEpocw Maximum [25/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.7
+model_train val_loss valEpocw [25/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 40.7
+model_train val_loss  valEpocw [25/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 94.7
+Outer loop valEpocw Maximum [25/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.5
+model_train val_loss valEpocw [25/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 108.3
+model_train val_loss  valEpocw [25/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 236.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 10.65, mAP score EMA 3.75
+starting validation
+mAP score regular 11.09, mAP score EMA 4.38
+Train_data_mAP: current_mAP = 10.65, highest_mAP = 10.65
+Val_data_mAP: current_mAP = 11.09, highest_mAP = 11.09
+tensor([0.4423, 0.3822, 0.4352, 0.4411, 0.4473, 0.4481, 0.4163, 0.4211, 0.4424,
+        0.4138, 0.4247, 0.4228, 0.4335, 0.4398, 0.4303, 0.3913, 0.4539, 0.4427,
+        0.4398, 0.4202, 0.4318, 0.4390, 0.4393, 0.4622, 0.4121, 0.4430, 0.4162,
+        0.4406, 0.4078, 0.3859, 0.4045, 0.4101, 0.4278, 0.4162, 0.4110, 0.4265,
+        0.3959, 0.3964, 0.4272, 0.4323, 0.4268, 0.3995, 0.4289, 0.4239, 0.4193,
+        0.4476, 0.4302, 0.4260, 0.4233, 0.4418, 0.4400, 0.4203, 0.4180, 0.4384,
+        0.4413, 0.4249, 0.4139, 0.4301, 0.3909, 0.4235, 0.4357, 0.4193, 0.4298,
+        0.4205, 0.4412, 0.4330, 0.4169, 0.4281, 0.4331, 0.4414, 0.4348, 0.4145,
+        0.4643, 0.4135, 0.4688, 0.4609, 0.4326, 0.4377, 0.4434, 0.4437],
+       device='cuda:0')
+Epoch [26/80], Step [000/642], LR 1.0e-04, Loss: 14.6
+Epoch [26/80], Step [100/642], LR 1.0e-04, Loss: 20.5
+Epoch [26/80], Step [200/642], LR 1.0e-04, Loss: 16.8
+Epoch [26/80], Step [300/642], LR 1.0e-04, Loss: 14.2
+Epoch [26/80], Step [400/642], LR 1.0e-04, Loss: 18.5
+Epoch [26/80], Step [500/642], LR 1.0e-04, Loss: 13.8
+Epoch [26/80], Step [600/642], LR 1.0e-04, Loss: 16.8
+Outer loop valEpocw Maximum [26/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 160.7
+model_train val_loss valEpocw [26/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 157.5
+model_train val_loss  valEpocw [26/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 347.0
+Outer loop valEpocw Maximum [26/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.0
+model_train val_loss valEpocw [26/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 73.7
+model_train val_loss  valEpocw [26/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 173.6
+Outer loop valEpocw Maximum [26/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.6
+model_train val_loss valEpocw [26/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 42.6
+model_train val_loss  valEpocw [26/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 104.4
+Outer loop valEpocw Maximum [26/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 46.4
+model_train val_loss valEpocw [26/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 94.3
+model_train val_loss  valEpocw [26/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 205.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 11.48, mAP score EMA 3.77
+starting validation
+mAP score regular 12.04, mAP score EMA 4.37
+Train_data_mAP: current_mAP = 11.48, highest_mAP = 11.48
+Val_data_mAP: current_mAP = 12.04, highest_mAP = 12.04
+tensor([0.4403, 0.3777, 0.4324, 0.4378, 0.4408, 0.4398, 0.4182, 0.4165, 0.4352,
+        0.4062, 0.4191, 0.4258, 0.4342, 0.4204, 0.4300, 0.3904, 0.4487, 0.4402,
+        0.4417, 0.4141, 0.4342, 0.4331, 0.4309, 0.4603, 0.4089, 0.4387, 0.4119,
+        0.4353, 0.4102, 0.3845, 0.4014, 0.4027, 0.4182, 0.4207, 0.4094, 0.4169,
+        0.3931, 0.3921, 0.4226, 0.4329, 0.4244, 0.4001, 0.4271, 0.4232, 0.4179,
+        0.4428, 0.4246, 0.4211, 0.4277, 0.4451, 0.4399, 0.4202, 0.4161, 0.4427,
+        0.4369, 0.4238, 0.4047, 0.4306, 0.3892, 0.4192, 0.4401, 0.4130, 0.4318,
+        0.4152, 0.4376, 0.4178, 0.4165, 0.4277, 0.4322, 0.4407, 0.4335, 0.4126,
+        0.4644, 0.4135, 0.4649, 0.4512, 0.4315, 0.4226, 0.4466, 0.4404],
+       device='cuda:0')
+Epoch [27/80], Step [000/642], LR 1.0e-04, Loss: 16.2
+Epoch [27/80], Step [100/642], LR 1.0e-04, Loss: 18.5
+Epoch [27/80], Step [200/642], LR 1.0e-04, Loss: 14.6
+Epoch [27/80], Step [300/642], LR 1.0e-04, Loss: 13.8
+Epoch [27/80], Step [400/642], LR 1.0e-04, Loss: 17.7
+Epoch [27/80], Step [500/642], LR 1.0e-04, Loss: 16.6
+Epoch [27/80], Step [600/642], LR 1.0e-04, Loss: 16.1
+Outer loop valEpocw Maximum [27/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 157.2
+model_train val_loss valEpocw [27/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 147.5
+model_train val_loss  valEpocw [27/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 328.8
+Outer loop valEpocw Maximum [27/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.4
+model_train val_loss valEpocw [27/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 84.4
+model_train val_loss  valEpocw [27/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 197.9
+Outer loop valEpocw Maximum [27/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.9
+model_train val_loss valEpocw [27/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 41.0
+model_train val_loss  valEpocw [27/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 96.4
+Outer loop valEpocw Maximum [27/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.3
+model_train val_loss valEpocw [27/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.1
+model_train val_loss  valEpocw [27/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 292.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 11.24, mAP score EMA 3.77
+starting validation
+mAP score regular 11.61, mAP score EMA 4.37
+Train_data_mAP: current_mAP = 11.24, highest_mAP = 11.48
+Val_data_mAP: current_mAP = 11.61, highest_mAP = 12.04
+tensor([0.4334, 0.3758, 0.4256, 0.4385, 0.4447, 0.4389, 0.4206, 0.4178, 0.4357,
+        0.4116, 0.4270, 0.4193, 0.4300, 0.4258, 0.4250, 0.3934, 0.4439, 0.4393,
+        0.4409, 0.4159, 0.4379, 0.4375, 0.4264, 0.4587, 0.4085, 0.4327, 0.4119,
+        0.4321, 0.3948, 0.3841, 0.4017, 0.4108, 0.4193, 0.4231, 0.4104, 0.4174,
+        0.3931, 0.3919, 0.4208, 0.4341, 0.4240, 0.4001, 0.4269, 0.4236, 0.4176,
+        0.4333, 0.4302, 0.4211, 0.4293, 0.4407, 0.4365, 0.4193, 0.4103, 0.4340,
+        0.4347, 0.4149, 0.4162, 0.4322, 0.3879, 0.4160, 0.4363, 0.4022, 0.4305,
+        0.4163, 0.4271, 0.4175, 0.4169, 0.4273, 0.4321, 0.4267, 0.4339, 0.4110,
+        0.4642, 0.4148, 0.4589, 0.4511, 0.4313, 0.4221, 0.4473, 0.4345],
+       device='cuda:0')
+Epoch [28/80], Step [000/642], LR 1.0e-04, Loss: 12.8
+Epoch [28/80], Step [100/642], LR 1.0e-04, Loss: 18.8
+Epoch [28/80], Step [200/642], LR 1.0e-04, Loss: 16.3
+Epoch [28/80], Step [300/642], LR 1.0e-04, Loss: 13.5
+Epoch [28/80], Step [400/642], LR 1.0e-04, Loss: 19.5
+Epoch [28/80], Step [500/642], LR 1.0e-04, Loss: 14.3
+Epoch [28/80], Step [600/642], LR 1.0e-04, Loss: 15.1
+Outer loop valEpocw Maximum [28/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 161.1
+model_train val_loss valEpocw [28/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 152.6
+model_train val_loss  valEpocw [28/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 343.7
+Outer loop valEpocw Maximum [28/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.3
+model_train val_loss valEpocw [28/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 72.1
+model_train val_loss  valEpocw [28/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 173.9
+Outer loop valEpocw Maximum [28/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.3
+model_train val_loss valEpocw [28/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 38.0
+model_train val_loss  valEpocw [28/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 93.6
+Outer loop valEpocw Maximum [28/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.9
+model_train val_loss valEpocw [28/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.3
+model_train val_loss  valEpocw [28/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 294.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 11.43, mAP score EMA 3.78
+starting validation
+mAP score regular 12.10, mAP score EMA 4.38
+Train_data_mAP: current_mAP = 11.43, highest_mAP = 11.48
+Val_data_mAP: current_mAP = 12.10, highest_mAP = 12.10
+tensor([0.4342, 0.3775, 0.4228, 0.4342, 0.4453, 0.4339, 0.4192, 0.4151, 0.4277,
+        0.4078, 0.4247, 0.4143, 0.4294, 0.4280, 0.4198, 0.3949, 0.4413, 0.4328,
+        0.4409, 0.4102, 0.4236, 0.4315, 0.4291, 0.4536, 0.4054, 0.4286, 0.4083,
+        0.4315, 0.3945, 0.3809, 0.3990, 0.4027, 0.4153, 0.4228, 0.4076, 0.4097,
+        0.3902, 0.3884, 0.4131, 0.4355, 0.4219, 0.4000, 0.4235, 0.4214, 0.4154,
+        0.4243, 0.4272, 0.4174, 0.4274, 0.4290, 0.4263, 0.4184, 0.4056, 0.4364,
+        0.4250, 0.4108, 0.4040, 0.4286, 0.3890, 0.4138, 0.4354, 0.4000, 0.4305,
+        0.4309, 0.4235, 0.4133, 0.4011, 0.4230, 0.4321, 0.4259, 0.4358, 0.4037,
+        0.4584, 0.4143, 0.4549, 0.4465, 0.4305, 0.4196, 0.4368, 0.4288],
+       device='cuda:0')
+Epoch [29/80], Step [000/642], LR 1.0e-04, Loss: 14.8
+Epoch [29/80], Step [100/642], LR 1.0e-04, Loss: 18.7
+Epoch [29/80], Step [200/642], LR 1.0e-04, Loss: 17.8
+Epoch [29/80], Step [300/642], LR 1.0e-04, Loss: 13.2
+Epoch [29/80], Step [400/642], LR 1.0e-04, Loss: 14.2
+Epoch [29/80], Step [500/642], LR 1.0e-04, Loss: 15.6
+Epoch [29/80], Step [600/642], LR 1.0e-04, Loss: 15.4
+Outer loop valEpocw Maximum [29/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 192.1
+model_train val_loss valEpocw [29/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 163.0
+model_train val_loss  valEpocw [29/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 369.3
+Outer loop valEpocw Maximum [29/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.9
+model_train val_loss valEpocw [29/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 69.2
+model_train val_loss  valEpocw [29/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 166.9
+Outer loop valEpocw Maximum [29/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.0
+model_train val_loss valEpocw [29/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 39.3
+model_train val_loss  valEpocw [29/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 95.4
+Outer loop valEpocw Maximum [29/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.5
+model_train val_loss valEpocw [29/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 141.2
+model_train val_loss  valEpocw [29/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 310.2
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.28, mAP score EMA 3.77
+starting validation
+mAP score regular 12.91, mAP score EMA 4.40
+Train_data_mAP: current_mAP = 12.28, highest_mAP = 12.28
+Val_data_mAP: current_mAP = 12.91, highest_mAP = 12.91
+tensor([0.4319, 0.3793, 0.4213, 0.4364, 0.4446, 0.4330, 0.4164, 0.4147, 0.4279,
+        0.4133, 0.4213, 0.4170, 0.4218, 0.4257, 0.4192, 0.3952, 0.4442, 0.4258,
+        0.4434, 0.4176, 0.4251, 0.4257, 0.4226, 0.4517, 0.3907, 0.4293, 0.4086,
+        0.4270, 0.3950, 0.3813, 0.3969, 0.3978, 0.4086, 0.4265, 0.4173, 0.4263,
+        0.3905, 0.3883, 0.4106, 0.4397, 0.4223, 0.4006, 0.4235, 0.4215, 0.4157,
+        0.4286, 0.4252, 0.4181, 0.4257, 0.4220, 0.4281, 0.4187, 0.4052, 0.4372,
+        0.4169, 0.4114, 0.4007, 0.4212, 0.3885, 0.4099, 0.4329, 0.3957, 0.4328,
+        0.4236, 0.4225, 0.3945, 0.4013, 0.4242, 0.4324, 0.4261, 0.4364, 0.4017,
+        0.4570, 0.3999, 0.4560, 0.4476, 0.4339, 0.4190, 0.4312, 0.4284],
+       device='cuda:0')
+Epoch [30/80], Step [000/642], LR 1.0e-04, Loss: 14.7
+Epoch [30/80], Step [100/642], LR 1.0e-04, Loss: 17.9
+Epoch [30/80], Step [200/642], LR 1.0e-04, Loss: 14.9
+Epoch [30/80], Step [300/642], LR 1.0e-04, Loss: 15.1
+Epoch [30/80], Step [400/642], LR 1.0e-04, Loss: 16.3
+Epoch [30/80], Step [500/642], LR 1.0e-04, Loss: 14.5
+Epoch [30/80], Step [600/642], LR 1.0e-04, Loss: 13.2
+Outer loop valEpocw Maximum [30/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 164.3
+model_train val_loss valEpocw [30/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 144.6
+model_train val_loss  valEpocw [30/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 325.6
+Outer loop valEpocw Maximum [30/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.5
+model_train val_loss valEpocw [30/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 70.7
+model_train val_loss  valEpocw [30/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 169.5
+Outer loop valEpocw Maximum [30/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.5
+model_train val_loss valEpocw [30/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 48.3
+model_train val_loss  valEpocw [30/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 110.9
+Outer loop valEpocw Maximum [30/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.1
+model_train val_loss valEpocw [30/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.9
+model_train val_loss  valEpocw [30/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 298.4
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.29, mAP score EMA 3.76
+starting validation
+mAP score regular 12.99, mAP score EMA 4.38
+Train_data_mAP: current_mAP = 12.29, highest_mAP = 12.29
+Val_data_mAP: current_mAP = 12.99, highest_mAP = 12.99
+tensor([0.4362, 0.3832, 0.4228, 0.4371, 0.4435, 0.4286, 0.4127, 0.4135, 0.4237,
+        0.4070, 0.4144, 0.4181, 0.4212, 0.4265, 0.4234, 0.3965, 0.4415, 0.4251,
+        0.4372, 0.4249, 0.4252, 0.4250, 0.4291, 0.4460, 0.3911, 0.4303, 0.4095,
+        0.4231, 0.3954, 0.3810, 0.3965, 0.4030, 0.4116, 0.4191, 0.4226, 0.4210,
+        0.3904, 0.3879, 0.4080, 0.4378, 0.4223, 0.4013, 0.4230, 0.4210, 0.4154,
+        0.4218, 0.4248, 0.4304, 0.4274, 0.4202, 0.4263, 0.4185, 0.4036, 0.4286,
+        0.4151, 0.4106, 0.4107, 0.4244, 0.3881, 0.4091, 0.4309, 0.3926, 0.4338,
+        0.4369, 0.4208, 0.3925, 0.4002, 0.4229, 0.4328, 0.4286, 0.4143, 0.4019,
+        0.4543, 0.4001, 0.4516, 0.4411, 0.4426, 0.4181, 0.4305, 0.4221],
+       device='cuda:0')
+Epoch [31/80], Step [000/642], LR 1.0e-04, Loss: 14.2
+Epoch [31/80], Step [100/642], LR 1.0e-04, Loss: 19.2
+Epoch [31/80], Step [200/642], LR 1.0e-04, Loss: 15.9
+Epoch [31/80], Step [300/642], LR 1.0e-04, Loss: 14.3
+Epoch [31/80], Step [400/642], LR 1.0e-04, Loss: 15.9
+Epoch [31/80], Step [500/642], LR 1.0e-04, Loss: 13.5
+Epoch [31/80], Step [600/642], LR 1.0e-04, Loss: 14.6
+Outer loop valEpocw Maximum [31/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 151.7
+model_train val_loss valEpocw [31/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 139.9
+model_train val_loss  valEpocw [31/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 316.9
+Outer loop valEpocw Maximum [31/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.2
+model_train val_loss valEpocw [31/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 76.6
+model_train val_loss  valEpocw [31/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 183.1
+Outer loop valEpocw Maximum [31/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.6
+model_train val_loss valEpocw [31/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 40.0
+model_train val_loss  valEpocw [31/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 97.9
+Outer loop valEpocw Maximum [31/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.0
+model_train val_loss valEpocw [31/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 137.7
+model_train val_loss  valEpocw [31/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 304.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.14, mAP score EMA 3.77
+starting validation
+mAP score regular 12.68, mAP score EMA 4.39
+Train_data_mAP: current_mAP = 12.14, highest_mAP = 12.29
+Val_data_mAP: current_mAP = 12.68, highest_mAP = 12.99
+tensor([0.4357, 0.3822, 0.4249, 0.4336, 0.4403, 0.4288, 0.4222, 0.4176, 0.4227,
+        0.4073, 0.4119, 0.4135, 0.4056, 0.4325, 0.4200, 0.3978, 0.4430, 0.4244,
+        0.4410, 0.4199, 0.4213, 0.4283, 0.4324, 0.4458, 0.3932, 0.4279, 0.3895,
+        0.4290, 0.3955, 0.3678, 0.3980, 0.3930, 0.4179, 0.4168, 0.4331, 0.4234,
+        0.3914, 0.3901, 0.4099, 0.4346, 0.4227, 0.4021, 0.4240, 0.4201, 0.4164,
+        0.4310, 0.4224, 0.4179, 0.4242, 0.4269, 0.4237, 0.4187, 0.4163, 0.4327,
+        0.4160, 0.4111, 0.4123, 0.4197, 0.3898, 0.4122, 0.4389, 0.3990, 0.4308,
+        0.4237, 0.4219, 0.3941, 0.4007, 0.4246, 0.4330, 0.4328, 0.4130, 0.4049,
+        0.4552, 0.4010, 0.4548, 0.4407, 0.4460, 0.4190, 0.4305, 0.4270],
+       device='cuda:0')
+Epoch [32/80], Step [000/642], LR 1.0e-04, Loss: 13.7
+Epoch [32/80], Step [100/642], LR 1.0e-04, Loss: 22.9
+Epoch [32/80], Step [200/642], LR 1.0e-04, Loss: 15.9
+Epoch [32/80], Step [300/642], LR 1.0e-04, Loss: 17.3
+Epoch [32/80], Step [400/642], LR 1.0e-04, Loss: 15.4
+Epoch [32/80], Step [500/642], LR 1.0e-04, Loss: 14.2
+Epoch [32/80], Step [600/642], LR 1.0e-04, Loss: 17.6
+Outer loop valEpocw Maximum [32/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 167.2
+model_train val_loss valEpocw [32/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 155.1
+model_train val_loss  valEpocw [32/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 350.2
+Outer loop valEpocw Maximum [32/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.3
+model_train val_loss valEpocw [32/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 69.6
+model_train val_loss  valEpocw [32/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 168.5
+Outer loop valEpocw Maximum [32/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.5
+model_train val_loss valEpocw [32/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 49.6
+model_train val_loss  valEpocw [32/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 112.0
+Outer loop valEpocw Maximum [32/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.0
+model_train val_loss valEpocw [32/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 124.5
+model_train val_loss  valEpocw [32/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 278.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 11.82, mAP score EMA 3.77
+starting validation
+mAP score regular 12.26, mAP score EMA 4.38
+Train_data_mAP: current_mAP = 11.82, highest_mAP = 12.29
+Val_data_mAP: current_mAP = 12.26, highest_mAP = 12.99
+tensor([0.4334, 0.3865, 0.4221, 0.4334, 0.4378, 0.4306, 0.4133, 0.4168, 0.4246,
+        0.4111, 0.4189, 0.4147, 0.4063, 0.4302, 0.4198, 0.3991, 0.4406, 0.4213,
+        0.4372, 0.4198, 0.4226, 0.4242, 0.4332, 0.4407, 0.3935, 0.4271, 0.3896,
+        0.4309, 0.3959, 0.3685, 0.3980, 0.3927, 0.4136, 0.4133, 0.4207, 0.4165,
+        0.3922, 0.3906, 0.4122, 0.4349, 0.4234, 0.4022, 0.4243, 0.4202, 0.4167,
+        0.4337, 0.4175, 0.4183, 0.4161, 0.4270, 0.4307, 0.4194, 0.4168, 0.4314,
+        0.4268, 0.4114, 0.4141, 0.4147, 0.3877, 0.4141, 0.4302, 0.3931, 0.4308,
+        0.4349, 0.4224, 0.3948, 0.4012, 0.4222, 0.4331, 0.4337, 0.4131, 0.4066,
+        0.4525, 0.4016, 0.4522, 0.4351, 0.4368, 0.4195, 0.4305, 0.4220],
+       device='cuda:0')
+Epoch [33/80], Step [000/642], LR 1.0e-04, Loss: 13.4
+Epoch [33/80], Step [100/642], LR 1.0e-04, Loss: 20.9
+Epoch [33/80], Step [200/642], LR 1.0e-04, Loss: 16.4
+Epoch [33/80], Step [300/642], LR 1.0e-04, Loss: 15.1
+Epoch [33/80], Step [400/642], LR 1.0e-04, Loss: 13.3
+Epoch [33/80], Step [500/642], LR 1.0e-04, Loss: 14.8
+Epoch [33/80], Step [600/642], LR 1.0e-04, Loss: 13.3
+Outer loop valEpocw Maximum [33/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 154.3
+model_train val_loss valEpocw [33/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 137.2
+model_train val_loss  valEpocw [33/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 311.4
+Outer loop valEpocw Maximum [33/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.5
+model_train val_loss valEpocw [33/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 73.3
+model_train val_loss  valEpocw [33/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 176.8
+Outer loop valEpocw Maximum [33/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.4
+model_train val_loss valEpocw [33/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 38.1
+model_train val_loss  valEpocw [33/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 93.9
+Outer loop valEpocw Maximum [33/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.4
+model_train val_loss valEpocw [33/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 130.8
+model_train val_loss  valEpocw [33/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 291.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.55, mAP score EMA 3.76
+starting validation
+mAP score regular 13.16, mAP score EMA 4.37
+Train_data_mAP: current_mAP = 12.55, highest_mAP = 12.55
+Val_data_mAP: current_mAP = 13.16, highest_mAP = 13.16
+tensor([0.4300, 0.3888, 0.4220, 0.4330, 0.4384, 0.4268, 0.4183, 0.4090, 0.4210,
+        0.4140, 0.4145, 0.4173, 0.4073, 0.4326, 0.4220, 0.3997, 0.4390, 0.4191,
+        0.4370, 0.4174, 0.4254, 0.4262, 0.4264, 0.4444, 0.3954, 0.4266, 0.3897,
+        0.4250, 0.3971, 0.3698, 0.3985, 0.4018, 0.4148, 0.4166, 0.4211, 0.4173,
+        0.3938, 0.4130, 0.4156, 0.4380, 0.4243, 0.4033, 0.4249, 0.4134, 0.4166,
+        0.4211, 0.4214, 0.4187, 0.4138, 0.4277, 0.4201, 0.4204, 0.4086, 0.4332,
+        0.4306, 0.4125, 0.4187, 0.4112, 0.3921, 0.4155, 0.4332, 0.3980, 0.4298,
+        0.4385, 0.4238, 0.3953, 0.4018, 0.4252, 0.4326, 0.4343, 0.4129, 0.4068,
+        0.4522, 0.4029, 0.4511, 0.4386, 0.4366, 0.4208, 0.4316, 0.4309],
+       device='cuda:0')
+Epoch [34/80], Step [000/642], LR 1.0e-04, Loss: 13.6
+Epoch [34/80], Step [100/642], LR 1.0e-04, Loss: 19.6
+Epoch [34/80], Step [200/642], LR 1.0e-04, Loss: 14.3
+Epoch [34/80], Step [300/642], LR 1.0e-04, Loss: 15.6
+Epoch [34/80], Step [400/642], LR 1.0e-04, Loss: 16.0
+Epoch [34/80], Step [500/642], LR 1.0e-04, Loss: 14.4
+Epoch [34/80], Step [600/642], LR 1.0e-04, Loss: 15.9
+Outer loop valEpocw Maximum [34/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 159.1
+model_train val_loss valEpocw [34/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 148.3
+model_train val_loss  valEpocw [34/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 337.8
+Outer loop valEpocw Maximum [34/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.4
+model_train val_loss valEpocw [34/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 64.8
+model_train val_loss  valEpocw [34/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 155.7
+Outer loop valEpocw Maximum [34/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.5
+model_train val_loss valEpocw [34/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 44.6
+model_train val_loss  valEpocw [34/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 108.6
+Outer loop valEpocw Maximum [34/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.8
+model_train val_loss valEpocw [34/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.3
+model_train val_loss  valEpocw [34/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 298.8
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.52, mAP score EMA 3.78
+starting validation
+mAP score regular 13.02, mAP score EMA 4.37
+Train_data_mAP: current_mAP = 12.52, highest_mAP = 12.55
+Val_data_mAP: current_mAP = 13.02, highest_mAP = 13.16
+tensor([0.4355, 0.3870, 0.4209, 0.4329, 0.4370, 0.4267, 0.4100, 0.4094, 0.4121,
+        0.4106, 0.4135, 0.4201, 0.4019, 0.4294, 0.4184, 0.3993, 0.4412, 0.4202,
+        0.4376, 0.4199, 0.4269, 0.4222, 0.4282, 0.4444, 0.3953, 0.4238, 0.3891,
+        0.4266, 0.4200, 0.3696, 0.3974, 0.4058, 0.4182, 0.4096, 0.4189, 0.4051,
+        0.3935, 0.4074, 0.4182, 0.4362, 0.4245, 0.4036, 0.4244, 0.4136, 0.4165,
+        0.4271, 0.4178, 0.4181, 0.4210, 0.4090, 0.4258, 0.4207, 0.4073, 0.4363,
+        0.4280, 0.4124, 0.4071, 0.4104, 0.3896, 0.4142, 0.4366, 0.3977, 0.4313,
+        0.4321, 0.4229, 0.3941, 0.4018, 0.4248, 0.4327, 0.4380, 0.4143, 0.4103,
+        0.4512, 0.4033, 0.4510, 0.4375, 0.4381, 0.4199, 0.4319, 0.4319],
+       device='cuda:0')
+Epoch [35/80], Step [000/642], LR 1.0e-04, Loss: 15.2
+Epoch [35/80], Step [100/642], LR 1.0e-04, Loss: 19.6
+Epoch [35/80], Step [200/642], LR 1.0e-04, Loss: 16.6
+Epoch [35/80], Step [300/642], LR 1.0e-04, Loss: 15.9
+Epoch [35/80], Step [400/642], LR 1.0e-04, Loss: 13.6
+Epoch [35/80], Step [500/642], LR 1.0e-04, Loss: 14.7
+Epoch [35/80], Step [600/642], LR 1.0e-04, Loss: 13.8
+Outer loop valEpocw Maximum [35/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 145.8
+model_train val_loss valEpocw [35/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 135.3
+model_train val_loss  valEpocw [35/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 306.7
+Outer loop valEpocw Maximum [35/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.0
+model_train val_loss valEpocw [35/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 74.5
+model_train val_loss  valEpocw [35/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 177.3
+Outer loop valEpocw Maximum [35/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.4
+model_train val_loss valEpocw [35/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 39.8
+model_train val_loss  valEpocw [35/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 99.9
+Outer loop valEpocw Maximum [35/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.7
+model_train val_loss valEpocw [35/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 116.6
+model_train val_loss  valEpocw [35/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 258.9
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.97, mAP score EMA 3.77
+starting validation
+mAP score regular 13.58, mAP score EMA 4.37
+Train_data_mAP: current_mAP = 12.97, highest_mAP = 12.97
+Val_data_mAP: current_mAP = 13.58, highest_mAP = 13.58
+tensor([0.4397, 0.3885, 0.4238, 0.4336, 0.4359, 0.4290, 0.4147, 0.4123, 0.4126,
+        0.4083, 0.4121, 0.4109, 0.4030, 0.4327, 0.4218, 0.3997, 0.4388, 0.4221,
+        0.4401, 0.4207, 0.4268, 0.4245, 0.4178, 0.4154, 0.3948, 0.4260, 0.3879,
+        0.4279, 0.4082, 0.3689, 0.3959, 0.4029, 0.4149, 0.4052, 0.4152, 0.4036,
+        0.3924, 0.4226, 0.4218, 0.4403, 0.4250, 0.4032, 0.4236, 0.4139, 0.4167,
+        0.4264, 0.4119, 0.4175, 0.4280, 0.4078, 0.4340, 0.4215, 0.3935, 0.4344,
+        0.4223, 0.3967, 0.4153, 0.4114, 0.3877, 0.4098, 0.4361, 0.3926, 0.4311,
+        0.4250, 0.4216, 0.3942, 0.4025, 0.4273, 0.4152, 0.4476, 0.4161, 0.4096,
+        0.4531, 0.4039, 0.4550, 0.4286, 0.4374, 0.4185, 0.4326, 0.4345],
+       device='cuda:0')
+Epoch [36/80], Step [000/642], LR 1.0e-04, Loss: 12.9
+Epoch [36/80], Step [100/642], LR 1.0e-04, Loss: 18.5
+Epoch [36/80], Step [200/642], LR 1.0e-04, Loss: 17.0
+Epoch [36/80], Step [300/642], LR 1.0e-04, Loss: 17.8
+Epoch [36/80], Step [400/642], LR 1.0e-04, Loss: 16.4
+Epoch [36/80], Step [500/642], LR 1.0e-04, Loss: 16.8
+Epoch [36/80], Step [600/642], LR 1.0e-04, Loss: 16.5
+Outer loop valEpocw Maximum [36/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 163.0
+model_train val_loss valEpocw [36/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 149.3
+model_train val_loss  valEpocw [36/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 340.2
+Outer loop valEpocw Maximum [36/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.1
+model_train val_loss valEpocw [36/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 72.2
+model_train val_loss  valEpocw [36/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 175.9
+Outer loop valEpocw Maximum [36/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.3
+model_train val_loss valEpocw [36/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 39.1
+model_train val_loss  valEpocw [36/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 98.4
+Outer loop valEpocw Maximum [36/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.3
+model_train val_loss valEpocw [36/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 107.6
+model_train val_loss  valEpocw [36/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 239.3
+---------evaluating the models---------
+
+starting validation
+mAP score regular 13.38, mAP score EMA 3.76
+starting validation
+mAP score regular 14.03, mAP score EMA 4.36
+Train_data_mAP: current_mAP = 13.38, highest_mAP = 13.38
+Val_data_mAP: current_mAP = 14.03, highest_mAP = 14.03
+tensor([0.4425, 0.3857, 0.4174, 0.4359, 0.4338, 0.4327, 0.4186, 0.4090, 0.4120,
+        0.4095, 0.4172, 0.4121, 0.4026, 0.4231, 0.4188, 0.3985, 0.4379, 0.4178,
+        0.4371, 0.4220, 0.4272, 0.4278, 0.4248, 0.3989, 0.3947, 0.4262, 0.3874,
+        0.4254, 0.4065, 0.3668, 0.3944, 0.3971, 0.4085, 0.4036, 0.4223, 0.4032,
+        0.3915, 0.4127, 0.4163, 0.4390, 0.4252, 0.4033, 0.4230, 0.4120, 0.4158,
+        0.4311, 0.4115, 0.4180, 0.4296, 0.4160, 0.4329, 0.4219, 0.4023, 0.4297,
+        0.4228, 0.3953, 0.4183, 0.4170, 0.3861, 0.4153, 0.4363, 0.3794, 0.4285,
+        0.4235, 0.4196, 0.3944, 0.4023, 0.4323, 0.4147, 0.4574, 0.4161, 0.4105,
+        0.4550, 0.4028, 0.4524, 0.4263, 0.4307, 0.4170, 0.4314, 0.4376],
+       device='cuda:0')
+Epoch [37/80], Step [000/642], LR 1.0e-04, Loss: 14.9
+Epoch [37/80], Step [100/642], LR 1.0e-04, Loss: 18.6
+Epoch [37/80], Step [200/642], LR 1.0e-04, Loss: 15.3
+Epoch [37/80], Step [300/642], LR 1.0e-04, Loss: 15.6
+Epoch [37/80], Step [400/642], LR 1.0e-04, Loss: 16.6
+Epoch [37/80], Step [500/642], LR 1.0e-04, Loss: 13.5
+Epoch [37/80], Step [600/642], LR 1.0e-04, Loss: 15.9
+Outer loop valEpocw Maximum [37/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 156.8
+model_train val_loss valEpocw [37/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 146.4
+model_train val_loss  valEpocw [37/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 334.4
+Outer loop valEpocw Maximum [37/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.1
+model_train val_loss valEpocw [37/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 70.8
+model_train val_loss  valEpocw [37/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 171.6
+Outer loop valEpocw Maximum [37/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 41.2
+model_train val_loss valEpocw [37/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 42.4
+model_train val_loss  valEpocw [37/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 106.0
+Outer loop valEpocw Maximum [37/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.3
+model_train val_loss valEpocw [37/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 94.0
+model_train val_loss  valEpocw [37/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 212.1
+---------evaluating the models---------
+
+starting validation
+mAP score regular 12.92, mAP score EMA 3.76
+starting validation
+mAP score regular 13.57, mAP score EMA 4.36
+Train_data_mAP: current_mAP = 12.92, highest_mAP = 13.38
+Val_data_mAP: current_mAP = 13.57, highest_mAP = 14.03
+tensor([0.4474, 0.3802, 0.4209, 0.4393, 0.4357, 0.4321, 0.4139, 0.4155, 0.4194,
+        0.4213, 0.4209, 0.4163, 0.4040, 0.4343, 0.4195, 0.4027, 0.4421, 0.4205,
+        0.4412, 0.4248, 0.4259, 0.4276, 0.4275, 0.4090, 0.3976, 0.4256, 0.3907,
+        0.4298, 0.4244, 0.3705, 0.3980, 0.4112, 0.4087, 0.4203, 0.4318, 0.4067,
+        0.3949, 0.4134, 0.4204, 0.4417, 0.4264, 0.4037, 0.4259, 0.4159, 0.4171,
+        0.4346, 0.4120, 0.4215, 0.4237, 0.4194, 0.4371, 0.4234, 0.4165, 0.4329,
+        0.4276, 0.3988, 0.4217, 0.4148, 0.3839, 0.4128, 0.4394, 0.3808, 0.4282,
+        0.4213, 0.4243, 0.3983, 0.4038, 0.4381, 0.4152, 0.4463, 0.4141, 0.4168,
+        0.4572, 0.4052, 0.4546, 0.4371, 0.4335, 0.4195, 0.4329, 0.4410],
+       device='cuda:0')
+Epoch [38/80], Step [000/642], LR 1.0e-04, Loss: 12.6
+Epoch [38/80], Step [100/642], LR 1.0e-04, Loss: 17.7
+Epoch [38/80], Step [200/642], LR 1.0e-04, Loss: 13.9
+Epoch [38/80], Step [300/642], LR 1.0e-04, Loss: 14.3
+Epoch [38/80], Step [400/642], LR 1.0e-04, Loss: 14.4
+Epoch [38/80], Step [500/642], LR 1.0e-04, Loss: 16.6
+Epoch [38/80], Step [600/642], LR 1.0e-04, Loss: 14.6
+Outer loop valEpocw Maximum [38/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 152.2
+model_train val_loss valEpocw [38/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 139.2
+model_train val_loss  valEpocw [38/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 314.9
+Outer loop valEpocw Maximum [38/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.5
+model_train val_loss valEpocw [38/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 63.7
+model_train val_loss  valEpocw [38/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 154.4
+Outer loop valEpocw Maximum [38/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 39.8
+model_train val_loss valEpocw [38/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 43.3
+model_train val_loss  valEpocw [38/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 107.8
+Outer loop valEpocw Maximum [38/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.6
+model_train val_loss valEpocw [38/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 100.1
+model_train val_loss  valEpocw [38/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 221.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 13.61, mAP score EMA 3.77
+starting validation
+mAP score regular 14.25, mAP score EMA 4.34
+Train_data_mAP: current_mAP = 13.61, highest_mAP = 13.61
+Val_data_mAP: current_mAP = 14.25, highest_mAP = 14.25
+tensor([0.4463, 0.3793, 0.4243, 0.4423, 0.4330, 0.4300, 0.4147, 0.4168, 0.4227,
+        0.4292, 0.4192, 0.4234, 0.4047, 0.4366, 0.4151, 0.4037, 0.4436, 0.4259,
+        0.4393, 0.4249, 0.4286, 0.4288, 0.4345, 0.4192, 0.3988, 0.4252, 0.3925,
+        0.4309, 0.4076, 0.3733, 0.3981, 0.4098, 0.4053, 0.4181, 0.4151, 0.4073,
+        0.3975, 0.4208, 0.4220, 0.4420, 0.4111, 0.4060, 0.4277, 0.4153, 0.4177,
+        0.4367, 0.4124, 0.4207, 0.4272, 0.4203, 0.4441, 0.4254, 0.4036, 0.4330,
+        0.4242, 0.4016, 0.4172, 0.4241, 0.3846, 0.4196, 0.4367, 0.3834, 0.4318,
+        0.4211, 0.4239, 0.3999, 0.4058, 0.4343, 0.4156, 0.4470, 0.4162, 0.4195,
+        0.4575, 0.4065, 0.4597, 0.4392, 0.4331, 0.4205, 0.4360, 0.4426],
+       device='cuda:0')
+Epoch [39/80], Step [000/642], LR 1.0e-04, Loss: 14.1
+Epoch [39/80], Step [100/642], LR 1.0e-04, Loss: 18.6
+Epoch [39/80], Step [200/642], LR 1.0e-04, Loss: 14.7
+Epoch [39/80], Step [300/642], LR 1.0e-04, Loss: 19.3
+Epoch [39/80], Step [400/642], LR 1.0e-04, Loss: 15.5
+Epoch [39/80], Step [500/642], LR 1.0e-04, Loss: 16.8
+Epoch [39/80], Step [600/642], LR 1.0e-04, Loss: 16.3
+Outer loop valEpocw Maximum [39/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 162.2
+model_train val_loss valEpocw [39/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 151.2
+model_train val_loss  valEpocw [39/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 340.8
+Outer loop valEpocw Maximum [39/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 42.6
+model_train val_loss valEpocw [39/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 85.5
+model_train val_loss  valEpocw [39/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 203.8
+Outer loop valEpocw Maximum [39/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 40.1
+model_train val_loss valEpocw [39/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 41.8
+model_train val_loss  valEpocw [39/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 104.2
+Outer loop valEpocw Maximum [39/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 44.9
+model_train val_loss valEpocw [39/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.7
+model_train val_loss  valEpocw [39/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 295.5
+---------evaluating the models---------
+
+starting validation
+mAP score regular 13.34, mAP score EMA 3.77
+starting validation
+mAP score regular 13.74, mAP score EMA 4.32
+Train_data_mAP: current_mAP = 13.34, highest_mAP = 13.61
+Val_data_mAP: current_mAP = 13.74, highest_mAP = 14.25
+tensor([0.4839, 0.3827, 0.4226, 0.4430, 0.4377, 0.4301, 0.4198, 0.4138, 0.4260,
+        0.4314, 0.4205, 0.4228, 0.4040, 0.4310, 0.4196, 0.4027, 0.4454, 0.4174,
+        0.4383, 0.4243, 0.4272, 0.4295, 0.4383, 0.4218, 0.3969, 0.4318, 0.3906,
+        0.4322, 0.4071, 0.3715, 0.3939, 0.4014, 0.4075, 0.4033, 0.4091, 0.4036,
+        0.3954, 0.4069, 0.4232, 0.4453, 0.4106, 0.4068, 0.4255, 0.4130, 0.4180,
+        0.4342, 0.4049, 0.4174, 0.4343, 0.4155, 0.4382, 0.4244, 0.3985, 0.4241,
+        0.4204, 0.3998, 0.4084, 0.4232, 0.3855, 0.4163, 0.4323, 0.3808, 0.4324,
+        0.4139, 0.4193, 0.3961, 0.4051, 0.4335, 0.4167, 0.4450, 0.4203, 0.4208,
+        0.4483, 0.4054, 0.4501, 0.4257, 0.4307, 0.4184, 0.4362, 0.4402],
+       device='cuda:0')
+Epoch [40/80], Step [000/642], LR 1.0e-04, Loss: 14.6
+Epoch [40/80], Step [100/642], LR 1.0e-04, Loss: 17.5
+Epoch [40/80], Step [200/642], LR 1.0e-04, Loss: 15.1
+Epoch [40/80], Step [300/642], LR 1.0e-04, Loss: 15.8
+Epoch [40/80], Step [400/642], LR 1.0e-04, Loss: 13.9
+Epoch [40/80], Step [500/642], LR 1.0e-04, Loss: 13.3
+Epoch [40/80], Step [600/642], LR 1.0e-04, Loss: 17.5
+Outer loop valEpocw Maximum [40/80], Step [000/314], LR 1.0e-04, Meta Learning Max Validation Loss: 148.1
+model_train val_loss valEpocw [40/80], Step [000/314], LR 1.0e-04, Main Model Weighted Validation Loss: 132.6
+model_train val_loss  valEpocw [40/80], Step [000/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 297.8
+Outer loop valEpocw Maximum [40/80], Step [100/314], LR 1.0e-04, Meta Learning Max Validation Loss: 45.2
+model_train val_loss valEpocw [40/80], Step [100/314], LR 1.0e-04, Main Model Weighted Validation Loss: 69.5
+model_train val_loss  valEpocw [40/80], Step [100/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 164.3
+Outer loop valEpocw Maximum [40/80], Step [200/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.5
+model_train val_loss valEpocw [40/80], Step [200/314], LR 1.0e-04, Main Model Weighted Validation Loss: 47.6
+model_train val_loss  valEpocw [40/80], Step [200/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 114.9
+Outer loop valEpocw Maximum [40/80], Step [300/314], LR 1.0e-04, Meta Learning Max Validation Loss: 43.5
+model_train val_loss valEpocw [40/80], Step [300/314], LR 1.0e-04, Main Model Weighted Validation Loss: 127.5
+model_train val_loss  valEpocw [40/80], Step [300/314], LR 1.0e-04, Main Model Unweighted Validation Loss: 283.6
+---------evaluating the models---------
+
+starting validation
+mAP score regular 13.34, mAP score EMA 3.77
+starting validation
+mAP score regular 13.87, mAP score EMA 4.30
+Train_data_mAP: current_mAP = 13.34, highest_mAP = 13.61
+Val_data_mAP: current_mAP = 13.87, highest_mAP = 14.25
+tensor([0.4800, 0.3798, 0.4203, 0.4445, 0.4419, 0.4323, 0.4243, 0.4190, 0.4224,
+        0.4407, 0.4139, 0.4242, 0.4043, 0.4346, 0.4293, 0.4055, 0.4476, 0.4178,
+        0.4402, 0.4210, 0.4209, 0.4301, 0.4395, 0.4270, 0.3970, 0.4252, 0.3908,
+        0.4382, 0.3877, 0.3716, 0.3941, 0.3952, 0.4135, 0.3914, 0.4086, 0.4037,
+        0.3957, 0.4033, 0.4226, 0.4406, 0.4107, 0.4071, 0.4092, 0.4131, 0.4183,
+        0.4317, 0.4165, 0.4175, 0.4318, 0.4278, 0.4381, 0.4247, 0.3985, 0.4218,
+        0.4214, 0.4000, 0.4045, 0.4267, 0.3842, 0.4244, 0.4284, 0.3890, 0.4313,
+        0.4090, 0.4194, 0.3963, 0.4054, 0.4293, 0.4170, 0.4474, 0.4209, 0.4041,
+        0.4503, 0.4057, 0.4516, 0.4289, 0.4309, 0.4185, 0.4363, 0.4277],
+       device='cuda:0')

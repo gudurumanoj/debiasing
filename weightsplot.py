@@ -11,7 +11,7 @@ args = parser.parse_args()
 
 
 
-## data of weights for the whole epochs
+## data of weights for the whole valEpocws
 
 def returndata():
 
