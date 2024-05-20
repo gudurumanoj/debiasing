@@ -53,8 +53,6 @@ Modified the train.py from the original repository to include the following:
 - ``` --seed``` argument to set the seed for reproducibility
 
 Detailed description is as follows:
-## Description
-This script is designed to train a model on the MS_COCO dataset using various training methods such as ASL (Asymmetric Loss), BCE (Binary Cross-Entropy), and object presence probability methods. It supports mixed precision training and can load pretrained models.
 
 ## Arguments
 The following arguments can be passed to the script:
